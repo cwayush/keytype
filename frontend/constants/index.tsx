@@ -63,3 +63,28 @@ export const FEATURES = [
     description: 'Enjoy a sleek design that enhances your focus.',
   },
 ];
+
+
+export const TESTIMONIALS = [
+  {
+    name: "Sarah L.",
+    username: "sarah_l",
+    image: "",
+    tweet:
+      "TypeFast has dramatically improved my typing speed. I've gone from 40 WPM to over 80 WPM in just a month!",
+  },
+  {
+    name: "Michael R.",
+    username: "michael_r",
+    image: "",
+    tweet:
+      "The real-time feedback and analytics have been crucial in identifying and correcting my typing mistakes.",
+  },
+  {
+    name: "Emily T.",
+    username: "emily_t",
+    image: "",
+    tweet:
+      "Challenging friends has made practicing typing so much more fun and engaging. I look forward to it every day!",
+  },
+];

@@ -3,7 +3,6 @@ import { Geist_Mono } from 'next/font/google';
 import './globals.css';
 
 const geistMono = Geist_Mono({
-  variable: '--font-geist-mono',
   subsets: ['latin'],
 });
 
@@ -20,7 +19,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistMono.variable} antialiased min-h-screen bg-gradient-to-b from-neutral-900 to-black text-neutral-400`}
+        className={`${geistMono.className} antialiased min-h-screen bg-gradient-to-b from-neutral-900 to-black text-neutral-400`}
       >
         {children}
       </body>

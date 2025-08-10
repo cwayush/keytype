@@ -15,6 +15,7 @@ import {
   cn,
   generateRandomWords,
 } from '@/lib/utils';
+import Result from './result';
 
 function Interface() {
   const [currentIndex, setCurrentIndex] = useState<number>(0);
@@ -301,15 +302,15 @@ function Interface() {
           )}
         </motion.div>
       ) : (
-        <Result />
-        //   wpm={wpm}
-        //   accuracy={accuracy}
-        //   time={timePassed}
-        //   wpmData={wpmData}
-        //   onRestart={resetTest}
-        //   mode={mode}
-        //   modeOption={modeOption}
-        // />
+        <Result
+          wpm={wpm}
+          accuracy={accuracy}
+          time={timePassed}
+          wpmData={wpmData}
+          onRestart={resetTest}
+          mode={mode}
+          modeOption={modeOption}
+        />
       )}
     </AnimatePresence>
   );

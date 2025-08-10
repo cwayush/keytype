@@ -36,3 +36,14 @@ declare type CountOptions = {
 declare function count(options?: CountOptions): number;
 
 export { generate, count, wordsList };
+
+
+export type ResultProps = {
+  wpm: number;
+  accuracy: number;
+  time: number;
+  wpmData: { time: number; wpm: number }[];
+  onRestart: () => void;
+  mode: string;
+  modeOption: number;
+};

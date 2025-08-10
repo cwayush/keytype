@@ -6,7 +6,7 @@ import {
   CardDescription,
   CardHeader,
   CardTitle,
-} from '@/ui/src/components/ui/card';
+} from '@/UI/components/card';
 import { motion } from 'framer-motion';
 
 const containerVarients = {

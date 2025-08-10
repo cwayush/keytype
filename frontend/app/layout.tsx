@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import { Geist_Mono } from 'next/font/google';
 import './globals.css';
+import { Header } from '@/components/header';
+import { Providers } from './provider';
 
 const geistMono = Geist_Mono({
   subsets: ['latin'],
@@ -21,7 +23,10 @@ export default function RootLayout({
       <body
         className={`${geistMono.className} antialiased min-h-screen bg-gradient-to-b from-neutral-900 to-black text-neutral-400`}
       >
-        {children}
+        <Providers>
+          <Header />
+          {children}
+        </Providers>
       </body>
     </html>
   );

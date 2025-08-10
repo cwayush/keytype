@@ -3,7 +3,7 @@ import {
   CardContent,
   CardDescription,
   CardTitle,
-} from '@/ui/src/components/ui/card';
+} from '@/UI/components/card';
 import { motion } from 'framer-motion';
 import { LoaderPinwheel } from 'lucide-react';
 import { useEffect, useState, useTransition } from 'react';
@@ -29,7 +29,9 @@ const Stats = () => {
 
   useEffect(() => {
     startTransition(async () => {
-      const response = await fetch('https://jsonplaceholder.typicode.com/posts');
+      const response = await fetch(
+        'https://jsonplaceholder.typicode.com/posts'
+      );
       const data = await response.json();
       setStats(data);
     });
@@ -73,6 +75,5 @@ const Stats = () => {
     </section>
   );
 };
-
 
 export default Stats;

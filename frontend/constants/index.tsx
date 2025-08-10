@@ -88,3 +88,10 @@ export const TESTIMONIALS = [
       "Challenging friends has made practicing typing so much more fun and engaging. I look forward to it every day!",
   },
 ];
+
+export const modes = ["time", "words"];
+export const timeOptions = [15, 30];
+export const wordOptions = [10, 25, 50];
+
+export const DEFAULT_TEST_MODE = "time";
+export const DEFAULT_TEST_MODE_OPTION = 15;

@@ -5,12 +5,12 @@ import {
   Avatar,
   AvatarFallback,
   AvatarImage,
-} from '@/ui/src/components/ui/avatar';
+} from '@/UI/components/avatar';
 import {
   Card,
   CardContent,
   CardDescription,
-} from '@/ui/src/components/ui/card';
+} from '@/UI/components/card';
 import { motion } from 'framer-motion';
 import { BadgeCheck } from 'lucide-react';
 

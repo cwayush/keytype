@@ -47,3 +47,13 @@ export type ResultProps = {
   mode: string;
   modeOption: number;
 };
+
+
+export type LeaderboardDataType = {
+  rank: number;
+  name: string;
+  wpm: number;
+  accuracy: number;
+  time: number;
+  mode: string;
+};

@@ -469,3 +469,7 @@
 {"level":"info","message":"Fetching tests","service":"hotelix-api","timestamp":"2025-08-16 16:58:43"}
 {"level":"info","message":"Fetching tests","service":"hotelix-api","timestamp":"2025-08-16 16:58:43"}
 {"level":"info","message":"Tests fetched successfully","service":"hotelix-api","timestamp":"2025-08-16 16:58:44"}
+{"ip":"::1","level":"info","message":"GET /test/all/cme9ueg1m0000i8ao0ru3336w","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-16 17:11:52"}
+{"level":"info","message":"Fetching tests","service":"hotelix-api","timestamp":"2025-08-16 17:11:52"}
+{"level":"info","message":"Fetching tests","service":"hotelix-api","timestamp":"2025-08-16 17:11:52"}
+{"level":"info","message":"Tests fetched successfully","service":"hotelix-api","timestamp":"2025-08-16 17:11:52"}

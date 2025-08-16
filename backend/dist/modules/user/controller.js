@@ -68,5 +68,17 @@ exports.userController = {
             next(err);
         }
     },
+    async userLogin(req, res, next) {
+        try {
+            logger_1.default.info(logger_2.LOG_MESSAGES.USER.LOGIN_REQUEST);
+            const result = await service_1.userService.userLogin(req.body);
+            return res
+                .status(response_1.HTTP_STATUS.OK)
+                .json({ message: response_1.MESSAGES.FETCHED_SUCCESS, data: result });
+        }
+        catch (err) {
+            next(err);
+        }
+    },
 };
 //# sourceMappingURL=controller.js.map

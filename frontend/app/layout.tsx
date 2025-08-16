@@ -23,10 +23,10 @@ export default function RootLayout({
       <body
         className={`${geistMono.className} antialiased min-h-screen bg-gradient-to-b from-neutral-900 to-black text-neutral-400`}
       >
-        <Providers>
+        {/* <Providers> */}
           <Header />
           {children}
-        </Providers>
+        {/* </Providers> */}
       </body>
     </html>
   );

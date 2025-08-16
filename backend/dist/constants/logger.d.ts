@@ -8,6 +8,8 @@ export declare const LOG_MESSAGES: {
         FETCHED: string;
         FETCH_BY_ID_REQUEST: string;
         FETCH_BY_ID_SUCCESS: string;
+        LOGIN_REQUEST: string;
+        LOGIN_SUCCESS: string;
     };
     TEST: {
         CREATE_REQUEST: string;

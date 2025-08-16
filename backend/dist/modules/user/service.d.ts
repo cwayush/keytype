@@ -1,6 +1,16 @@
-import { SignUpInput } from '../../config/zvalidate';
+import { SignInInput, SignUpInput } from '../../config/zvalidate';
 export declare const userService: {
     createUser(value: SignUpInput): Promise<{
+        email: string;
+        password: string | null;
+        name: string | null;
+        id: string;
+        emailVerified: Date | null;
+        image: string | null;
+        createdAt: Date;
+        updatedAt: Date;
+    }>;
+    userLogin(value: SignInInput): Promise<{
         email: string;
         password: string | null;
         name: string | null;

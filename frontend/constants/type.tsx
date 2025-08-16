@@ -57,3 +57,48 @@ export type LeaderboardDataType = {
   time: number;
   mode: string;
 };
+
+export type RecentPerformanceProps = {
+  recentTests: { date: string | undefined; wpm: number }[];
+};
+
+export type ProfileHeaderProps = {
+  image: string;
+  name: string;
+};
+
+export type StatsGridProps = {
+  stats: {
+    averageWpm: number;
+    averageAccuracy: number;
+    testsCompleted: number;
+    totalTimeTyping: string;
+  };
+};
+
+
+export type BestScoresProps = {
+  allTimeBestScores: {
+    time: {
+      "15s": number;
+      "30s": number;
+    };
+    words: {
+      "10": number;
+      "25": number;
+      "50": number;
+    };
+  };
+};
+
+export type Test = {
+  id: string;
+  wpm: number;
+  accuracy: number;
+  time: number;
+  mode: string;
+  modeOption: number;
+  userId: string;
+  createdAt: Date;
+  updatedAt: Date;
+};

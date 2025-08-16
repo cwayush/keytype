@@ -1,7 +1,7 @@
 export declare const ROUTES: {
     USER: {
-        SIGNUP: string;
         LOGIN: string;
+        REGISTER: string;
         RESET_PASSWORD: string;
         GET_USERS: string;
         GET_USER_BY_ID: string;

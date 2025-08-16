@@ -64,4 +64,16 @@ export const userController = {
       next(err);
     }
   },
+
+  async userLogin(req: Request, res: Response, next: NextFunction) {
+    try {
+      logger.info(LOG_MESSAGES.USER.LOGIN_REQUEST);
+      const result = await userService.userLogin(req.body);
+      return res
+        .status(HTTP_STATUS.OK)
+        .json({ message: MESSAGES.FETCHED_SUCCESS, data: result });
+    } catch (err) {
+      next(err);
+    }
+  },
 };

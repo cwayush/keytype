@@ -6,6 +6,9 @@ export const ERR_MESSAGES = {
     UPDATE_FAILED: 'Failed to update user',
     FETCH_FAILED: 'Failed to fetch users',
     FETCH_BY_ID_FAILED: 'Failed to fetch user by ID',
+    INVALID_PASSWORD: 'Invalid password provided',
+    USER_NOT_FOUND: 'User not found',
+    EMAIL_NOT_VERIFIED: 'Email address not verified',
   },
 
   // TEST ERROR MESSAGES

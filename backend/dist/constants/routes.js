@@ -4,10 +4,10 @@ exports.ROUTES = void 0;
 exports.ROUTES = {
     // USER ROUTES
     USER: {
-        SIGNUP: '/auth/signup',
         LOGIN: '/auth/login',
+        REGISTER: '/auth/register',
         RESET_PASSWORD: '/auth/users/:userId/password',
-        GET_USERS: '/auth/users',
+        GET_USERS: 'users',
         GET_USER_BY_ID: '/auth/users/:userId',
     },
     // TEST ROUTES

@@ -31,9 +31,10 @@ import {
   LoaderPinwheel,
   Medal,
 } from 'lucide-react';
-import { useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { LeaderboardDataType } from '@/constants/type';
 import Link from 'next/link';
+import { getUsers } from '@/services/userService';
 
 function LeaderBoard() {
   const [countdown, setCountDown] = useState(30);
@@ -45,6 +46,16 @@ function LeaderBoard() {
   const [leaderboardData, setLeaderboardData] = useState<LeaderboardDataType[]>(
     []
   );
+
+  const fetchUsersData = useCallback(async () => {
+    const res = await getUsers();
+    if (res && Array.isArray(res.data?.data)) {
+      setLeaderboardData(res.data.data); // <-- Access the inner array
+    } else {
+      setLeaderboardData([]); // fallback
+    }
+  }, []);
+  
 
   const filteredData = leaderboardData.filter((entry) =>
     entry?.name?.toLowerCase().includes(searchTerm?.toLowerCase())
@@ -64,6 +75,11 @@ function LeaderBoard() {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0 },
   };
+
+  useEffect(() => {
+    fetchUsersData();
+  }, [fetchUsersData]);
+
   return (
     <motion.div
       variants={containerVariants}

@@ -1,7 +1,12 @@
 import logger from '../../config/logger';
 import { ERR_MESSAGES } from '../../constants/error';
 import { LOG_MESSAGES } from '../../constants/logger';
-import { SignUpInput, signUpSchema } from '../../config/zvalidate';
+import {
+  SignInInput,
+  signInSchema,
+  SignUpInput,
+  signUpSchema,
+} from '../../config/zvalidate';
 import { userDao } from './dao';
 import bcrypt from 'bcryptjs';
 
@@ -37,6 +42,46 @@ export const userService = {
     } catch (err: any) {
       logger.error(err.message || ERR_MESSAGES.USER.CREATE_FAILED);
       throw new Error(err.message || ERR_MESSAGES.USER.CREATE_FAILED);
+    }
+  },
+
+  async userLogin(value: SignInInput) {
+    const validation = signInSchema.safeParse(value);
+    if (!validation.success) {
+      const errorMessages = validation.error.issues
+        .map((issue) => issue.message)
+        .join(', ');
+      throw new Error(errorMessages);
+    }
+
+    const { email, password } = validation.data;
+
+    const userexist = await userDao.getUserByEmail(email);
+    if (!userexist) {
+      throw new Error(ERR_MESSAGES.USER.USER_NOT_FOUND);
+    }
+
+    if (!userexist.emailVerified) {
+      throw new Error(ERR_MESSAGES.USER.EMAIL_NOT_VERIFIED);
+    }
+
+    if (!userexist.password) {
+      throw new Error(ERR_MESSAGES.USER.INVALID_PASSWORD);
+    }
+
+    try {
+      const isPasswordValid = await bcrypt.compare(
+        password,
+        userexist.password
+      );
+      if (!isPasswordValid) {
+        throw new Error(ERR_MESSAGES.USER.INVALID_PASSWORD);
+      }
+      logger.info(LOG_MESSAGES.USER.LOGIN_SUCCESS);
+      return userexist;
+    } catch (err) {
+      logger.error(ERR_MESSAGES.USER.INVALID_PASSWORD, err);
+      throw new Error(ERR_MESSAGES.USER.INVALID_PASSWORD);
     }
   },
 

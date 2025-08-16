@@ -5,6 +5,9 @@ export declare const ERR_MESSAGES: {
         UPDATE_FAILED: string;
         FETCH_FAILED: string;
         FETCH_BY_ID_FAILED: string;
+        INVALID_PASSWORD: string;
+        USER_NOT_FOUND: string;
+        EMAIL_NOT_VERIFIED: string;
     };
     TEST: {
         CREATE_FAILED: string;

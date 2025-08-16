@@ -9,6 +9,8 @@ export const LOG_MESSAGES = {
     FETCHED: 'Users fetched successfully',
     FETCH_BY_ID_REQUEST: 'Fetching user by ID',
     FETCH_BY_ID_SUCCESS: 'User fetched successfully by ID',
+    LOGIN_REQUEST: 'Processing user login request',
+    LOGIN_SUCCESS: 'User logged in successfully',
   },
 
   // TEST SUCCESS MESSAGES

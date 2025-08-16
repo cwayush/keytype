@@ -6,7 +6,7 @@ import { signOut, useSession } from 'next-auth/react';
 import { Button } from '@/UI/components/button';
 
 export function Header() {
-  const { data: session } = useSession();
+  // const { data: session } = useSession();
   return (
     <header className="w-full max-w-5xl mx-auto flex items-center justify-between py-5 px-0">
       <Link
@@ -30,7 +30,7 @@ export function Header() {
           </Link>
         ))}
 
-        {session && (
+        {/* {session && (
           <Button
             variant="ghost"
             size="icon"
@@ -39,7 +39,7 @@ export function Header() {
           >
             <LogOut className="size-6" />
           </Button>
-        )}
+        )} */}
       </nav>
     </header>
   );

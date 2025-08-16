@@ -40,6 +40,38 @@ exports.userService = {
             throw new Error(err.message || error_1.ERR_MESSAGES.USER.CREATE_FAILED);
         }
     },
+    async userLogin(value) {
+        const validation = zvalidate_1.signInSchema.safeParse(value);
+        if (!validation.success) {
+            const errorMessages = validation.error.issues
+                .map((issue) => issue.message)
+                .join(', ');
+            throw new Error(errorMessages);
+        }
+        const { email, password } = validation.data;
+        const userexist = await dao_1.userDao.getUserByEmail(email);
+        if (!userexist) {
+            throw new Error(error_1.ERR_MESSAGES.USER.USER_NOT_FOUND);
+        }
+        if (!userexist.emailVerified) {
+            throw new Error(error_1.ERR_MESSAGES.USER.EMAIL_NOT_VERIFIED);
+        }
+        if (!userexist.password) {
+            throw new Error(error_1.ERR_MESSAGES.USER.INVALID_PASSWORD);
+        }
+        try {
+            const isPasswordValid = await bcryptjs_1.default.compare(password, userexist.password);
+            if (!isPasswordValid) {
+                throw new Error(error_1.ERR_MESSAGES.USER.INVALID_PASSWORD);
+            }
+            logger_1.default.info(logger_2.LOG_MESSAGES.USER.LOGIN_SUCCESS);
+            return userexist;
+        }
+        catch (err) {
+            logger_1.default.error(error_1.ERR_MESSAGES.USER.INVALID_PASSWORD, err);
+            throw new Error(error_1.ERR_MESSAGES.USER.INVALID_PASSWORD);
+        }
+    },
     async updateUser(id, data) {
         try {
             logger_1.default.info(logger_2.LOG_MESSAGES.USER.UPDATE_REQUEST);

@@ -22,7 +22,7 @@ const StatsGrid = ({ stats }: StatsGridProps) => {
       />
       <StatusCard
         icon={<Clock className="size-8 mr-2 text-violet-400" />}
-        title="Total Time Typing"
+        title="Total TypingTime"
         value={stats.totalTimeTyping}
       />
     </div>

@@ -1,4 +1,4 @@
-import { Dispatch, SetStateAction } from "react";
+import { Dispatch, SetStateAction } from 'react';
 
 export type ModesProps = {
   mode: string;
@@ -6,7 +6,6 @@ export type ModesProps = {
   modeOption: number;
   setModeOption: Dispatch<SetStateAction<number>>;
 };
-
 
 declare type GenerateOptions = {
   min?: number;
@@ -37,7 +36,6 @@ declare function count(options?: CountOptions): number;
 
 export { generate, count, wordsList };
 
-
 export type ResultProps = {
   wpm: number;
   accuracy: number;
@@ -47,7 +45,6 @@ export type ResultProps = {
   mode: string;
   modeOption: number;
 };
-
 
 export type LeaderboardDataType = {
   rank: number;
@@ -76,17 +73,16 @@ export type StatsGridProps = {
   };
 };
 
-
 export type BestScoresProps = {
   allTimeBestScores: {
     time: {
-      "15s": number;
-      "30s": number;
+      '15s': number;
+      '30s': number;
     };
     words: {
-      "10": number;
-      "25": number;
-      "50": number;
+      '10': number;
+      '25': number;
+      '50': number;
     };
   };
 };
@@ -102,3 +98,58 @@ export type Test = {
   createdAt: Date;
   updatedAt: Date;
 };
+
+export type Room = {
+  mode: string;
+  modeOption: number;
+  name: string;
+  id: string;
+  code: string;
+  appuserId: string;
+  createdAt: Date;
+  updatedAt: Date;
+};
+
+export type MultiplayerHeaderProps = {
+  roomData: Room;
+  isHost: boolean;
+  isRaceStarted: boolean;
+};
+
+export type InterfaceProps = {
+  mode: string;
+  modeOption: number;
+  text: string;
+  onProgress: (wpm: number, accuracy: number, progress: number) => void;
+};
+
+export type Member = {
+  id: string;
+  name: string;
+  image: string;
+  isHost: boolean;
+  progress?: {
+    wpm: number;
+    accuracy: number;
+    progress: number;
+  };
+};
+
+export type CompeProps = {
+  members: Member[];
+  isRaceStarted: boolean;
+  setIsRaceStarted: Dispatch<React.SetStateAction<boolean>>;
+  roomData: Room;
+  raceText: string;
+};
+
+
+export type MemberProgressProps = {
+  member: Member;
+};
+
+export type MembersProps = {
+  members: Member[];
+};
+
+export type MemberAvatarProps = { name: string; image: string };

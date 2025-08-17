@@ -473,3 +473,98 @@
 {"level":"info","message":"Fetching tests","service":"hotelix-api","timestamp":"2025-08-16 17:11:52"}
 {"level":"info","message":"Fetching tests","service":"hotelix-api","timestamp":"2025-08-16 17:11:52"}
 {"level":"info","message":"Tests fetched successfully","service":"hotelix-api","timestamp":"2025-08-16 17:11:52"}
+{"ip":"::1","level":"info","message":"GET /test/all/cme9ueg1m0000i8ao0ru3336w","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-16 18:24:47"}
+{"level":"info","message":"Fetching tests","service":"hotelix-api","timestamp":"2025-08-16 18:24:47"}
+{"level":"info","message":"Fetching tests","service":"hotelix-api","timestamp":"2025-08-16 18:24:47"}
+{"level":"info","message":"Tests fetched successfully","service":"hotelix-api","timestamp":"2025-08-16 18:24:47"}
+{"ip":"::1","level":"info","message":"GET /test/all/cme9ueg1m0000i8ao0ru3336w","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-16 18:26:03"}
+{"level":"info","message":"Fetching tests","service":"hotelix-api","timestamp":"2025-08-16 18:26:03"}
+{"level":"info","message":"Fetching tests","service":"hotelix-api","timestamp":"2025-08-16 18:26:03"}
+{"level":"info","message":"Tests fetched successfully","service":"hotelix-api","timestamp":"2025-08-16 18:26:03"}
+{"ip":"::1","level":"info","message":"GET /auth/users","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-16 18:26:13"}
+{"ip":"::1","level":"info","message":"GET /auth/users","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-16 18:26:13"}
+{"ip":"::1","level":"info","message":"GET /test/all/cme9ueg1m0000i8ao0ru3336w","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-16 18:26:15"}
+{"level":"info","message":"Fetching tests","service":"hotelix-api","timestamp":"2025-08-16 18:26:15"}
+{"level":"info","message":"Fetching tests","service":"hotelix-api","timestamp":"2025-08-16 18:26:15"}
+{"level":"info","message":"Tests fetched successfully","service":"hotelix-api","timestamp":"2025-08-16 18:26:15"}
+{"ip":"::1","level":"info","message":"GET /test/all/cme9ueg1m0000i8ao0ru3336w","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-16 18:27:19"}
+{"level":"info","message":"Fetching tests","service":"hotelix-api","timestamp":"2025-08-16 18:27:19"}
+{"level":"info","message":"Fetching tests","service":"hotelix-api","timestamp":"2025-08-16 18:27:19"}
+{"level":"info","message":"Tests fetched successfully","service":"hotelix-api","timestamp":"2025-08-16 18:27:19"}
+{"ip":"::1","level":"info","message":"GET /auth/users","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-16 18:27:39"}
+{"ip":"::1","level":"info","message":"GET /auth/users","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-16 18:27:39"}
+{"ip":"::1","level":"info","message":"GET /auth/users","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-16 18:27:41"}
+{"ip":"::1","level":"info","message":"GET /auth/users","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-16 18:27:41"}
+{"ip":"::1","level":"info","message":"GET /auth/users","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-16 18:27:44"}
+{"ip":"::1","level":"info","message":"GET /auth/users","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-16 18:27:44"}
+{"ip":"::1","level":"info","message":"GET /auth/users","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-16 18:27:46"}
+{"ip":"::1","level":"info","message":"GET /auth/users","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-16 18:27:46"}
+{"ip":"::1","level":"info","message":"GET /auth/users","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-16 18:27:47"}
+{"ip":"::1","level":"info","message":"GET /auth/users","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-16 18:27:47"}
+{"ip":"::1","level":"info","message":"GET /test/all/cme9ueg1m0000i8ao0ru3336w","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-16 18:27:48"}
+{"level":"info","message":"Fetching tests","service":"hotelix-api","timestamp":"2025-08-16 18:27:48"}
+{"level":"info","message":"Fetching tests","service":"hotelix-api","timestamp":"2025-08-16 18:27:48"}
+{"level":"info","message":"Tests fetched successfully","service":"hotelix-api","timestamp":"2025-08-16 18:27:48"}
+{"ip":"::1","level":"info","message":"GET /auth/users","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-16 18:27:50"}
+{"ip":"::1","level":"info","message":"GET /auth/users","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-16 18:27:50"}
+{"ip":"::1","level":"info","message":"GET /test/all/cme9ueg1m0000i8ao0ru3336w","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-16 18:27:51"}
+{"level":"info","message":"Fetching tests","service":"hotelix-api","timestamp":"2025-08-16 18:27:51"}
+{"level":"info","message":"Fetching tests","service":"hotelix-api","timestamp":"2025-08-16 18:27:51"}
+{"level":"info","message":"Tests fetched successfully","service":"hotelix-api","timestamp":"2025-08-16 18:27:51"}
+{"ip":"::1","level":"info","message":"GET /auth/users","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-16 18:27:52"}
+{"ip":"::1","level":"info","message":"GET /auth/users","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-16 18:27:52"}
+{"ip":"::1","level":"info","message":"GET /auth/users","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-16 18:27:54"}
+{"ip":"::1","level":"info","message":"GET /auth/users","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-16 18:27:54"}
+{"ip":"::1","level":"info","message":"GET /auth/users","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-16 18:27:58"}
+{"ip":"::1","level":"info","message":"GET /auth/users","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-16 18:27:58"}
+{"ip":"::1","level":"info","message":"GET /test/all/cme9ueg1m0000i8ao0ru3336w","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-16 18:28:41"}
+{"level":"info","message":"Fetching tests","service":"hotelix-api","timestamp":"2025-08-16 18:28:41"}
+{"level":"info","message":"Fetching tests","service":"hotelix-api","timestamp":"2025-08-16 18:28:41"}
+{"level":"info","message":"Tests fetched successfully","service":"hotelix-api","timestamp":"2025-08-16 18:28:41"}
+{"ip":"::1","level":"info","message":"GET /test/all/cme9ueg1m0000i8ao0ru3336w","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-16 18:30:46"}
+{"level":"info","message":"Fetching tests","service":"hotelix-api","timestamp":"2025-08-16 18:30:46"}
+{"level":"info","message":"Fetching tests","service":"hotelix-api","timestamp":"2025-08-16 18:30:46"}
+{"level":"info","message":"Tests fetched successfully","service":"hotelix-api","timestamp":"2025-08-16 18:30:46"}
+{"ip":"::1","level":"info","message":"GET /test/all/cme9ueg1m0000i8ao0ru3336w","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-16 18:30:47"}
+{"level":"info","message":"Fetching tests","service":"hotelix-api","timestamp":"2025-08-16 18:30:47"}
+{"level":"info","message":"Fetching tests","service":"hotelix-api","timestamp":"2025-08-16 18:30:47"}
+{"level":"info","message":"Tests fetched successfully","service":"hotelix-api","timestamp":"2025-08-16 18:30:47"}
+{"ip":"::1","level":"info","message":"GET /auth/users","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-16 18:30:48"}
+{"ip":"::1","level":"info","message":"GET /auth/users","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-16 18:30:48"}
+{"ip":"::1","level":"info","message":"GET /auth/users","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-16 18:30:51"}
+{"ip":"::1","level":"info","message":"GET /auth/users","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-16 18:30:51"}
+{"ip":"::1","level":"info","message":"GET /test/all/cme9ueg1m0000i8ao0ru3336w","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-16 18:30:59"}
+{"level":"info","message":"Fetching tests","service":"hotelix-api","timestamp":"2025-08-16 18:30:59"}
+{"level":"info","message":"Fetching tests","service":"hotelix-api","timestamp":"2025-08-16 18:30:59"}
+{"level":"info","message":"Tests fetched successfully","service":"hotelix-api","timestamp":"2025-08-16 18:30:59"}
+{"level":"info","message":"Server initialized successfully in development mode","service":"hotelix-api","timestamp":"2025-08-17 11:50:32"}
+{"ip":"::1","level":"info","message":"GET /test/all/cme9ueg1m0000i8ao0ru3336w","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-17 11:50:38"}
+{"level":"info","message":"Fetching tests","service":"hotelix-api","timestamp":"2025-08-17 11:50:38"}
+{"level":"info","message":"Fetching tests","service":"hotelix-api","timestamp":"2025-08-17 11:50:38"}
+{"level":"info","message":"Tests fetched successfully","service":"hotelix-api","timestamp":"2025-08-17 11:50:38"}
+{"ip":"::1","level":"info","message":"GET /auth/users","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-17 12:33:30"}
+{"ip":"::1","level":"info","message":"GET /auth/users","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-17 12:33:30"}
+{"ip":"::1","level":"info","message":"GET /test/all/cme9ueg1m0000i8ao0ru3336w","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-17 12:33:47"}
+{"level":"info","message":"Fetching tests","service":"hotelix-api","timestamp":"2025-08-17 12:33:47"}
+{"level":"info","message":"Fetching tests","service":"hotelix-api","timestamp":"2025-08-17 12:33:47"}
+{"level":"info","message":"Tests fetched successfully","service":"hotelix-api","timestamp":"2025-08-17 12:33:47"}
+{"ip":"::1","level":"info","message":"GET /auth/users","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-17 12:44:30"}
+{"ip":"::1","level":"info","message":"GET /auth/users","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-17 12:44:30"}
+{"ip":"::1","level":"info","message":"GET /auth/users","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-17 17:55:22"}
+{"ip":"::1","level":"info","message":"GET /auth/users","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-17 17:55:22"}
+{"ip":"::1","level":"info","message":"GET /test/all/cme9ueg1m0000i8ao0ru3336w","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-17 17:55:27"}
+{"level":"info","message":"Fetching tests","service":"hotelix-api","timestamp":"2025-08-17 17:55:27"}
+{"level":"info","message":"Fetching tests","service":"hotelix-api","timestamp":"2025-08-17 17:55:27"}
+{"level":"info","message":"Tests fetched successfully","service":"hotelix-api","timestamp":"2025-08-17 17:55:27"}
+{"ip":"::1","level":"info","message":"GET /test/all/cme9ueg1m0000i8ao0ru3336w","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-17 17:58:57"}
+{"level":"info","message":"Fetching tests","service":"hotelix-api","timestamp":"2025-08-17 17:58:57"}
+{"level":"info","message":"Fetching tests","service":"hotelix-api","timestamp":"2025-08-17 17:58:57"}
+{"level":"info","message":"Tests fetched successfully","service":"hotelix-api","timestamp":"2025-08-17 17:58:57"}
+{"ip":"::1","level":"info","message":"GET /test/all/cme9ueg1m0000i8ao0ru3336w","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-17 17:59:32"}
+{"level":"info","message":"Fetching tests","service":"hotelix-api","timestamp":"2025-08-17 17:59:32"}
+{"level":"info","message":"Fetching tests","service":"hotelix-api","timestamp":"2025-08-17 17:59:32"}
+{"ip":"::1","level":"info","message":"GET /test/all/cme9ueg1m0000i8ao0ru3336w","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-17 17:59:32"}
+{"level":"info","message":"Fetching tests","service":"hotelix-api","timestamp":"2025-08-17 17:59:32"}
+{"level":"info","message":"Fetching tests","service":"hotelix-api","timestamp":"2025-08-17 17:59:32"}
+{"level":"info","message":"Tests fetched successfully","service":"hotelix-api","timestamp":"2025-08-17 17:59:32"}
+{"level":"info","message":"Tests fetched successfully","service":"hotelix-api","timestamp":"2025-08-17 17:59:32"}

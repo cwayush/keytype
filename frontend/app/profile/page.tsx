@@ -50,7 +50,7 @@ const ProfilePage = async () => {
 
   return (
     <main className="min-h-screen flex flex-col items-center justify-center p-6">
-      <div className="w-full max-w-5xl space-y-8">
+      <div className="w-full max-w-5xl p-6 space-y-8">
         <Header image={data.image} name={data.name} />
         <StatsGrid stats={data.stats} />
         <BestScore allTimeBestScores={data.allTimeBestScores} />

@@ -568,3 +568,13 @@
 {"level":"info","message":"Fetching tests","service":"hotelix-api","timestamp":"2025-08-17 17:59:32"}
 {"level":"info","message":"Tests fetched successfully","service":"hotelix-api","timestamp":"2025-08-17 17:59:32"}
 {"level":"info","message":"Tests fetched successfully","service":"hotelix-api","timestamp":"2025-08-17 17:59:32"}
+{"level":"info","message":"Server initialized successfully in development mode","service":"hotelix-api","timestamp":"2025-08-21 17:16:15"}
+{"level":"info","message":"Server initialized successfully in development mode","service":"hotelix-api","timestamp":"2025-08-21 17:22:07"}
+{"ip":"::1","level":"info","message":"GET /room/code/:code","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-21 17:22:13"}
+{"level":"info","message":"Fetching room by code","service":"hotelix-api","timestamp":"2025-08-21 17:22:13"}
+{"level":"info","message":"Fetching room by code","service":"hotelix-api","timestamp":"2025-08-21 17:22:13"}
+{"level":"info","message":"Room fetched successfully by code","service":"hotelix-api","timestamp":"2025-08-21 17:22:13"}
+{"ip":"::1","level":"info","message":"GET /room/code/RM-105","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-21 17:22:34"}
+{"level":"info","message":"Fetching room by code","service":"hotelix-api","timestamp":"2025-08-21 17:22:34"}
+{"level":"info","message":"Fetching room by code","service":"hotelix-api","timestamp":"2025-08-21 17:22:34"}
+{"level":"info","message":"Room fetched successfully by code","service":"hotelix-api","timestamp":"2025-08-21 17:22:34"}

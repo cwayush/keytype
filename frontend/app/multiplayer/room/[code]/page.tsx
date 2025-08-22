@@ -1,7 +1,12 @@
+'use client';
+
 import Compe from '@/components/multiplayer/roomCode/compe';
 import Header from '@/components/multiplayer/roomCode/header';
 import Members from '@/components/multiplayer/roomCode/member/members';
+import Chat from '@/components/multiplayer/roomCode/chat';
 import { motion } from 'framer-motion';
+import { use } from 'react';
+import { Room, Member } from '@/constants/type';
 
 const containerVarients = {
   hidden: { opacity: 0 },
@@ -13,7 +18,15 @@ const itemVarients = {
   visible: { opacity: 1, y: 0 },
 };
 
-const RoomPage = () => {
+//http://localhost:5000/room/code/RM-105
+
+const RoomPage = (props: { params: Promise<{ code: string }> }) => {
+  const { code } = use(props.params);
+
+  const [roomData, setRoomData] = useState<Room | null>(null);
+  const [isRaceStarted, setIsRaceStarted] = useState<boolean>(false);
+  const [members, setMembers] = useState<Member[]>([]);
+const [raceText, setRaceText] = useState<string>('');
   return (
     <motion.div
       variants={containerVarients}
@@ -33,6 +46,7 @@ const RoomPage = () => {
               raceText={}
             />
           ) : (
+            <Chat code={} />
             <Members members={} />
           )}
         </motion.div> */}

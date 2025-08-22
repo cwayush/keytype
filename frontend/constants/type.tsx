@@ -143,7 +143,6 @@ export type CompeProps = {
   raceText: string;
 };
 
-
 export type MemberProgressProps = {
   member: Member;
 };
@@ -153,3 +152,20 @@ export type MembersProps = {
 };
 
 export type MemberAvatarProps = { name: string; image: string };
+
+export type ChatProps = {
+  code: string;
+};
+
+export type Message = {
+  id: string;
+  sender: {
+    name: string;
+    image: string | null;
+  };
+  text: string;
+};
+
+export type ChatMessageProps = {
+  message: Message;
+};

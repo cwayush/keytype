@@ -1,10 +1,9 @@
 'use server';
 
-import { authoption } from '@/app/api/auth/[...nextauth]/option';
 import { getUserByEmail } from '@/dboper/user';
 import prisma from '../../backend/src/config/prismaClient';
 import { AddTestTypes } from '@/constants/type';
-import NextAuth from 'next-auth';
+import { auth } from '@/option';
 
 export const addTest = async ({
   wpm,
@@ -18,7 +17,7 @@ export const addTest = async ({
       throw new Error('Missing required parameters');
     }
 
-    const session = await NextAuth(authoption);
+    const session = auth();
 
     if (!session?.user?.email) {
       throw new Error('Unauthorized: No valid session found');

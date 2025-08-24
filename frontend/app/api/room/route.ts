@@ -1,13 +1,12 @@
-import NextAuth from 'next-auth';
-import { authoption } from '../auth/[...nextauth]/option';
 import { NextRequest, NextResponse } from 'next/server';
 import { roomSchema } from '@/config/zvalidate';
 import { geneateRoomCode } from '@/lib/utils';
-import { createRoom, getAllRooms } from '@/services/userService';
+import prisma from '../../../../backend/src/config/prismaClient';
+import { auth } from '@/option';
 
 export const POST = async (req: NextRequest) => {
   try {
-    const session = await NextAuth(authoption);
+    const session = await auth();
 
     if (!session || !session?.user || !session?.user?.id) {
       return NextResponse.json(
@@ -26,12 +25,14 @@ export const POST = async (req: NextRequest) => {
 
     const roomCode = geneateRoomCode();
 
-    const room = await createRoom({
-      code: roomCode,
-      name,
-      mode,
-      modeOption: modeOption,
-      userId: session?.user?.id,
+    const room = await prisma.room.create({
+      data: {
+        code: roomCode,
+        name,
+        mode,
+        modeOption: modeOption,
+        userId: session?.user?.id,
+      },
     });
     return NextResponse.json(room, { status: 201 });
   } catch (err) {
@@ -45,7 +46,16 @@ export const POST = async (req: NextRequest) => {
 
 export const GET = async () => {
   try {
-    const rooms = await getAllRooms();
+    const rooms = await prisma.room.findMany({
+      select: {
+        id: true,
+        code: true,
+        name: true,
+        mode: true,
+        modeOption: true,
+      },
+      orderBy: { createdAt: 'desc' },
+    });
     console.log(rooms);
     return NextResponse.json(rooms, { status: 200 });
   } catch (err) {

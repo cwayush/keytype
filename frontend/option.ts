@@ -1,7 +1,7 @@
 import GoogleProvider from 'next-auth/providers/google';
 import CredentialsProvider from 'next-auth/providers/credentials';
 import { getuserById, login, updateUser } from '@/services/userService';
-import { NextAuthOptions } from 'next-auth';
+import NextAuth from 'next-auth';
 
 // Add this type definition at the top of your file
 import { DefaultSession } from 'next-auth';
@@ -17,7 +17,7 @@ declare module 'next-auth' {
   }
 }
 
-export const authoption: NextAuthOptions = {
+export const { auth, handler, signIn, signOut } = NextAuth({
   providers: [
     GoogleProvider({
       clientId: process.env.GOOGLE_CLIENT_ID!,
@@ -85,4 +85,4 @@ export const authoption: NextAuthOptions = {
   },
 
   session: { strategy: 'jwt' },
-};
+});

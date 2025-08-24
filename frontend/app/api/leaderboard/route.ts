@@ -1,8 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { redis } from '@/lib/redis';
 import { LeaderboardDataType } from '@/constants/type';
-import NextAuth from 'next-auth';
-import { authoption } from '../auth/[...nextauth]/option';
+import { auth } from '@/option';
 
 const ALL_TIME_KEY = 'all_time_leaderboard';
 const DAILY_KEY = 'daily_leaderboard';
@@ -61,7 +60,7 @@ export const POST = async (req: NextRequest) => {
       return NextResponse.json({ error: 'Invalid data' }, { status: 400 });
     }
 
-    const session = await NextAuth(authoption);
+    const session = await auth();
 
     if (!session?.user) {
       return NextResponse.json(

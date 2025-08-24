@@ -1,11 +1,11 @@
 import { Button } from '@/UI/components/button';
 import { Card, CardContent } from '@/UI/components/card';
 import { ScrollArea } from '@/UI/components/scrollarea';
-import { RoomType } from '@/constants/type';
+import { Room } from '@/constants/type';
 import { Hourglass, Loader2, Type } from 'lucide-react';
 import { useState, useTransition } from 'react';
 
-const PublicRoom = ({ rooms }: { rooms: RoomType[] }) => {
+const PublicRoom = ({ rooms }: { rooms: Room[] }) => {
   const [isPending, startTransition] = useTransition();
   const [roomId, setRoomId] = useState<string | null>(null);
 

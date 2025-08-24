@@ -578,3 +578,1104 @@
 {"level":"info","message":"Fetching room by code","service":"hotelix-api","timestamp":"2025-08-21 17:22:34"}
 {"level":"info","message":"Fetching room by code","service":"hotelix-api","timestamp":"2025-08-21 17:22:34"}
 {"level":"info","message":"Room fetched successfully by code","service":"hotelix-api","timestamp":"2025-08-21 17:22:34"}
+{"level":"info","message":"Server initialized successfully in development mode","service":"hotelix-api","timestamp":"2025-08-22 18:33:57"}
+{"ip":"::1","level":"info","message":"GET /test/all//cme9ueg1m0000i8ao0ru3336w","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-22 18:34:11"}
+{"ip":"::1","level":"info","message":"GET /test/all//cme9ueg1m0000i8ao0ru3336w","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-22 18:34:11"}
+{"ip":"::1","level":"info","message":"GET /test/all//cme9ueg1m0000i8ao0ru3336w","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-22 18:34:26"}
+{"ip":"::1","level":"info","message":"GET /test/all/cme9ueg1m0000i8ao0ru3336w","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-22 18:35:23"}
+{"level":"info","message":"Fetching tests","service":"hotelix-api","timestamp":"2025-08-22 18:35:23"}
+{"level":"info","message":"Fetching tests","service":"hotelix-api","timestamp":"2025-08-22 18:35:23"}
+{"level":"info","message":"Tests fetched successfully","service":"hotelix-api","timestamp":"2025-08-22 18:35:23"}
+{"ip":"::1","level":"info","message":"GET /test/all/cme9ueg1m0000i8ao0ru3336w","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-22 18:36:12"}
+{"level":"info","message":"Fetching tests","service":"hotelix-api","timestamp":"2025-08-22 18:36:12"}
+{"level":"info","message":"Fetching tests","service":"hotelix-api","timestamp":"2025-08-22 18:36:12"}
+{"level":"info","message":"Tests fetched successfully","service":"hotelix-api","timestamp":"2025-08-22 18:36:12"}
+{"level":"info","message":"Server initialized successfully in development mode","service":"hotelix-api","timestamp":"2025-08-23 15:36:45"}
+{"level":"info","message":"Server initialized successfully in development mode","service":"hotelix-api","timestamp":"2025-08-23 15:37:38"}
+{"level":"info","message":"Server initialized successfully in development mode","service":"hotelix-api","timestamp":"2025-08-23 15:38:44"}
+{"ip":"::1","level":"info","message":"GET /room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 15:39:02"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 15:39:02"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 15:39:02"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 15:39:03"}
+{"ip":"::1","level":"info","message":"GET /room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 15:39:03"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 15:39:03"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 15:39:03"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 15:39:03"}
+{"ip":"::1","level":"info","message":"GET /room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 15:39:32"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 15:39:32"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 15:39:32"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 15:39:32"}
+{"ip":"::1","level":"info","message":"GET /room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 15:39:32"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 15:39:32"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 15:39:32"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 15:39:32"}
+{"ip":"::1","level":"info","message":"GET /room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 15:40:03"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 15:40:03"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 15:40:03"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 15:40:03"}
+{"ip":"::1","level":"info","message":"GET /room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 15:40:27"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 15:40:27"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 15:40:27"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 15:40:27"}
+{"ip":"::1","level":"info","message":"GET /room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 15:40:28"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 15:40:28"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 15:40:28"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 15:40:28"}
+{"ip":"::1","level":"info","message":"GET /room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 15:41:36"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 15:41:36"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 15:41:36"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 15:41:36"}
+{"level":"info","message":"Server initialized successfully in development mode","service":"hotelix-api","timestamp":"2025-08-23 15:44:42"}
+{"ip":"::1","level":"info","message":"GET /room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 15:44:43"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 15:44:50"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 15:44:50"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 15:44:50"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 15:44:50"}
+{"ip":"::1","level":"info","message":"GET /room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 15:45:01"}
+{"ip":"::1","level":"info","message":"GET /room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 15:45:19"}
+{"ip":"::1","level":"info","message":"GET /room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 15:45:28"}
+{"ip":"::1","level":"info","message":"GET /room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 15:45:28"}
+{"ip":"::1","level":"info","message":"GET /room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 16:00:55"}
+{"ip":"::1","level":"info","message":"GET /room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 16:01:03"}
+{"ip":"::1","level":"info","message":"GET /room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 16:01:17"}
+{"ip":"::1","level":"info","message":"GET /room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 16:01:18"}
+{"ip":"::1","level":"info","message":"GET /room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 16:04:11"}
+{"ip":"::1","level":"info","message":"GET /room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 16:06:10"}
+{"ip":"::1","level":"info","message":"GET /room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 16:06:20"}
+{"ip":"::1","level":"info","message":"GET /room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 16:06:20"}
+{"ip":"::1","level":"info","message":"GET /room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 16:06:52"}
+{"ip":"::1","level":"info","message":"GET /room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 16:08:13"}
+{"ip":"::1","level":"info","message":"GET /room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 16:08:16"}
+{"ip":"::1","level":"info","message":"GET /room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 16:08:19"}
+{"ip":"::1","level":"info","message":"GET /room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 16:08:22"}
+{"ip":"::1","level":"info","message":"GET /room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 16:08:25"}
+{"ip":"::1","level":"info","message":"GET /room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 16:08:28"}
+{"ip":"::1","level":"info","message":"GET /room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 16:08:31"}
+{"ip":"::1","level":"info","message":"GET /room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 16:08:34"}
+{"ip":"::1","level":"info","message":"GET /room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 16:08:37"}
+{"ip":"::1","level":"info","message":"GET /room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 16:08:40"}
+{"ip":"::1","level":"info","message":"GET /room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 16:08:43"}
+{"ip":"::1","level":"info","message":"GET /room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 16:08:46"}
+{"ip":"::1","level":"info","message":"GET /room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 16:08:49"}
+{"ip":"::1","level":"info","message":"GET /room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 16:08:52"}
+{"ip":"::1","level":"info","message":"GET /room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 16:08:55"}
+{"ip":"::1","level":"info","message":"GET /room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 16:08:58"}
+{"ip":"::1","level":"info","message":"GET /room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 16:08:59"}
+{"ip":"::1","level":"info","message":"GET /room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 16:09:02"}
+{"ip":"::1","level":"info","message":"GET /room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 16:09:04"}
+{"ip":"::1","level":"info","message":"GET /room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 16:09:07"}
+{"ip":"::1","level":"info","message":"GET /room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 16:09:10"}
+{"ip":"::1","level":"info","message":"GET /room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 16:09:13"}
+{"ip":"::1","level":"info","message":"GET /room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 16:09:16"}
+{"ip":"::1","level":"info","message":"GET /room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 16:09:19"}
+{"ip":"::1","level":"info","message":"GET /room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 16:09:22"}
+{"ip":"::1","level":"info","message":"GET /room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 16:09:25"}
+{"ip":"::1","level":"info","message":"GET /room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 16:09:28"}
+{"ip":"::1","level":"info","message":"GET /room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 16:09:31"}
+{"ip":"::1","level":"info","message":"GET /room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 16:09:34"}
+{"ip":"::1","level":"info","message":"GET /room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 16:09:37"}
+{"ip":"::1","level":"info","message":"GET /room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 16:09:40"}
+{"ip":"::1","level":"info","message":"GET /room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 16:09:43"}
+{"ip":"::1","level":"info","message":"GET /room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 16:09:46"}
+{"ip":"::1","level":"info","message":"GET /room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 16:09:49"}
+{"ip":"::1","level":"info","message":"GET /room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 16:09:52"}
+{"ip":"::1","level":"info","message":"GET /room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 16:09:55"}
+{"ip":"::1","level":"info","message":"GET /room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 16:09:58"}
+{"ip":"::1","level":"info","message":"GET /room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 16:10:01"}
+{"ip":"::1","level":"info","message":"GET /room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 16:10:04"}
+{"ip":"::1","level":"info","message":"GET /room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 16:10:07"}
+{"ip":"::1","level":"info","message":"GET /room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 16:10:10"}
+{"ip":"::1","level":"info","message":"GET /room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 16:10:13"}
+{"ip":"::1","level":"info","message":"GET /room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 16:10:16"}
+{"ip":"::1","level":"info","message":"GET /room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 16:10:19"}
+{"ip":"::1","level":"info","message":"GET /room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 16:10:22"}
+{"ip":"::1","level":"info","message":"GET /room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 16:10:25"}
+{"ip":"::1","level":"info","message":"GET /room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 16:10:28"}
+{"ip":"::1","level":"info","message":"GET /room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 16:10:31"}
+{"ip":"::1","level":"info","message":"GET /room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 16:10:34"}
+{"ip":"::1","level":"info","message":"GET /room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 16:10:37"}
+{"ip":"::1","level":"info","message":"GET /room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 16:10:40"}
+{"ip":"::1","level":"info","message":"GET /room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 16:10:43"}
+{"ip":"::1","level":"info","message":"GET /room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 16:11:01"}
+{"ip":"::1","level":"info","message":"GET /room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 16:11:04"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 16:11:06"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 16:11:06"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 16:11:06"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 16:11:06"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 16:11:14"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 16:11:14"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 16:11:14"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 16:11:14"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 16:11:39"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 16:11:39"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 16:11:39"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 16:11:39"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 16:11:44"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 16:11:44"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 16:11:44"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 16:11:44"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 16:13:29"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 16:13:29"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 16:13:29"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 16:13:30"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 16:13:37"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 16:13:37"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 16:13:37"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 16:13:37"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 16:14:13"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 16:14:13"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 16:14:13"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 16:14:13"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 16:15:09"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 16:15:09"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 16:15:09"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 16:15:09"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 16:15:55"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 16:15:55"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 16:15:55"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 16:15:55"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 16:15:59"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 16:15:59"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 16:15:59"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 16:15:59"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 16:16:16"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 16:16:16"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 16:16:16"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 16:16:17"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 16:18:42"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 16:18:42"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 16:18:42"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 16:18:42"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 16:23:14"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 16:23:14"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 16:23:14"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 16:23:14"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 16:23:16"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 16:23:16"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 16:23:16"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 16:23:17"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 16:23:20"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 16:23:20"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 16:23:20"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 16:23:20"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 16:23:23"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 16:23:23"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 16:23:23"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 16:23:23"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 16:23:24"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 16:23:24"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 16:23:24"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 16:23:24"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 16:23:25"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 16:23:25"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 16:23:25"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 16:23:25"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 16:23:28"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 16:23:28"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 16:23:28"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 16:23:28"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 16:23:31"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 16:23:31"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 16:23:31"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 16:23:31"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 16:23:34"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 16:23:34"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 16:23:34"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 16:23:34"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 16:23:37"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 16:23:37"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 16:23:37"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 16:23:37"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 16:23:40"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 16:23:40"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 16:23:40"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 16:23:40"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 16:23:43"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 16:23:43"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 16:23:43"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 16:23:43"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 16:23:46"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 16:23:46"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 16:23:46"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 16:23:46"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 16:23:47"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 16:23:47"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 16:23:47"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 16:23:47"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 16:23:50"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 16:23:50"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 16:23:50"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 16:23:50"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 16:23:53"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 16:23:53"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 16:23:53"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 16:23:53"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 16:23:56"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 16:23:56"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 16:23:56"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 16:23:56"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 16:23:58"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 16:23:58"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 16:23:58"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 16:23:58"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 16:24:01"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 16:24:01"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 16:24:01"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 16:24:01"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 16:24:04"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 16:24:04"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 16:24:04"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 16:24:04"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 16:24:07"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 16:24:07"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 16:24:07"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 16:24:07"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 16:24:10"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 16:24:10"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 16:24:10"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 16:24:10"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 16:24:13"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 16:24:13"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 16:24:13"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 16:24:13"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 16:24:16"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 16:24:16"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 16:24:16"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 16:24:16"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 16:24:19"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 16:24:19"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 16:24:19"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 16:24:19"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 16:24:22"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 16:24:22"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 16:24:22"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 16:24:22"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 16:24:25"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 16:24:25"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 16:24:25"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 16:24:25"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 16:24:28"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 16:24:28"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 16:24:28"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 16:24:28"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 16:24:31"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 16:24:31"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 16:24:31"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 16:24:31"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 16:24:34"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 16:24:34"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 16:24:34"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 16:24:34"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 16:24:40"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 16:24:40"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 16:24:40"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 16:24:40"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 16:24:43"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 16:24:43"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 16:24:43"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 16:24:43"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 16:24:44"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 16:24:44"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 16:24:44"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 16:24:44"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 16:47:27"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 16:47:27"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 16:47:27"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 16:47:28"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 16:47:56"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 16:47:56"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 16:47:56"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 16:47:56"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 16:47:58"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 16:47:58"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 16:47:58"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 16:47:58"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 16:48:02"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 16:48:02"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 16:48:02"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 16:48:02"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 16:48:05"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 16:48:05"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 16:48:05"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 16:48:05"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 16:48:08"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 16:48:08"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 16:48:08"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 16:48:08"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 16:48:11"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 16:48:11"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 16:48:11"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 16:48:11"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 16:48:14"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 16:48:14"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 16:48:14"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 16:48:14"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 16:48:17"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 16:48:17"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 16:48:17"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 16:48:17"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 16:48:20"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 16:48:20"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 16:48:20"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 16:48:20"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 16:48:23"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 16:48:23"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 16:48:23"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 16:48:23"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 16:48:26"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 16:48:26"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 16:48:26"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 16:48:26"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 16:48:29"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 16:48:29"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 16:48:29"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 16:48:29"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 16:48:32"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 16:48:32"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 16:48:32"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 16:48:32"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 16:48:35"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 16:48:35"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 16:48:35"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 16:48:35"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 16:48:38"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 16:48:38"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 16:48:38"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 16:48:38"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 16:48:41"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 16:48:41"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 16:48:41"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 16:48:41"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 16:48:44"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 16:48:44"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 16:48:44"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 16:48:44"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 16:48:47"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 16:48:47"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 16:48:47"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 16:48:47"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 16:48:50"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 16:48:50"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 16:48:50"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 16:48:50"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 16:48:53"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 16:48:53"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 16:48:53"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 16:48:53"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 16:48:56"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 16:48:56"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 16:48:56"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 16:48:56"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 16:48:59"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 16:48:59"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 16:48:59"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 16:48:59"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 16:49:18"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 16:49:18"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 16:49:18"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 16:49:18"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 16:50:18"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 16:50:18"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 16:50:18"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 16:50:18"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 16:51:18"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 16:51:18"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 16:51:18"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 16:51:18"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 16:52:18"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 16:52:18"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 16:52:18"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 16:52:18"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 16:53:18"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 16:53:18"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 16:53:18"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 16:53:18"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 16:54:18"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 16:54:18"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 16:54:18"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 16:54:18"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 16:55:18"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 16:55:18"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 16:55:18"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 16:55:18"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 16:56:18"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 16:56:18"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 16:56:18"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 16:56:18"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 16:57:18"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 16:57:18"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 16:57:18"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 16:57:18"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 16:58:18"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 16:58:18"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 16:58:18"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 16:58:18"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 17:21:43"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:21:43"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:21:43"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 17:21:44"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 17:21:46"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:21:46"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:21:46"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 17:21:46"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 17:21:49"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:21:49"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:21:49"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 17:21:49"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 17:21:52"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:21:52"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:21:52"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 17:21:52"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 17:21:55"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:21:55"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:21:55"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 17:21:55"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 17:21:58"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:21:58"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:21:58"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 17:21:58"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 17:22:01"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:22:01"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:22:01"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 17:22:01"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 17:22:02"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:22:02"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:22:02"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 17:22:02"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 17:22:05"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:22:05"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:22:05"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 17:22:05"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 17:22:08"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:22:08"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:22:08"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 17:22:08"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 17:22:11"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:22:11"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:22:11"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 17:22:11"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 17:22:14"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:22:14"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:22:14"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 17:22:14"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 17:22:17"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:22:17"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:22:17"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 17:22:17"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 17:22:20"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:22:20"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:22:20"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 17:22:20"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 17:22:23"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:22:23"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:22:23"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 17:22:23"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 17:22:26"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:22:26"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:22:26"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 17:22:26"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 17:22:29"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:22:29"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:22:29"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 17:22:29"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 17:22:32"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:22:32"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:22:32"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 17:22:32"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 17:22:35"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:22:35"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:22:35"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 17:22:35"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 17:22:38"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:22:38"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:22:38"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 17:22:38"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 17:22:41"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:22:41"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:22:41"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 17:22:41"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 17:22:44"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:22:44"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:22:44"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 17:22:44"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 17:22:47"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:22:47"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:22:47"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 17:22:47"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 17:22:50"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:22:50"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:22:50"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 17:22:50"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 17:22:53"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:22:53"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:22:53"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 17:22:53"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 17:22:56"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:22:56"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:22:56"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 17:22:56"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 17:22:59"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:22:59"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:22:59"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 17:22:59"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 17:23:02"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:23:02"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:23:02"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 17:23:02"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 17:23:05"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:23:05"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:23:05"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 17:23:05"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 17:23:08"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:23:08"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:23:08"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 17:23:08"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 17:23:11"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:23:11"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:23:11"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 17:23:11"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 17:23:14"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:23:14"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:23:14"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 17:23:14"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 17:23:17"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:23:17"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:23:17"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 17:23:17"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 17:23:20"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:23:20"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:23:20"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 17:23:20"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 17:23:23"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:23:23"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:23:23"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 17:23:23"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 17:23:26"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:23:26"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:23:26"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 17:23:26"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 17:23:29"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:23:29"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:23:29"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 17:23:29"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 17:23:32"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:23:32"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:23:32"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 17:23:32"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 17:23:35"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:23:35"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:23:35"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 17:23:35"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 17:23:39"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:23:39"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:23:39"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 17:23:39"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 17:23:39"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:23:39"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:23:39"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 17:23:39"}
+{"ip":"::1","level":"info","message":"GET /api/test/all/cme9ueg1m0000i8ao0ru3336w","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 17:23:44"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 17:31:31"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:31:31"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:31:31"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 17:31:31"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 17:31:31"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:31:31"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:31:31"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 17:31:31"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 17:31:33"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:31:33"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:31:33"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 17:31:33"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 17:31:34"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:31:34"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:31:34"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 17:31:34"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 17:31:37"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:31:37"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:31:37"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 17:31:37"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 17:31:39"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:31:39"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:31:39"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 17:31:39"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 17:31:42"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:31:42"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:31:42"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 17:31:42"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 17:31:45"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:31:45"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:31:45"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 17:31:45"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 17:31:48"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:31:48"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:31:48"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 17:31:48"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 17:31:51"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:31:51"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:31:51"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 17:31:51"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 17:31:54"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:31:54"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:31:54"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 17:31:54"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 17:31:57"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:31:57"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:31:57"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 17:31:57"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 17:32:00"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:32:00"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:32:00"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 17:32:00"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 17:32:03"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:32:03"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:32:03"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 17:32:03"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 17:32:06"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:32:06"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:32:06"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 17:32:06"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 17:32:09"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:32:09"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:32:09"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 17:32:09"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 17:32:12"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:32:12"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:32:12"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 17:32:12"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 17:32:15"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:32:15"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:32:15"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 17:32:15"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 17:32:18"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:32:18"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:32:18"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 17:32:18"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 17:32:21"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:32:21"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:32:21"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 17:32:21"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 17:32:24"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:32:24"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:32:24"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 17:32:24"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 17:32:27"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:32:27"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:32:27"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 17:32:27"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 17:32:30"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:32:30"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:32:30"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 17:32:30"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 17:32:33"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:32:33"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:32:33"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 17:32:33"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 17:32:36"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:32:36"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:32:36"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 17:32:36"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 17:32:39"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:32:39"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:32:39"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 17:32:39"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 17:32:42"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:32:42"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:32:42"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 17:32:42"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 17:32:45"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:32:45"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:32:45"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 17:32:45"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 17:32:48"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:32:48"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:32:48"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 17:32:48"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 17:32:51"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:32:51"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:32:51"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 17:32:51"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 17:32:54"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:32:54"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:32:54"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 17:32:54"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 17:32:57"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:32:57"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:32:57"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 17:32:57"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 17:33:00"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:33:00"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:33:00"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 17:33:00"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 17:33:03"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:33:03"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:33:03"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 17:33:03"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 17:33:06"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:33:06"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:33:06"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 17:33:06"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 17:33:09"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:33:09"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:33:09"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 17:33:09"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 17:33:12"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:33:12"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:33:12"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 17:33:12"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 17:33:15"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:33:15"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:33:15"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 17:33:15"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 17:33:21"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:33:21"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:33:21"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 17:33:21"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 17:33:21"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:33:21"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:33:21"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 17:33:21"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 17:33:24"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:33:24"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:33:24"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 17:33:24"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 17:33:27"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:33:27"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:33:27"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 17:33:27"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 17:33:30"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:33:30"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:33:30"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 17:33:30"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 17:33:33"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:33:33"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:33:33"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 17:33:33"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 17:33:36"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:33:36"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:33:36"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 17:33:36"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 17:33:39"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:33:39"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:33:39"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 17:33:39"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 17:33:42"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:33:42"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:33:42"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 17:33:42"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 17:33:45"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:33:45"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:33:45"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 17:33:45"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 17:33:48"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:33:48"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:33:48"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 17:33:48"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 17:33:52"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:33:52"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:33:52"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 17:33:52"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 17:33:55"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:33:55"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:33:55"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 17:33:55"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 17:33:58"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:33:58"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:33:58"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 17:33:58"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 17:34:01"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:34:01"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:34:01"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 17:34:01"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 17:34:04"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:34:04"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:34:04"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 17:34:04"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 17:34:07"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:34:07"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:34:07"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 17:34:07"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 17:34:10"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:34:10"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:34:10"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 17:34:10"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 17:34:13"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:34:13"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:34:13"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 17:34:13"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 17:34:17"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:34:17"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:34:17"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 17:34:17"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 17:34:20"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:34:20"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:34:20"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 17:34:20"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 17:34:23"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:34:23"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:34:23"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 17:34:23"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 17:34:26"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:34:26"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:34:26"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 17:34:26"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 17:34:29"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:34:29"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:34:29"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 17:34:29"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 17:34:32"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:34:32"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:34:32"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 17:34:32"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 17:34:35"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:34:35"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:34:35"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 17:34:35"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 17:34:38"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:34:38"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:34:38"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 17:34:38"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 17:34:41"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:34:41"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:34:41"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 17:34:41"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 17:34:44"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:34:44"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:34:44"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 17:34:44"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 17:34:47"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:34:47"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:34:47"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 17:34:47"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 17:34:50"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:34:50"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:34:50"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 17:34:50"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 17:34:53"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:34:53"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:34:53"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 17:34:53"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 17:34:56"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:34:56"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:34:56"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 17:34:56"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 17:34:59"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:34:59"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:34:59"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 17:34:59"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 17:35:02"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:35:02"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:35:02"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 17:35:02"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 17:35:05"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:35:05"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:35:05"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 17:35:05"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 17:35:08"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:35:08"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:35:08"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 17:35:08"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 17:35:11"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:35:11"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:35:11"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 17:35:11"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 17:35:14"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:35:14"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:35:14"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 17:35:14"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 17:35:18"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:35:18"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:35:18"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 17:35:18"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 17:35:50"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:35:50"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:35:50"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 17:35:50"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 17:35:53"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:35:53"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:35:53"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 17:35:53"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 17:35:57"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:35:57"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:35:57"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 17:35:57"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 17:36:00"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:36:00"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:36:00"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 17:36:00"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 17:36:03"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:36:03"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:36:03"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 17:36:03"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 17:36:06"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:36:06"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:36:06"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 17:36:06"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 17:36:09"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:36:09"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:36:09"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 17:36:09"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 17:36:40"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:36:40"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:36:40"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 17:36:40"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 17:36:43"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:36:43"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:36:43"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 17:36:43"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 17:36:46"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:36:46"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:36:46"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 17:36:46"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 17:36:49"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:36:49"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:36:49"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 17:36:49"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 17:36:52"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:36:52"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:36:52"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 17:36:52"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 17:36:55"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:36:55"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:36:55"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 17:36:55"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 17:36:58"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:36:58"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:36:58"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 17:36:58"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 17:37:09"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:37:09"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:37:09"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 17:37:09"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 17:37:10"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:37:10"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:37:10"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 17:37:10"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 17:37:18"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:37:18"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:37:18"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 17:37:18"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 17:37:50"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:37:50"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:37:50"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 17:37:50"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 17:37:52"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:37:52"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:37:52"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 17:37:52"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 17:38:18"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:38:18"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:38:18"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 17:38:18"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 17:42:53"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:42:53"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:42:53"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 17:42:54"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 17:42:56"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:42:56"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:42:56"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 17:42:56"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 17:42:59"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:42:59"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:42:59"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 17:42:59"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 17:43:02"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:43:02"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:43:02"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 17:43:02"}
+{"ip":"::1","level":"info","message":"GET /api/room/code/RM-105","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 17:43:04"}
+{"level":"info","message":"Fetching room by code","service":"hotelix-api","timestamp":"2025-08-23 17:43:04"}
+{"level":"info","message":"Fetching room by code","service":"hotelix-api","timestamp":"2025-08-23 17:43:04"}
+{"level":"info","message":"Room fetched successfully by code","service":"hotelix-api","timestamp":"2025-08-23 17:43:04"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 17:43:05"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:43:05"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:43:05"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 17:43:05"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 17:46:21"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:46:21"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:46:21"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 17:46:21"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 17:46:21"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:46:21"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:46:21"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 17:46:21"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 17:46:24"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:46:24"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:46:24"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 17:46:24"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 17:46:27"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:46:27"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:46:27"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 17:46:27"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 17:46:30"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:46:30"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:46:30"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 17:46:30"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 17:46:33"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:46:33"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:46:33"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 17:46:33"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 17:46:36"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:46:36"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:46:36"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 17:46:36"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 17:46:39"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:46:39"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:46:39"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 17:46:39"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 17:46:42"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:46:42"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:46:42"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 17:46:42"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 17:46:45"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:46:45"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:46:45"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 17:46:45"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 17:46:48"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:46:48"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:46:48"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 17:46:48"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 17:46:51"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:46:51"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:46:51"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 17:46:51"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 17:46:54"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:46:54"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:46:54"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 17:46:54"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 17:46:57"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:46:57"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:46:57"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 17:46:57"}
+{"ip":"::1","level":"info","message":"GET /api/room/code/RM-105","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 17:46:57"}
+{"level":"info","message":"Fetching room by code","service":"hotelix-api","timestamp":"2025-08-23 17:46:57"}
+{"level":"info","message":"Fetching room by code","service":"hotelix-api","timestamp":"2025-08-23 17:46:57"}
+{"level":"info","message":"Room fetched successfully by code","service":"hotelix-api","timestamp":"2025-08-23 17:46:57"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 17:47:00"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:47:00"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:47:00"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 17:47:00"}
+{"ip":"::1","level":"info","message":"GET /api/room","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 17:47:03"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:47:03"}
+{"level":"info","message":"Fetching rooms","service":"hotelix-api","timestamp":"2025-08-23 17:47:03"}
+{"level":"info","message":"Rooms fetched successfully","service":"hotelix-api","timestamp":"2025-08-23 17:47:03"}
+{"ip":"::1","level":"info","message":"GET /api/room/code/RM-105","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 18:02:07"}
+{"level":"info","message":"Fetching room by code","service":"hotelix-api","timestamp":"2025-08-23 18:02:07"}
+{"level":"info","message":"Fetching room by code","service":"hotelix-api","timestamp":"2025-08-23 18:02:07"}
+{"level":"info","message":"Room fetched successfully by code","service":"hotelix-api","timestamp":"2025-08-23 18:02:07"}
+{"ip":"::1","level":"info","message":"GET /api/room/code/RM-105","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 18:05:22"}
+{"level":"info","message":"Fetching room by code","service":"hotelix-api","timestamp":"2025-08-23 18:05:22"}
+{"level":"info","message":"Fetching room by code","service":"hotelix-api","timestamp":"2025-08-23 18:05:22"}
+{"level":"info","message":"Room fetched successfully by code","service":"hotelix-api","timestamp":"2025-08-23 18:05:22"}
+{"ip":"::1","level":"info","message":"GET /api/room/code/RM-105","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 18:05:34"}
+{"level":"info","message":"Fetching room by code","service":"hotelix-api","timestamp":"2025-08-23 18:05:34"}
+{"level":"info","message":"Fetching room by code","service":"hotelix-api","timestamp":"2025-08-23 18:05:34"}
+{"level":"info","message":"Room fetched successfully by code","service":"hotelix-api","timestamp":"2025-08-23 18:05:34"}
+{"ip":"::1","level":"info","message":"GET /api/room/code/RM-105","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 19:08:08"}
+{"level":"info","message":"Fetching room by code","service":"hotelix-api","timestamp":"2025-08-23 19:08:08"}
+{"level":"info","message":"Fetching room by code","service":"hotelix-api","timestamp":"2025-08-23 19:08:08"}
+{"level":"info","message":"Room fetched successfully by code","service":"hotelix-api","timestamp":"2025-08-23 19:08:08"}
+{"ip":"::1","level":"info","message":"GET /api/room/code/RM-105","params":{},"query":{},"service":"hotelix-api","timestamp":"2025-08-23 19:21:18"}
+{"level":"info","message":"Fetching room by code","service":"hotelix-api","timestamp":"2025-08-23 19:21:18"}
+{"level":"info","message":"Fetching room by code","service":"hotelix-api","timestamp":"2025-08-23 19:21:18"}
+{"level":"info","message":"Room fetched successfully by code","service":"hotelix-api","timestamp":"2025-08-23 19:21:18"}

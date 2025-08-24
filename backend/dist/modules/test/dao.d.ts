@@ -1,5 +1,7 @@
 export declare const testDao: {
     createTest(data: any): Promise<{
+        mode: string;
+        modeOption: number;
         id: string;
         createdAt: Date;
         updatedAt: Date;
@@ -7,10 +9,10 @@ export declare const testDao: {
         wpm: number;
         accuracy: number;
         time: number;
-        mode: string;
-        modeOption: number;
     }>;
     getAllTest(userId: string): Promise<{
+        mode: string;
+        modeOption: number;
         id: string;
         createdAt: Date;
         updatedAt: Date;
@@ -18,8 +20,6 @@ export declare const testDao: {
         wpm: number;
         accuracy: number;
         time: number;
-        mode: string;
-        modeOption: number;
     }[]>;
     allTestCount(): Promise<number>;
 };

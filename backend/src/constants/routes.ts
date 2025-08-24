@@ -17,8 +17,8 @@ export const ROUTES = {
 
   // ROOM ROUTES
   ROOM: {
-    CREATE: '/room/create',
-    GET_ALL: '/room/all/:userId',
-    FETCH_BY_CODE: '/room/code/:code',
+    CREATE: '/api/room/create',
+    GET_ALL: '/api/room',
+    FETCH_BY_CODE: '/api/room/code/:code',
   },
 };

@@ -36,7 +36,7 @@ const CreateRoom = () => {
       </CardHeader>
       <CardContent>
         <Form {...form}>
-          <form onSubmit={form.handleSubmit(onsubmit)} className="space-y-6">
+          <form onSubmit={() => {}} className="space-y-6">
             <FormField
               control={form.control}
               name="name"

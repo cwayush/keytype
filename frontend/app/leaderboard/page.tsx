@@ -24,7 +24,6 @@ import { motion, number } from 'framer-motion';
 import {
   Activity,
   ArrowRight,
-  Badge,
   ChevronDown,
   CrownIcon,
   Hourglass,
@@ -34,7 +33,7 @@ import {
 import { useCallback, useEffect, useState } from 'react';
 import { LeaderboardDataType } from '@/constants/type';
 import Link from 'next/link';
-import { getUsers } from '@/services/userService';
+import { Badge } from '@/UI/components/bages';
 
 function LeaderBoard() {
   const [countdown, setCountDown] = useState(30);
@@ -48,14 +47,51 @@ function LeaderBoard() {
   );
 
   const fetchUsersData = useCallback(async () => {
-    const res = await getUsers();
-    if (res && Array.isArray(res.data?.data)) {
-      setLeaderboardData(res.data.data); // <-- Access the inner array
-    } else {
-      setLeaderboardData([]); // fallback
+    try {
+      setIsLoading(true);
+      setError(null);
+      setCountDown(30);
+      const timeFrame = isAllTime ? 'alltime' : 'daily';
+      const response = await fetch(
+        `/api/leaderboard?mode=${selectedMode}&timeFrame=${timeFrame}&limit=10`,
+        {
+          headers: {
+            'Cache-Control': 'no-store',
+          },
+        }
+      );
+      const data = await response.json();
+
+      if (Array.isArray(data.leaderboard)) {
+        setLeaderboardData(data.leaderboard);
+      } else {
+        setLeaderboardData([]);
+      }
+    } catch (err) {
+      console.error('Error fetching leaderboard:', err);
+      setError('Failed to fetch leaderboard');
+      setLeaderboardData([]);
+    } finally {
+      setIsLoading(false);
     }
-  }, []);
-  
+  }, [isAllTime, selectedMode]);
+
+  useEffect(() => {
+    fetchUsersData();
+
+    const countdownInterval = setInterval(() => {
+      setCountDown((prev) => (prev > 0 ? prev - 1 : 30));
+    }, 1000);
+
+    const fetchInterval = setInterval(() => {
+      fetchUsersData();
+    }, 30000);
+
+    return () => {
+      clearInterval(countdownInterval);
+      clearInterval(fetchInterval);
+    };
+  }, [isAllTime, selectedMode, fetchUsersData]);
 
   const filteredData = leaderboardData.filter((entry) =>
     entry?.name?.toLowerCase().includes(searchTerm?.toLowerCase())

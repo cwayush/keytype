@@ -33,7 +33,7 @@ var __importStar = (this && this.__importStar) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.signUpSchema = exports.signInSchema = void 0;
+exports.joinRoomSchema = exports.roomSchema = exports.signUpSchema = exports.signInSchema = void 0;
 const z = __importStar(require("zod"));
 exports.signInSchema = z.object({
     email: z.email({ message: 'Invalid email address' }),
@@ -43,5 +43,21 @@ exports.signUpSchema = z.object({
     name: z.string().min(3, 'Name must be at least 3 characters long'),
     email: z.email({ message: 'Invalid email address' }),
     password: z.string().min(8, 'Password must be at least 8 characters long'),
+});
+exports.roomSchema = z.object({
+    name: z.string().min(3, {
+        message: "Room name must be at least 3 characters.",
+    }),
+    mode: z.string().min(1, {
+        message: "Please select a mode.",
+    }),
+    modeOption: z.string().min(1, {
+        message: "Please select a mode option.",
+    }),
+});
+exports.joinRoomSchema = z.object({
+    code: z.string().min(6, {
+        message: "Room code must be 6 characters long.",
+    }),
 });
 //# sourceMappingURL=zvalidate.js.map

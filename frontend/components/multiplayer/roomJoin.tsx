@@ -1,14 +1,42 @@
+import { JoinRoomInput, joinRoomSchema } from '@/config/zvalidate';
+import { getRoomByCode } from '@/services/userService';
 import { Button } from '@/UI/components/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/UI/components/card';
 import { Form, FormControl, FormField, FormItem } from '@/UI/components/form';
 import { Input } from '@/UI/components/input';
+import { zodResolver } from '@hookform/resolvers/zod';
 import { Loader2, LogIn } from 'lucide-react';
+import { useRouter } from 'next/navigation';
 import { useTransition } from 'react';
 import { useForm } from 'react-hook-form';
 
 const JoinRoom = () => {
   const [isPending, startTransition] = useTransition();
-  const form = useForm();
+  const router = useRouter();
+
+  const form = useForm<JoinRoomInput>({
+    resolver: zodResolver(joinRoomSchema),
+    defaultValues: {
+      code: '',
+    },
+  });
+
+  const onSubmit = (data: JoinRoomInput) => {
+    startTransition(async () => {
+      try {
+        const response = await getRoomByCode(data.code);
+        const room = response.data;
+        console.log(room);
+
+        if (response.status === 200) {
+          router.push(`/multiplayer/room/${data.code}`);
+        }
+      } catch (err) {
+        console.error(err);
+      }
+    });
+  };
+
   return (
     <Card className="bg-neutral-900/50 border-neutral-800 text-neutral-200">
       <CardHeader>
@@ -19,7 +47,7 @@ const JoinRoom = () => {
       </CardHeader>
       <CardContent>
         <Form {...form}>
-          <form className="space-y-4">
+          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
             <FormField
               control={form.control}
               name="code"

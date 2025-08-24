@@ -169,3 +169,5 @@ export type Message = {
 export type ChatMessageProps = {
   message: Message;
 };
+
+export type AddTestTypes = Omit<ResultProps, "onRestart" | "wpmData">;

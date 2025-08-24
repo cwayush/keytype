@@ -4,7 +4,7 @@ exports.userRoute = void 0;
 const routes_1 = require("../../constants/routes");
 const controller_1 = require("./controller");
 const userRoute = (router) => {
-    router.post(routes_1.ROUTES.USER.SIGNUP, controller_1.userController.signup);
+    router.post(routes_1.ROUTES.USER.REGISTER, controller_1.userController.signup);
     router.post(routes_1.ROUTES.USER.LOGIN, controller_1.userController.userLogin);
     router.put(routes_1.ROUTES.USER.RESET_PASSWORD, controller_1.userController.updateUser);
     // router.delete(ROUTES.USER.RESET_PASSWORD, userController.deleteUser);

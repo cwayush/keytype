@@ -8,13 +8,11 @@ import {
   getRecentTests,
 } from '@/lib/utils';
 import { Test } from '@/constants/type';
+import { getalltestbyId } from '@/services/userService';
 
 const ProfilePage = async () => {
-  const response = await fetch(
-    'http://localhost:5000/test/all/cme9ueg1m0000i8ao0ru3336w'
-  );
-  const result = await response.json();
-  const testsData: Test[] = result.data ?? [];
+  const response = await getalltestbyId('cme9ueg1m0000i8ao0ru3336w');
+  const testsData: Test[] = response.data?.data ?? [];
 
   const testsCompleted = testsData.length;
   const averageWpm = testsCompleted

@@ -6,27 +6,48 @@ import PublicRoom from '@/components/multiplayer/roomPublic';
 import { Card, CardContent, CardHeader, CardTitle } from '@/UI/components/card';
 import { motion } from 'framer-motion';
 import { Hash, LoaderPinwheel } from 'lucide-react';
-import { useState, useTransition } from 'react';
+import { useEffect, useState, useTransition } from 'react';
 import { Room } from '@/constants/type';
+import { getAllRooms } from '@/services/userService';
+
+const containerVarient = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0 },
+};
 
 const Multiplayer = () => {
   const [isPending, startTransition] = useTransition();
   const [rooms, setRooms] = useState<Room[]>([]);
 
-  const containerVarient = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-      },
-    },
-  };
+  useEffect(() => {
+    const fetchRooms = async () => {
+      try {
+        const response = await getAllRooms();
+        const data = response.data; 
+        console.log(data);
 
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0 },
-  };
+        setRooms(data.data || []);
+      } catch (err) {
+        console.log('Error fetching rooms', err);
+      }
+    };
+    startTransition(() => {
+      fetchRooms();
+    });
+
+    const interval = setInterval(fetchRooms, 3000);
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <motion.div

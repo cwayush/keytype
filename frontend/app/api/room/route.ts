@@ -1,8 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { roomSchema } from '@/config/zvalidate';
 import { geneateRoomCode } from '@/lib/utils';
-import prisma from '../../../../backend/src/config/prismaClient';
 import { auth } from '@/option';
+import prisma from '@repo/db';
 
 export const POST = async (req: NextRequest) => {
   try {

@@ -1,58 +1,51 @@
 'use client';
 
-import { TESTIMONIALS } from '@/constants';
-import {
-  Avatar,
-  AvatarFallback,
-  AvatarImage,
-} from '@/UI/components/avatar';
-import {
-  Card,
-  CardContent,
-  CardDescription,
-} from '@/UI/components/card';
-import { motion } from 'framer-motion';
+import { Avatar, AvatarFallback, AvatarImage } from '@/UI/components/avatar';
+import { Card, CardContent, CardDescription } from '@/UI/components/card';
+import { ReviewsCardProps } from '@/constants/type';
+import { ReviewsData } from '@/constants';
 import { BadgeCheck } from 'lucide-react';
+import { motion } from 'framer-motion';
 
-const containerVarients = {
+const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
     transition: {
-      staggerChildern: 0.1,
+      staggerChildren: 0.1,
     },
   },
 };
 
-const Testimonials = () => {
+const Reviews = () => {
   return (
-    <section className="py-20 ">
+    <section className="py-20">
       <div className="max-w-5xl mx-auto px-4">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-12 text-neutral-200"
+          className="text-3xl sm:text-4xl md:text-5xl text-neutral-200 font-bold text-center mb-12"
         >
           What Our{' '}
-          <span className="underline underline-offset-8 decoration-blue-800">
+          <span className="underline underline-offset-8 decoration-emerald-400">
             Users
-          </span>
+          </span>{' '}
           Say
         </motion.h2>
         <motion.div
-          variants={containerVarients}
+          variants={containerVariants}
           initial="hidden"
           animate="visible"
-          className="flex flex-wrap justify-center gap-8"
+          className="flex flex-wrap gap-8 justify-center"
         >
-          {TESTIMONIALS.map((testimonial, index) => (
-            <TestimonialCard
+          {ReviewsData.map((review, index) => (
+            <ReviewsCard
               key={index}
-              name={testimonial.name}
-              username={testimonial.username}
-              image={testimonial.image}
-              tweet={testimonial.tweet}
+              name={review.name}
+              username={review.username}
+              image={review.image}
+              tweet={review.tweet}
             />
           ))}
         </motion.div>
@@ -61,38 +54,31 @@ const Testimonials = () => {
   );
 };
 
-export default Testimonials;
+export default Reviews;
 
-const itemVarients = {
+const itemVariants = {
   hidden: { opacity: 0, y: 20 },
   visible: {
     opacity: 1,
     y: 0,
     transition: {
       type: 'spring' as const,
-      damping: 30,
+      damping: 15,
       stiffness: 100,
     },
   },
 };
 
-interface TestimonialCardProps {
-  name: string;
-  username: string;
-  image: string;
-  tweet: string;
-}
-
-export const TestimonialCard = ({
+export const ReviewsCard = ({
   name,
   username,
   image,
   tweet,
-}: TestimonialCardProps) => {
+}: ReviewsCardProps) => {
   return (
-    <motion.div variants={itemVarients}>
-      <Card className="bg-neutral-900/50 border-neutral-800  max-w-md ">
-        <CardContent className="p-6">
+    <motion.div variants={itemVariants}>
+      <Card className="bg-neutral-900/50 border-neutral-800 max-w-md">
+        <CardContent className="p-5">
           <div className="flex items-center gap-x-3">
             <Avatar className="size-8">
               <AvatarImage src={image} />
@@ -100,7 +86,7 @@ export const TestimonialCard = ({
             </Avatar>
             <div className="flex gap-x-1 items-center">
               <span className="font-bold text-neutral-200">{name}</span>
-              <BadgeCheck className="text-blue-800 size-5" />
+              <BadgeCheck className="text-emerald-400 size-5" />
             </div>
             <span className="text-neutral-500">@{username}</span>
           </div>

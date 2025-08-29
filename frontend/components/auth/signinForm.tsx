@@ -1,5 +1,14 @@
-import { motion } from 'framer-motion';
+import { SignInInput, signInSchema } from '@/config/zvalidate';
 import { zodResolver } from '@hookform/resolvers/zod';
+import { ArrowRight, Lock, Mail } from 'lucide-react';
+import { DEFAULT_LOGIN_REDIRECT } from '@/constants';
+import { Button } from '@/UI/components/button';
+import { Input } from '@/UI/components/input';
+import { useForm } from 'react-hook-form';
+import { signIn } from 'next-auth/react';
+import { login } from '@/actions/login';
+import { useTransition } from 'react';
+import { motion } from 'framer-motion';
 import {
   Form,
   FormControl,
@@ -8,12 +17,6 @@ import {
   FormLabel,
   FormMessage,
 } from '@/UI/components/form';
-import { ArrowRight, Lock, Mail } from 'lucide-react';
-import { Input } from '@/UI/components/input';
-import { Button } from '@/UI/components/button';
-import { useTransition } from 'react';
-import { useForm } from 'react-hook-form';
-import { SignInInput, signInSchema } from '@/config/zvalidate';
 
 const childVarients = {
   hidden: { opacity: 0, y: 20 },
@@ -38,9 +41,34 @@ const SignInForm = () => {
       password: '',
     },
   });
+
+  const onSignIn = async (values: SignInInput) => {
+    startTransition(async () => {
+      try {
+        const result = await login(values);
+
+        if (result.success) {
+          await signIn('credentials', {
+            email: values.email,
+            password: values.password,
+            redirect: true,
+            callbackUrl: DEFAULT_LOGIN_REDIRECT,
+          });
+        } else {
+          console.error(result.message);
+        }
+      } catch (err) {
+        console.error(err);
+      }
+    });
+  };
+
   return (
     <Form {...signInForm}>
-      <form onSubmit={() => {}} className="space-y-4 text-neutral-200">
+      <form
+        onSubmit={signInForm.handleSubmit(onSignIn)}
+        className="space-y-4 text-neutral-200"
+      >
         <motion.div variants={childVarients}>
           <FormField
             control={signInForm.control}

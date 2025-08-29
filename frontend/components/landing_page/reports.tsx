@@ -1,12 +1,12 @@
+import { useEffect, useState, useTransition } from 'react';
+import { LoaderPinwheel } from 'lucide-react';
+import { motion } from 'framer-motion';
 import {
   Card,
   CardContent,
   CardDescription,
   CardTitle,
 } from '@/UI/components/card';
-import { motion } from 'framer-motion';
-import { LoaderPinwheel } from 'lucide-react';
-import { useEffect, useState, useTransition } from 'react';
 
 const itemVarients = {
   hidden: { opacity: 0, y: 20 },
@@ -21,19 +21,19 @@ const itemVarients = {
   },
 } as const;
 
-const Stats = () => {
-  const [stats, setStats] = useState<null | { name: string; value: number }[]>(
-    null
-  );
+// ReviewsProps
+
+const Reports = () => {
+  const [reports, setReports] = useState<
+    null | { name: string; value: number }[]
+  >(null);
   const [isPending, startTransition] = useTransition();
 
   useEffect(() => {
     startTransition(async () => {
-      const response = await fetch(
-        'https://jsonplaceholder.typicode.com/posts'
-      );
+      const response = await fetch('/api/reports');
       const data = await response.json();
-      setStats(data);
+      setReports(data);
     });
   }, []);
   return (
@@ -54,17 +54,17 @@ const Stats = () => {
           {isPending ? (
             <LoaderPinwheel className="nimate-spin mx-auto size-10 text-blue-700" />
           ) : (
-            stats?.map((stat, index) => (
+            reports?.map((report, index) => (
               <Card
                 key={index}
                 className="bg-neutral-900/50 border-neutral-800 w-full max-w-xs"
               >
                 <CardContent className="p-5 text-center space-y-2">
                   <CardTitle className="text-blue-800 text-4xl">
-                    {stat.name}
+                    {report.name}
                   </CardTitle>
                   <CardDescription className="text-neutral-400 text-base">
-                    {stat.value}
+                    {report.value}
                   </CardDescription>
                 </CardContent>
               </Card>
@@ -76,4 +76,4 @@ const Stats = () => {
   );
 };
 
-export default Stats;
+export default Reports;

@@ -1,13 +1,13 @@
 'use client';
 
-import { FEATURES } from '@/constants';
+import { FeaturesData } from '@/constants';
+import { motion } from 'framer-motion';
 import {
   Card,
   CardDescription,
   CardHeader,
   CardTitle,
 } from '@/UI/components/card';
-import { motion } from 'framer-motion';
 
 const containerVarients = {
   hidden: { opacity: 0 },
@@ -53,7 +53,7 @@ const Features = () => {
         animate="visible"
         className="flex flex-wrap justify-center gap-8"
       >
-        {FEATURES.map((feature, index) => (
+        {FeaturesData.map((feature, index) => (
           <FeatureCard
             key={index}
             icon={feature.icon}

@@ -1,11 +1,11 @@
 'use server';
 
-import bcrypt from 'bcryptjs';
-import { getUserByEmail } from '@/dboper/user';
-import { sendVerificationEmail } from '@/lib/resend';
 import { signUpSchema, SignUpInput } from '@/config/zvalidate';
-import prisma from '../../backend/src/config/prismaClient';
 import { generateVerificationToken } from '@/lib/utils';
+import { sendVerificationEmail } from '@/lib/resend';
+import { getUserByEmail } from '@/dboper/user';
+import bcrypt from 'bcryptjs';
+import prisma from '@repo/db';
 
 export const register = async (values: SignUpInput) => {
   const validation = signUpSchema.safeParse(values);

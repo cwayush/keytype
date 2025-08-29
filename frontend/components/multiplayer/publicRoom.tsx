@@ -1,13 +1,37 @@
-import { Button } from '@/UI/components/button';
 import { Card, CardContent } from '@/UI/components/card';
 import { ScrollArea } from '@/UI/components/scrollarea';
-import { Room } from '@/constants/type';
 import { Hourglass, Loader2, Type } from 'lucide-react';
+import { Button } from '@/UI/components/button';
 import { useState, useTransition } from 'react';
+import { useRouter } from 'next/navigation';
+import { Room } from '@/constants/type';
 
 const PublicRoom = ({ rooms }: { rooms: Room[] }) => {
   const [isPending, startTransition] = useTransition();
   const [roomId, setRoomId] = useState<string | null>(null);
+  const router = useRouter();
+
+  const handleJoinRoom = async (roomCode: string, roomId: string) => {
+    setRoomId(roomId);
+    startTransition(async () => {
+      try {
+        const response = await fetch(`/api/room/${roomCode}`);
+        const room = await response.json();
+        console.log(room);
+
+        if (response.ok) {
+          router.push(`/multiplayer/room/${roomCode}`);
+        } else {
+          console.error('Room Not Found');
+        }
+      } catch (error) {
+        console.log(error);
+        console.error('Something went wrong');
+      } finally {
+        setRoomId(null);
+      }
+    });
+  };
 
   return (
     <ScrollArea className="h-[400px] pr-4">
@@ -37,7 +61,7 @@ const PublicRoom = ({ rooms }: { rooms: Room[] }) => {
               <Button
                 size="lg"
                 className="from-violet-500 to-violet-600 hover:from-violet-700 hover:to-violet-800"
-                // onClick={() => handleJoinRoom(room.code, room.id)}
+                onClick={() => handleJoinRoom(room.code, room.id)}
                 disabled={isPending && roomId === room.id}
               >
                 {isPending ? (
@@ -59,6 +83,5 @@ const PublicRoom = ({ rooms }: { rooms: Room[] }) => {
     </ScrollArea>
   );
 };
-
 
 export default PublicRoom;

@@ -64,7 +64,7 @@ export type ProfileHeaderProps = {
   name: string;
 };
 
-export type StatsGridProps = {
+export type ReportsGridProps = {
   stats: {
     averageWpm: number;
     averageAccuracy: number;
@@ -72,6 +72,13 @@ export type StatsGridProps = {
     totalTimeTyping: string;
   };
 };
+
+export type ReviewsCardProps = {
+  name: string;
+  username: string;
+  image: string;
+  tweet: string;
+}; 
 
 export type BestScoresProps = {
   allTimeBestScores: {

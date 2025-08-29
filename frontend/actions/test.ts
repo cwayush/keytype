@@ -1,9 +1,9 @@
 'use server';
 
-import { getUserByEmail } from '@/dboper/user';
-import prisma from '../../backend/src/config/prismaClient';
 import { AddTestTypes } from '@/constants/type';
+import { getUserByEmail } from '@/dboper/user';
 import { auth } from '@/option';
+import prisma from '@repo/db';
 
 export const addTest = async ({
   wpm,

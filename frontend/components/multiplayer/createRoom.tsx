@@ -1,8 +1,15 @@
 'use client';
 
-import { wordOptions } from '@/constants';
-import { Button } from '@/UI/components/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/UI/components/card';
+import { RoomInput, roomSchema } from '@/config/zvalidate';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { Button } from '@/UI/components/button';
+import { Input } from '@/UI/components/input';
+import { Loader2, Plus } from 'lucide-react';
+import { useRouter } from 'next/navigation';
+import { useForm } from 'react-hook-form';
+import { wordOptions } from '@/constants';
+import { useTransition } from 'react';
 import {
   Form,
   FormControl,
@@ -10,7 +17,6 @@ import {
   FormItem,
   FormMessage,
 } from '@/UI/components/form';
-import { Input } from '@/UI/components/input';
 import {
   Select,
   SelectContent,
@@ -18,14 +24,39 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/UI/components/select';
-import { Loader2, Plus } from 'lucide-react';
-import { useTransition } from 'react';
-import { useForm } from 'react-hook-form';
 
 const CreateRoom = () => {
   const [isPending, startTransition] = useTransition();
+  const router = useRouter();
+  const form = useForm<RoomInput>({
+    resolver: zodResolver(roomSchema),
+    defaultValues: {
+      name: '',
+      mode: 'words',
+      modeOption: '10',
+    },
+  });
 
-  const form = useForm();
+  const onSubmit = (data: RoomInput) => {
+    startTransition(async () => {
+      try {
+        const response = await fetch('/api/room', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data),
+        });
+        const room = await response.json();
+        console.log(room);
+        router.push(`/multiplayer/room/${room.code}`);
+        console.log('Room Successfully Created');
+      } catch (err) {
+        console.log('Room Not Created', err);
+      }
+    });
+  };
+
   return (
     <Card className="bg-neutral-900/50 border-neutral-800 text-neutral-200 ">
       <CardHeader>
@@ -36,7 +67,7 @@ const CreateRoom = () => {
       </CardHeader>
       <CardContent>
         <Form {...form}>
-          <form onSubmit={() => {}} className="space-y-6">
+          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
             <FormField
               control={form.control}
               name="name"

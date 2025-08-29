@@ -1,15 +1,66 @@
-import { CompeProps } from '@/constants/type';
 import { Card, CardContent } from '@/UI/components/card';
-import Interface from './interface';
 import MemberProgress from './member/memberProgress';
+import { useCallback, useEffect } from 'react';
+import { CompeProps } from '@/constants/type';
+import { useSession } from 'next-auth/react';
+import useWsStore from '@/store/useWsStore';
+import Interface from './interface';
 
 const Compe = ({
   members,
-  //   isRaceStarted,
-  //   setIsRaceStarted,
+  isRaceStarted,
+  setIsRaceStarted,
   roomData,
   raceText,
 }: CompeProps) => {
+  const { wsref } = useWsStore((state) => state);
+
+  const { data: session } = useSession();
+
+  useEffect(() => {
+    let isTypingFinished = false;
+
+    if (members.length > 0) {
+      isTypingFinished = members.every(
+        (member) => member.progress?.progress === 100
+      );
+    }
+
+    if (isTypingFinished) {
+      setTimeout(() => {
+        setIsRaceStarted(true);
+      }, 5000);
+    }
+  }, [members]);
+
+  const progUpdate = useCallback(
+    (wpm: number, accuracy: number, progress: number) => {
+      if (!roomData?.code || !session?.user?.id) return;
+
+      if (isRaceStarted && wsref?.readyState === WebSocket.OPEN) {
+        try {
+          wsref.send(
+            JSON.stringify({
+              type: 'UPDATE_PROGRESS',
+              userId: session?.user.id,
+              roomCode: roomData.code,
+              progress: {
+                wpm,
+                accuracy,
+                progress,
+              },
+            })
+          );
+        } catch (err) {
+          console.log('Error updating progress:', err);
+        }
+      }
+    },
+    [isRaceStarted, roomData.code, session?.user.id, wsref]
+  );
+
+  if (!roomData) return null;
+
   const sortedMembers = [...members].sort((a, b) => {
     const progressA = a.progress?.progress || 0;
     const progressB = b.progress?.progress || 0;
@@ -29,7 +80,7 @@ const Compe = ({
         mode={roomData.mode}
         modeOption={roomData.modeOption}
         text={raceText}
-        onProgress={onProgress}
+        onProgress={progUpdate}
       />
     </div>
   );

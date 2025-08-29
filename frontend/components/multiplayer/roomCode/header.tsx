@@ -1,7 +1,11 @@
-import { MultiplayerHeaderProps } from '@/constants/type';
-import { Button } from '@/UI/components/button';
-import { motion } from 'framer-motion';
 import { Copy, Hash, Hourglass, PlayCircle, Type } from 'lucide-react';
+import { MultiplayerHeaderProps } from '@/constants/type';
+import { generateRandomWords } from '@/lib/utils';
+import { Button } from '@/UI/components/button';
+import { useSession } from 'next-auth/react';
+import useWsStore from '@/store/useWsStore';
+import { motion } from 'framer-motion';
+import { useCallback } from 'react';
 
 const itemVariants = {
   hidden: { opacity: 0, y: 20 },
@@ -13,6 +17,49 @@ const Header = ({
   isHost,
   isRaceStarted,
 }: MultiplayerHeaderProps) => {
+  const { wsref } = useWsStore((state) => state);
+  const { data: session } = useSession();
+
+  const handleStartTest = useCallback(() => {
+    if (!roomData || !session?.user?.id) return;
+    if (wsref?.readyState === WebSocket.OPEN) {
+      try {
+        const text = generateRandomWords(
+          roomData.mode === 'words'
+            ? roomData.modeOption
+            : roomData.modeOption * 2
+        );
+
+        wsref.send(
+          JSON.stringify({
+            type: 'START_RACE',
+            userId: session?.user.id,
+            roomCode: roomData.code,
+            text,
+          })
+        );
+      } catch (err) {
+        console.log('Error starting race:', err);
+      }
+    } else {
+      console.error('Connection lost. Reconnecting...');
+    }
+  }, [wsref, roomData, session?.user.id]);
+
+  const handleCopyInvite = useCallback(() => {
+    if (!roomData) return;
+
+    try {
+      const inviteURL = `${window.location.origin}/multiplayer/room/${roomData.code}`;
+      navigator.clipboard.writeText(inviteURL);
+      console.log('Invite link copied to clipboard');
+    } catch (err) {
+      console.log('Error copying invite:', err);
+    }
+  }, [roomData]);
+
+  if (!roomData) return null;
+
   return (
     <motion.div
       variants={itemVariants}
@@ -41,7 +88,7 @@ const Header = ({
               size="icon"
               variant="ghost"
               className="text-neutral-400 hover:text-violet-400"
-              //   onClick = {handleCopyInvite}
+              onClick={handleCopyInvite}
               aria-label="Copy Invite Link"
             >
               <Copy className="size-5" />
@@ -51,7 +98,7 @@ const Header = ({
       </div>
       <div className="flex gap-3 w-full lg:w-auto">
         {isHost && (
-          <Button size="lg" disabled={isRaceStarted}>
+          <Button size="lg" disabled={isRaceStarted} onClick={handleStartTest}>
             <PlayCircle />
             {isRaceStarted ? 'Join Race' : 'Start Race'}
           </Button>

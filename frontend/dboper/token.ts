@@ -1,4 +1,4 @@
-import prisma from '../../backend/src/config/prismaClient';
+import prisma from "@repo/db";
 
 export const getVerificationTokenByEmail = async (email: string) => {
   try {

@@ -1,5 +1,8 @@
 'use client';
 
+import { AnimatePresence, motion } from 'framer-motion';
+import Result from './result';
+import Modes from './modes';
 import React, {
   useCallback,
   useEffect,
@@ -7,15 +10,12 @@ import React, {
   useRef,
   useState,
 } from 'react';
-import Modes from './modes';
-import { AnimatePresence, motion } from 'framer-motion';
 import {
   calculateAccuracy,
   calculateWPM,
   cn,
   generateRandomWords,
 } from '@/lib/utils';
-import Result from './result';
 
 const Interface = () => {
   const [currentIndex, setCurrentIndex] = useState<number>(0);

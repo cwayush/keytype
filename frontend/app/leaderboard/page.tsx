@@ -1,16 +1,21 @@
 'use client';
 
-import { modes } from '@/constants';
-import { Button } from '@/UI/components/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/UI/components/card';
+import { useCallback, useEffect, useState } from 'react';
+import { ScrollArea } from '@/UI/components/scrollarea';
+import { LeaderboardDataType } from '@/constants/type';
+import { Button } from '@/UI/components/button';
+import { Input } from '@/UI/components/input';
+import { Badge } from '@/UI/components/bages';
+import { motion } from 'framer-motion';
+import { modes } from '@/constants';
+import Link from 'next/link';
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from '@/UI/components/dropdown';
-import { Input } from '@/UI/components/input';
-import { ScrollArea } from '@/UI/components/scrollarea';
 import {
   Table,
   TableBody,
@@ -19,8 +24,6 @@ import {
   TableHeader,
   TableRow,
 } from '@/UI/components/table';
-import { error } from 'console';
-import { motion, number } from 'framer-motion';
 import {
   Activity,
   ArrowRight,
@@ -30,10 +33,6 @@ import {
   LoaderPinwheel,
   Medal,
 } from 'lucide-react';
-import { useCallback, useEffect, useState } from 'react';
-import { LeaderboardDataType } from '@/constants/type';
-import Link from 'next/link';
-import { Badge } from '@/UI/components/bages';
 
 function LeaderBoard() {
   const [countdown, setCountDown] = useState(30);

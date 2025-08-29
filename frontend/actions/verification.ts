@@ -2,7 +2,7 @@
 
 import { getVerificationTokenByToken } from '@/dboper/token';
 import { getUserByEmail } from '@/dboper/user';
-import prisma from '../../backend/src/config/prismaClient';
+import prisma from '@repo/db';
 
 export const verification = async (token: string) => {
   const exisitingToken = await getVerificationTokenByToken(token);

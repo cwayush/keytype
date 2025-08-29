@@ -1,5 +1,12 @@
-import { motion } from 'framer-motion';
+import { SignUpInput, signUpSchema } from '@/config/zvalidate';
+import { ArrowRight, Lock, Mail, User } from 'lucide-react';
 import { zodResolver } from '@hookform/resolvers/zod';
+import { Button } from '@/UI/components/button';
+import { register } from '@/actions/register';
+import { Input } from '@/UI/components/input';
+import { useForm } from 'react-hook-form';
+import { motion } from 'framer-motion';
+import { useTransition } from 'react';
 import {
   Form,
   FormControl,
@@ -8,12 +15,6 @@ import {
   FormLabel,
   FormMessage,
 } from '@/UI/components/form';
-import { ArrowRight, Lock, Mail, User } from 'lucide-react';
-import { Input } from '@/UI/components/input';
-import { Button } from '@/UI/components/button';
-import { useTransition } from 'react';
-import { useForm } from 'react-hook-form';
-import { SignUpInput, signUpSchema } from '@/config/zvalidate';
 
 const childVarients = {
   hidden: { opacity: 0, y: 20 },
@@ -39,9 +40,29 @@ const SignUpForm = () => {
       password: '',
     },
   });
+
+  const onSignUp = async (values: SignUpInput) => {
+    startTransition(async () => {
+      try {
+        const result = await register(values);
+
+        if (result.success) {
+          console.log(result.message);
+        } else {
+          console.error(result.message);
+        }
+      } catch (err) {
+        console.error('Registration error:', err);
+      }
+    });
+  };
+
   return (
     <Form {...signUpForm}>
-      <form onSubmit={() => {}} className="space-y-4 text-neutral-200">
+      <form
+        onSubmit={signUpForm.handleSubmit(onSignUp)}
+        className="space-y-4 text-neutral-200"
+      >
         <motion.div variants={childVarients}>
           <FormField
             control={signUpForm.control}

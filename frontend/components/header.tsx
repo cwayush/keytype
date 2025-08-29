@@ -1,9 +1,10 @@
 'use client';
-import { NAVLINKS } from '@/constants';
-import { LogOut, Zap } from 'lucide-react';
-import Link from 'next/link';
+
 import { signOut, useSession } from 'next-auth/react';
 import { Button } from '@/UI/components/button';
+import { LogOut, Zap } from 'lucide-react';
+import { NAVLINKS } from '@/constants';
+import Link from 'next/link';
 
 export function Header() {
   // const { data: session } = useSession();

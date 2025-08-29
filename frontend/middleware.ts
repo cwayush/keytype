@@ -1,14 +1,11 @@
-import NextAuth from 'next-auth';
 import { NextResponse } from 'next/server';
-import { authoption } from './app/api/auth/[...nextauth]/option';
 import {
   apiAuthPrefix,
   authRoutes,
   DEFAULT_LOGIN_REDIRECT,
   publicRoutes,
 } from './constants';
-
-const { auth } = NextAuth(authoption);
+import { auth } from './option';
 
 export default auth((req: any) => {
   const isLoggedIn = !req.auth;
@@ -39,3 +36,11 @@ export default auth((req: any) => {
 export const config = {
   matcher: ['/auth', '/api/auth/:path*'],
 };
+
+
+// export const config = {
+//   matcher: [
+//     "/((?!_next|[^?]*\\.(?:html?|css|js(?!on)|jpe?g|webp|png|gif|svg|ttf|woff2?|ico|csv|docx?|xlsx?|zip|webmanifest)).*)",
+//     "/(api|trpc)(.*)",
+//   ],
+// };

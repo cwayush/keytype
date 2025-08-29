@@ -36,7 +36,7 @@ export const NAVLINKS = [
   },
 ];
 
-export const FEATURES = [
+export const FeaturesData = [
   {
     icon: <Activity className="size-10 text-emerald-400" />,
     title: 'Real-time Feedback',
@@ -65,7 +65,7 @@ export const FEATURES = [
 ];
 
 
-export const TESTIMONIALS = [
+export const ReviewsData = [
   {
     name: "Sarah L.",
     username: "sarah_l",

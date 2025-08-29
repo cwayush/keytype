@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import prisma from '../../../../../backend/src/config/prismaClient';
+import prisma from '@repo/db';
 
 export const GET = async (
   req: NextRequest,

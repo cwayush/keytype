@@ -1,14 +1,20 @@
 'use client';
 
 import { modes, timeOptions, wordOptions } from '@/constants';
+import { Hourglass, Type } from 'lucide-react';
 import { ModesProps } from '@/constants/type';
 import { motion } from 'framer-motion';
-import { Hourglass, Type } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 const Modes = ({ mode, setMode, modeOption, setModeOption }: ModesProps) => {
-  const handleModeChange = (selectedMode: string) => {
-    setMode(selectedMode);
+  const handleModeChange = (mode: string) => {
+    if (mode == 'time') {
+      setMode(mode);
+      setModeOption(timeOptions[0]!);
+    } else if (mode === 'words') {
+      setMode(mode);
+      setModeOption(wordOptions[0]!);
+    }
   };
 
   return (

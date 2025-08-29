@@ -1,5 +1,5 @@
-import { MemberProgressProps } from '@/constants/type';
 import { Avatar, AvatarFallback, AvatarImage } from '@/UI/components/avatar';
+import { MemberProgressProps } from '@/constants/type';
 
 const MemberProgress = ({ member }: MemberProgressProps) => {
   const wpm = member.progress?.wpm || 0;

@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
-import { AnimatePresence, motion } from 'framer-motion';
 import { calculateAccuracy, calculateWPM, cn } from '@/lib/utils';
+import { AnimatePresence, motion } from 'framer-motion';
 import { InterfaceProps } from '@/constants/type';
 import Result from './result';
 

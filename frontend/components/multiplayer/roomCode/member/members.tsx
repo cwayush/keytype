@@ -1,10 +1,10 @@
 'use client';
 
-import { MembersProps } from '@/constants/type';
 import { Card, CardContent, CardHeader, CardTitle } from '@/UI/components/card';
 import { ScrollArea } from '@/UI/components/scrollarea';
-import { User } from 'lucide-react';
+import { MembersProps } from '@/constants/type';
 import MemberAvatar from './memberAvatar';
+import { User } from 'lucide-react';
 
 const Members = ({ members }: MembersProps) => {
   return (

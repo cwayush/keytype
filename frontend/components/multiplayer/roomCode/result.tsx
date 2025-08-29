@@ -1,11 +1,13 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { Activity, ChartNoAxesCombined, Hourglass, Target } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/UI/components/card';
 import { ChartContainer, ChartTooltip } from '@/UI/components/chart';
+import ReportCard from '@/components/profile/reportCard';
 import { ResultProps } from '@/constants/type';
-import StatusCard from '../../profile/resCard';
-import { Activity, ChartNoAxesCombined, Hourglass, Target } from 'lucide-react';
+import { addTest } from '@/actions/test';
+import { motion } from 'framer-motion';
+import { useEffect } from 'react';
 import {
   CartesianGrid,
   Line,
@@ -24,6 +26,49 @@ const Result = ({
   mode,
   modeOption,
 }: Omit<ResultProps, 'onRestart'>) => {
+  useEffect(() => {
+    const saveTest = async () => {
+      try {
+        if (!wpm || !accuracy || !time || !mode || !modeOption) return;
+
+        await addTest({
+          wpm,
+          accuracy: parseFloat(accuracy.toFixed(2)),
+          time,
+          mode,
+          modeOption,
+        });
+      } catch (err) {
+        console.log('Error saving test:', err);
+      }
+    };
+
+    const addToLeaderboard = async () => {
+      try {
+        if (!wpm || !accuracy || !time || !mode || !modeOption) return;
+
+        await fetch('/api/leaderboard', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            wpm,
+            accuracy,
+            time,
+            mode,
+            modeOption,
+          }),
+        });
+      } catch (err) {
+        console.log('Error adding to leaderboard:', err);
+      }
+    };
+
+    saveTest();
+    addToLeaderboard();
+    console.log('Test saved and added to leaderboard');
+  }, [wpm, accuracy, time, mode, modeOption]);
 
   const averageWPM = Math.round(
     wpmData.reduce((sum, data) => sum + data.wpm, 0) / wpmData.length
@@ -55,17 +100,17 @@ const Result = ({
         variants={itemVariants}
         className="grid grid-cols-1 sm:grid-cols-3 gap-6"
       >
-        <StatusCard
+        <ReportCard
           icon={<Activity className="size-8 mr-2 text-sky-400" />}
           title="WPM"
           value={wpm}
         />
-        <StatusCard
+        <ReportCard
           icon={<Target className="size-8 mr-2 text-emerald-400" />}
           title="Accuracy"
           value={`${accuracy.toFixed(2)}%`}
         />
-        <StatusCard
+        <ReportCard
           icon={<Hourglass className="size-8 mr-2 text-violet-400" />}
           title="Time"
           value={`${time}s`}

@@ -1,6 +1,6 @@
 import { Card, CardContent } from '@/UI/components/card';
 
-const StatusCard = ({
+const ReportCard = ({
   icon,
   title,
   value,
@@ -24,4 +24,5 @@ const StatusCard = ({
   );
 };
 
-export default StatusCard;
+export default ReportCard;
+

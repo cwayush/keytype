@@ -1,8 +1,8 @@
 'use client';
 
 import { Button } from '@/UI/components/button';
-import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
+import { motion } from 'framer-motion';
 import Link from 'next/link';
 
 const containerVarients = {
@@ -28,7 +28,7 @@ const itemVarients = {
   },
 };
 
-const CTA = () => {
+const Engage = () => {
   return (
     <section className="container mx-auto px-4 py-20 text-center relative">
       <motion.div
@@ -66,4 +66,4 @@ const CTA = () => {
   );
 };
 
-export default CTA;
+export default Engage;

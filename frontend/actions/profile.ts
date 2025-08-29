@@ -1,13 +1,14 @@
 'use server';
 
-import prisma from '../../backend/src/config/prismaClient';
 import { getUserByEmail } from '@/dboper/user';
+import { auth } from '@/option';
+import prisma from '@repo/db';
+import { Test } from '@/constants/type';
 import {
   calculateTotalTypingTime,
   getAllTimeBestScores,
   getRecentTests,
 } from '@/lib/utils';
-import { auth } from '@/option';
 
 export const getProfileData = async () => {
   try {
@@ -26,17 +27,17 @@ export const getProfileData = async () => {
       orderBy: { createdAt: 'desc' },
     });
 
-    const testCompleted = tests.length;
-    const averageWpm = testCompleted
+    const testsCompleted = tests.length;
+    const averageWpm = testsCompleted
       ? Math.round(
-          tests.reduce((sum, test) => test.wpm + sum, 0) / testCompleted
+          tests.reduce((sum: number, test: Test) => test.wpm + sum, 0) / testsCompleted
         )
       : 0;
 
-    const averageAccuracy = testCompleted
+    const averageAccuracy = testsCompleted
       ? Number(
           (
-            tests.reduce((sum, test) => test.accuracy + sum, 0) / testCompleted
+            tests.reduce((sum: number, test: Test) => test.accuracy + sum, 0) / testsCompleted
           ).toFixed(1)
         )
       : 0;
@@ -48,7 +49,7 @@ export const getProfileData = async () => {
         stats: {
           averageWpm,
           averageAccuracy,
-          testCompleted,
+          testsCompleted,
           totalTimeTyping: calculateTotalTypingTime(tests),
         },
         allTimeBestScores: getAllTimeBestScores(tests),

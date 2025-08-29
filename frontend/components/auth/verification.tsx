@@ -1,7 +1,13 @@
 'use client';
 
+import { CircleCheckBig, TriangleAlert } from 'lucide-react';
+import { useCallback, useEffect, useState } from 'react';
 import { verification } from '@/actions/verification';
+import BeatLoader from 'react-spinners/BeatLoader';
+import { useSearchParams } from 'next/navigation';
+import { motion } from 'framer-motion';
 import { cn } from '@/lib/utils';
+import Link from 'next/link';
 import {
   Card,
   CardContent,
@@ -9,12 +15,6 @@ import {
   CardHeader,
   CardTitle,
 } from '@/UI/components/card';
-import { motion } from 'framer-motion';
-import { CircleCheckBig, TriangleAlert } from 'lucide-react';
-import Link from 'next/link';
-import { useSearchParams } from 'next/navigation';
-import { useCallback, useEffect, useState } from 'react';
-import BeatLoader from 'react-spinners/BeatLoader';
 
 const containerVarients = {
   hidden: { opacity: 0 },

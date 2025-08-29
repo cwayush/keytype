@@ -1,20 +1,20 @@
 'use client';
 
 import Features from '@/components/landing_page/features';
-import Stats from '@/components/landing_page/feature2';
-import Hero from '@/components/landing_page/hero';
-import CTA from '@/components/landing_page/feature3';
-import Testimonials from '@/components/landing_page/feature4';
+import Reviews from '@/components/landing_page/reviews';
+import Reports from '@/components/landing_page/reports';
 import Footer from '@/components/landing_page/footer';
+import Engage from '@/components/landing_page/engage';
+import Intro from '@/components/landing_page/intro';
 
 export default function Home() {
   return (
     <main className="grid place-content-center mt-20">
-      <Hero />
+      <Intro />
       <Features />
-      <Stats />
-      <CTA />
-      <Testimonials />
+      <Reports />
+      <Engage />
+      <Reviews />
       <Footer />
     </main>
   );

@@ -1,13 +1,14 @@
-import { ChatMessageProps, ChatProps, Message } from '@/constants/type';
-import useWsStore from '@/store/useWsStore';
-import { Avatar, AvatarFallback } from '@/UI/components/avatar';
-import { Button } from '@/UI/components/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/UI/components/card';
-import { Input } from '@/UI/components/input';
+import { ChatMessageProps, ChatProps, Message } from '@/constants/type';
+import { useCallback, useEffect, useRef, useState } from 'react';
+import { Avatar, AvatarFallback } from '@/UI/components/avatar';
 import { ScrollArea } from '@/UI/components/scrollarea';
 import { AvatarImage } from '@radix-ui/react-avatar';
 import { MessageSquare, Send } from 'lucide-react';
-import { useCallback, useEffect, useRef, useState } from 'react';
+// import { useSession } from 'next-auth/react';
+import { Button } from '@/UI/components/button';
+import { Input } from '@/UI/components/input';
+import useWsStore from '@/store/useWsStore';
 import { v4 as uidv4 } from 'uuid';
 //
 const Chat = ({ code }: ChatProps) => {
@@ -16,6 +17,8 @@ const Chat = ({ code }: ChatProps) => {
   const scrollAreaRef = useRef<HTMLDivElement>(null);
 
   const { wsref } = useWsStore((state) => state);
+
+  // const {data:session} = useSession();
 
   const scrollToBottom = useCallback(() => {
     if (scrollAreaRef.current) {
@@ -27,23 +30,31 @@ const Chat = ({ code }: ChatProps) => {
     (e: React.FormEvent) => {
       e.preventDefault();
 
+      // if (!inputMessage.trim() || !wsref || !session?.user) return;
       if (!inputMessage.trim() || !wsref) return;
 
       wsref.send(
         JSON.stringify({
           type: 'SEND_MESSAGE',
-          userId: user.id, //// extract userid from session but currently i not setup that
+          // userId:session?.user.id,
+          // userId: user.id, //// extract userid from session but currently i not setup that
           roomCode: code,
           messages: inputMessage.trim(),
         })
       );
       setInputMessage('');
     },
-    [inputMessage, wsref, code]
+    [
+      inputMessage,
+      wsref,
+      // session,
+      code,
+    ]
   );
 
   useEffect(() => {
     if (!wsref) return;
+
     const handleWebMessage = (e: MessageEvent) => {
       const data = JSON.parse(e.data);
       if (data.type === 'MESSAGE') {
@@ -62,9 +73,7 @@ const Chat = ({ code }: ChatProps) => {
       }
     };
     wsref.addEventListener('message', handleWebMessage);
-    return () => {
-      wsref.removeEventListener('message', handleWebMessage);
-    };
+    return () => wsref.removeEventListener('message', handleWebMessage);
   }, [wsref, scrollToBottom]);
 
   return (

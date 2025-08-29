@@ -1,8 +1,12 @@
 'use client';
 
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/UI/components/tabs';
 import SignInForm from '@/components/auth/signinForm';
 import SignUpForm from '@/components/auth/signupForm';
 import { Button } from '@/UI/components/button';
+import { signIn } from 'next-auth/react';
+import { motion } from 'framer-motion';
+import { Chrome } from 'lucide-react';
 import {
   Card,
   CardContent,
@@ -11,9 +15,7 @@ import {
   CardHeader,
   CardTitle,
 } from '@/UI/components/card';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/UI/components/tabs';
-import { motion } from 'framer-motion';
-import { Chrome } from 'lucide-react';
+
 
 const containerVarients = {
   hidden: { opacity: 0 },
@@ -21,6 +23,12 @@ const containerVarients = {
 };
 
 const AuthPage = () => {
+  const handleClick = () => {
+    signIn('google', {
+      callbackUrl: '/',
+    });
+  };
+
   return (
     <div className="flex items-center justify-center mt-10 p-4">
       <motion.div
@@ -65,7 +73,7 @@ const AuthPage = () => {
           <CardFooter>
             <Button
               className="w-full bg-neutral-200 text-neutral-900"
-              onClick={() => {}}
+              onClick={handleClick}
             >
               <Chrome />
 

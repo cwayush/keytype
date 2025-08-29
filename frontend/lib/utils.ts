@@ -1,11 +1,10 @@
 import { clsx, type ClassValue } from 'clsx';
-// import { filter } from 'framer-motion/client';
 import { generate } from 'random-words';
 import { twMerge } from 'tailwind-merge';
 import { Test } from '../constants/type';
 import { v4 as uuidv4 } from 'uuid';
 import { getVerificationTokenByEmail } from '@/dboper/token';
-import prisma from '../../backend/src/config/prismaClient';
+import prisma from '@repo/db';
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));

@@ -1,14 +1,14 @@
 'use client';
 
-import CreateRoom from '@/components/multiplayer/roomCreate';
-import JoinRoom from '@/components/multiplayer/roomJoin';
-import PublicRoom from '@/components/multiplayer/roomPublic';
 import { Card, CardContent, CardHeader, CardTitle } from '@/UI/components/card';
-import { motion } from 'framer-motion';
-import { Hash, LoaderPinwheel } from 'lucide-react';
+import CreateRoom from '@/components/multiplayer/createRoom';
+import PublicRoom from '@/components/multiplayer/publicRoom';
 import { useEffect, useState, useTransition } from 'react';
+import JoinRoom from '@/components/multiplayer/joinRoom';
+import { Hash, LoaderPinwheel } from 'lucide-react';
 import { Room } from '@/constants/type';
-import { getAllRooms } from '@/services/userService';
+import { motion } from 'framer-motion';
+
 
 const containerVarient = {
   hidden: { opacity: 0 },
@@ -32,11 +32,11 @@ const Multiplayer = () => {
   useEffect(() => {
     const fetchRooms = async () => {
       try {
-        const response = await getAllRooms();
-        const data = response.data; 
+        const response = await fetch('/api/room');
+        const data = await response.json();
         console.log(data);
 
-        setRooms(data.data || []);
+        setRooms(data || []);
       } catch (err) {
         console.log('Error fetching rooms', err);
       }
@@ -46,6 +46,7 @@ const Multiplayer = () => {
     });
 
     const interval = setInterval(fetchRooms, 3000);
+
     return () => clearInterval(interval);
   }, []);
 

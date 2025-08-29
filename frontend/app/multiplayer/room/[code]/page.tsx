@@ -1,16 +1,15 @@
 'use client';
 
-import Compe from '@/components/multiplayer/roomCode/compe';
-import Header from '@/components/multiplayer/roomCode/header';
 import Members from '@/components/multiplayer/roomCode/member/members';
-import Chat from '@/components/multiplayer/roomCode/chat';
-import { motion } from 'framer-motion';
+import Header from '@/components/multiplayer/roomCode/header';
 import { useEffect, useState, use, useCallback } from 'react';
+import Compe from '@/components/multiplayer/roomCode/compe';
+import Chat from '@/components/multiplayer/roomCode/chat';
 import { Room, Member } from '@/constants/type';
-import useSocket from '@/hooks/useSocket';
-import { useSession } from 'next-auth/react';
 import { LoaderPinwheel } from 'lucide-react';
-import { getRoomByCode } from '@/services/userService';
+import { useSession } from 'next-auth/react';
+import useSocket from '@/hooks/useSocket';
+import { motion } from 'framer-motion';
 
 const containerVarients = {
   hidden: { opacity: 0 },
@@ -36,9 +35,8 @@ const fakeSession = {
 const RoomPage = (props: { params: Promise<{ code: string }> }) => {
   const { code } = use(props.params);
 
- 
-
   const socket = useSocket();
+  //  const {data:session,status} = useSession()
   const user = fakeSession.user;
 
   const [roomData, setRoomData] = useState<Room | null>(null);
@@ -48,21 +46,36 @@ const RoomPage = (props: { params: Promise<{ code: string }> }) => {
 
   useEffect(() => {
     const getRoomData = async () => {
-      const response = await getRoomByCode(code);
-      const data = response.data;
+      const response = await fetch(`/api/room/${code}`);
+      const data = await response.json();
       setRoomData(data);
     };
+
     if (code) {
       getRoomData();
     }
   }, [code]);
 
   const joinRoom = useCallback(() => {
+    // if (status === 'loading') return;
+    // if (!session?.user || !socket) return
     if (!socket) return;
 
     const userId = fakeSession.user.id;
     const userName = fakeSession.user.name;
     const userImage = fakeSession.user.image;
+
+    // socket.send(
+    //   JSON.stringify({
+    //     type:'JOIN_ROOM',
+    //     userId:session?.user?.id,
+    //     roomCode:code,
+    //     userData:{
+    //       name:session?.user?.name,
+    //       image:session?.user?.image
+    //     }
+    //   })
+    // )
 
     socket.send(
       JSON.stringify({
@@ -103,7 +116,6 @@ const RoomPage = (props: { params: Promise<{ code: string }> }) => {
                 : member
             );
           });
-
           break;
       }
     };

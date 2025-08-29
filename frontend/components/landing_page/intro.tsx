@@ -1,8 +1,8 @@
 'use client ';
 
-import { motion } from 'framer-motion';
-import { ArrowRight } from 'lucide-react';
 import { Button } from '@/UI/components/button';
+import { ArrowRight } from 'lucide-react';
+import { motion } from 'framer-motion';
 import Link from 'next/link';
 
 const containerVarients = {
@@ -28,7 +28,7 @@ const itemVarients = {
   },
 };
 
-const Hero = () => {
+const Intro = () => {
   return (
     <section className="container mx-auto px-4 py-20 text-center relative">
       <motion.div
@@ -65,4 +65,4 @@ const Hero = () => {
   );
 };
 
-export default Hero;
+export default Intro;

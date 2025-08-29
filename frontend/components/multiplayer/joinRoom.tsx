@@ -1,14 +1,13 @@
-import { JoinRoomInput, joinRoomSchema } from '@/config/zvalidate';
-import { getRoomByCode } from '@/services/userService';
-import { Button } from '@/UI/components/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/UI/components/card';
 import { Form, FormControl, FormField, FormItem } from '@/UI/components/form';
-import { Input } from '@/UI/components/input';
+import { JoinRoomInput, joinRoomSchema } from '@/config/zvalidate';
 import { zodResolver } from '@hookform/resolvers/zod';
+import { Button } from '@/UI/components/button';
+import { Input } from '@/UI/components/input';
 import { Loader2, LogIn } from 'lucide-react';
 import { useRouter } from 'next/navigation';
-import { useTransition } from 'react';
 import { useForm } from 'react-hook-form';
+import { useTransition } from 'react';
 
 const JoinRoom = () => {
   const [isPending, startTransition] = useTransition();
@@ -24,15 +23,19 @@ const JoinRoom = () => {
   const onSubmit = (data: JoinRoomInput) => {
     startTransition(async () => {
       try {
-        const response = await getRoomByCode(data.code);
-        const room = response.data;
+        const response = await fetch(`/api/room/${data.code}`);
+        const room = await response.json();
         console.log(room);
 
-        if (response.status === 200) {
+        if (response.ok) {
           router.push(`/multiplayer/room/${data.code}`);
+          console.log('Room Successfully Joined');
+        } else {
+          console.error('Room Not Found');
         }
       } catch (err) {
         console.error(err);
+        console.error('Something went wrong');
       }
     });
   };

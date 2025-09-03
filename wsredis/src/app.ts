@@ -1,8 +1,10 @@
 import { createServer } from 'node:http';
 import { ChatWithServer } from './services/chat';
 import express from 'express';
+import dotenv from 'dotenv';
 
-const PORT = 8000;
+const PORT = process.env.PORT || 8000;
+dotenv.config();
 
 const app = express();
 const httpServer = createServer(app);

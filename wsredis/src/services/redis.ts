@@ -1,16 +1,14 @@
 import Redis from 'ioredis';
 
-const URL = 'redis://localhost:6379';
-
-const redis = new Redis(URL);
+const URL = process.env.REDIS_URL || 'redis://localhost:6379';
 
 export class RedisManager {
   private publisher: Redis;
   public subscriber: Redis;
 
   constructor() {
-    this.publisher = redis;
-    this.subscriber = redis;
+    this.publisher = new Redis(URL);
+    this.subscriber = new Redis(URL);
   }
 
   async subscribe(channel: string) {

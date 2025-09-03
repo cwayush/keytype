@@ -4,7 +4,7 @@ if (!process.env.RESEND_API_KEY) {
   throw new Error('RESEND_API_KEY is not defined');
 }
 
-if (!process.env.FRONTEND_URL) {
+if (!process.env.NEXT_PUBLIC_FRONTEND_URL) {
   throw new Error('FRONTEND_URL is not defined');
 }
 

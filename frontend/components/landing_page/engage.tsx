@@ -52,7 +52,7 @@ const Engage = () => {
           className="text-xl text-normal-400 max-w-2xl mx-auto leading-relaxed"
         >
           Join thousands of users who have improves their typing speed and
-          accuracy with KEYTYPE
+          accuracy with keyType
         </motion.p>
         <motion.div variants={itemVarients}>
           <Button size="lg" asChild>

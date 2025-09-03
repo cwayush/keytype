@@ -43,7 +43,7 @@ const Features = () => {
       >
         Why Choose{' '}
         <span className="underline underline-offset-8 decoration-blue-800 ">
-          KEYTYPE
+          keyType
         </span>
         ?
       </motion.h2>

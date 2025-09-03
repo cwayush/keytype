@@ -1,1 +1,0 @@
-{"version":3,"file":"controller.d.ts","sourceRoot":"","sources":["../../../src/modules/room/controller.ts"],"names":[],"mappings":"AAGA,OAAO,EAAE,OAAO,EAAE,QAAQ,EAAE,YAAY,EAAE,MAAM,SAAS,CAAC;AAG1D,eAAO,MAAM,cAAc;oBACH,OAAO,OAAO,QAAQ,QAAQ,YAAY;qBAYzC,OAAO,OAAO,QAAQ,QAAQ,YAAY;uBAYxC,OAAO,OAAO,QAAQ,QAAQ,YAAY;CAWpE,CAAC"}

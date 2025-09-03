@@ -45,7 +45,7 @@ const Reports = () => {
           animate="visible"
           className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-12 text-neutral-200"
         >
-          Keytype by{' '}
+          keyType by{' '}
           <span className="underline underline-offset-8 decoration-blue-800 ">
             Numbers
           </span>

@@ -42,7 +42,7 @@ const Intro = () => {
           className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-neutral-200"
         >
           Develop your Typing Skills <br />
-          with <span className="text-blue-800">KEYTYPE</span>
+          with <span className="text-blue-800">keyType</span>
         </motion.h1>
 
         <motion.p

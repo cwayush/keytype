@@ -1,10 +1,11 @@
 import GoogleProvider from 'next-auth/providers/google';
 import CredentialsProvider from 'next-auth/providers/credentials';
-import { getuserById, login, updateUser } from '@/services/userService';
 import NextAuth from 'next-auth';
-
-// Add this type definition at the top of your file
 import { DefaultSession } from 'next-auth';
+import prisma from '@repo/db';
+import { getUserByEmail, getUserById } from './dboper/user';
+import { signInSchema } from './config/zvalidate';
+import bcrypt from 'bcryptjs';
 
 declare module 'next-auth' {
   interface Session {
@@ -30,25 +31,21 @@ export const { auth, handler, signIn, signOut } = NextAuth({
         password: { label: 'Password', type: 'password' },
       },
       async authorize(credentials) {
-        if (!credentials?.email || !credentials?.password) {
-          throw new Error('Email and password are required');
+        const validation = signInSchema.safeParse(credentials);
+
+        if (validation.success) {
+          const { email, password } = validation.data;
+
+          const user = await getUserByEmail(email);
+          if (!user || !user.password) return null;
+
+          const passwordMatch = await bcrypt.compare(password, user.password);
+          if (passwordMatch) {
+            return user;
+          }
         }
 
-        try {
-          const response = await login({
-            email: credentials.email,
-            password: credentials.password,
-          });
-
-          const user = response.data?.data;
-
-          if (!user) return null;
-
-          return user;
-        } catch (error) {
-          console.error('Login error:', error);
-          return null;
-        }
+        return null;
       },
     }),
   ],
@@ -58,21 +55,19 @@ export const { auth, handler, signIn, signOut } = NextAuth({
   },
 
   events: {
-    async linkAccount({ user, account }) {
-      const userId = user.id || (account?.providerAccountId as string);
-      if (userId) {
-        await updateUser(userId, {
-          emailVerified: new Date(),
-        });
-      }
+    async linkAccount({ user }) {
+      await prisma.user.update({
+        where: { id: user.id },
+        data: { emailVerified: new Date() },
+      });
     },
   },
 
   callbacks: {
     async signIn({ user, account }) {
       if (account?.provider !== 'credentials') return true;
-      const existingUser = await getuserById(user.id);
-      if (!existingUser || !existingUser?.data?.emailVerified) return false;
+      const existingUser = await getUserById(user.id!);
+      if (!existingUser || !existingUser?.emailVerified) return false;
       return true;
     },
 

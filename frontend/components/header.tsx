@@ -16,7 +16,7 @@ export function Header() {
       >
         <Zap className="size-6  text-blue-700" />
         <p>
-          KEY<span className="text-blue-700">TYPE</span>
+          key<span className="text-blue-700">Type</span>
         </p>
       </Link>
       <nav className="flex items-center gap-x-6">

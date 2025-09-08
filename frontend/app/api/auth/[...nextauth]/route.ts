@@ -1,2 +1,3 @@
-import { handler } from '@/option';
-export { handler as GET, handler as POST };
+import { handlers } from '@/auth';
+export const { GET, POST } = handlers;
+export const runtime = 'nodejs';

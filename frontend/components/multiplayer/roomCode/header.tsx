@@ -44,7 +44,7 @@ const Header = ({
     } else {
       console.error('Connection lost. Reconnecting...');
     }
-  }, [wsref, roomData, session?.user.id]);
+  }, [wsref, roomData, session?.user?.id]);
 
   const handleCopyInvite = useCallback(() => {
     if (!roomData) return;

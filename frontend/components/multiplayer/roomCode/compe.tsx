@@ -31,7 +31,7 @@ const Compe = ({
         setIsRaceStarted(true);
       }, 5000);
     }
-  }, [members]);
+  }, [members, setIsRaceStarted]);
 
   const progUpdate = useCallback(
     (wpm: number, accuracy: number, progress: number) => {
@@ -56,7 +56,7 @@ const Compe = ({
         }
       }
     },
-    [isRaceStarted, roomData.code, session?.user.id, wsref]
+    [isRaceStarted, roomData.code, session?.user?.id, wsref]
   );
 
   if (!roomData) return null;

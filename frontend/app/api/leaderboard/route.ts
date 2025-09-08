@@ -1,28 +1,28 @@
-import { NextRequest, NextResponse } from 'next/server';
-import { LeaderboardDataType } from '@/constants/type';
-import { redis } from '@/lib/redis';
-import { auth } from '@/option';
+import { NextRequest, NextResponse } from "next/server";
+import { LeaderboardDataType } from "@/constants/type";
+import { redis } from "@/lib/redis";
+import { auth } from "@/auth";
 
-const ALL_TIME_KEY = 'all_time_leaderboard';
-const DAILY_KEY = 'daily_leaderboard';
+const ALL_TIME_KEY = "keytype:leaderboard:alltime";
+const DAILY_KEY = "keytype:leaderboard:daily";
 
 export const GET = async (req: NextRequest) => {
   const { searchParams } = new URL(req.url);
-  const mode = searchParams.get('mode') || 'all';
-  const timeFrame = searchParams.get('timeFrame') || 'alltime';
-  const limit = parseInt(searchParams.get('limit') || '10');
+  const mode = searchParams.get("mode") || "all";
+  const timeFrame = searchParams.get("timeFrame") || "alltime";
+  const limit = parseInt(searchParams.get("limit") || "10");
 
-  const leaderboardKey = timeFrame === 'daily' ? DAILY_KEY : ALL_TIME_KEY;
+  const leaderboardKey = timeFrame === "daily" ? DAILY_KEY : ALL_TIME_KEY;
 
   try {
-    const scores = await redis.zrevrange(leaderboardKey, 0, -1, 'WITHSCORES');
+    const scores = await redis.zrevrange(leaderboardKey, 0, -1, "WITHSCORES");
 
     const userHighestScore = new Map<string, LeaderboardDataType>();
 
     for (let i = 0; i < scores.length; i += 2) {
       const userData = JSON.parse(scores[i]!);
 
-      if (mode === 'all' || userData.mode === mode) {
+      if (mode === "all" || userData.mode === mode) {
         if (!userHighestScore.has(userData.name)) {
           userHighestScore.set(userData.name, {
             rank: 0,
@@ -44,9 +44,9 @@ export const GET = async (req: NextRequest) => {
 
     return NextResponse.json({ leaderboard });
   } catch (err) {
-    console.error('Error fetching leaderboard:', err);
+    console.error("Error fetching leaderboard:", err);
     return NextResponse.json(
-      { error: 'Failed to fetch leaderboard' },
+      { error: "Failed to fetch leaderboard" },
       { status: 500 }
     );
   }
@@ -57,7 +57,7 @@ export const POST = async (req: NextRequest) => {
     const { wpm, accuracy, time, mode } = await req.json();
 
     if (!wpm || !accuracy || !time || !mode) {
-      return NextResponse.json({ error: 'Invalid data' }, { status: 400 });
+      return NextResponse.json({ error: "Invalid data" }, { status: 400 });
     }
 
     const session = await auth();
@@ -65,7 +65,7 @@ export const POST = async (req: NextRequest) => {
     if (!session?.user) {
       return NextResponse.json(
         {
-          error: 'Unauthorized: No valid session found',
+          error: "Unauthorized: No valid session found",
         },
         { status: 401 }
       );
@@ -82,8 +82,8 @@ export const POST = async (req: NextRequest) => {
       timeStamp: Date.now(),
     });
 
-    const allTimeScores = await redis.zrange(ALL_TIME_KEY, 0, -1, 'WITHSCORES');
-    const dailyScores = await redis.zrange(DAILY_KEY, 0, -1, 'WITHSCORES');
+    const allTimeScores = await redis.zrange(ALL_TIME_KEY, 0, -1, "WITHSCORES");
+    const dailyScores = await redis.zrange(DAILY_KEY, 0, -1, "WITHSCORES");
 
     for (let i = 0; i < allTimeScores.length; i += 2) {
       const entry = JSON.parse(allTimeScores[i]!);
@@ -112,12 +112,12 @@ export const POST = async (req: NextRequest) => {
     return NextResponse.json({
       sucess: true,
       score,
-      message: 'Score submitted successfully',
+      message: "Score submitted successfully",
     });
   } catch (err) {
-    console.error('Error submitting score:', err);
+    console.error("Error submitting score:", err);
     return NextResponse.json(
-      { error: 'Failed to submit score' },
+      { error: "Failed to submit score" },
       { status: 500 }
     );
   }

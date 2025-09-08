@@ -2,7 +2,7 @@
 
 import { AddTestTypes } from '@/constants/type';
 import { getUserByEmail } from '@/dboper/user';
-import { auth } from '@/option';
+import { auth } from '@/auth';
 import prisma from '@repo/db';
 
 export const addTest = async ({

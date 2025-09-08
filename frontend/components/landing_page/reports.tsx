@@ -21,8 +21,6 @@ const itemVarients = {
   },
 } as const;
 
-// ReviewsProps
-
 const Reports = () => {
   const [reports, setReports] = useState<
     null | { name: string; value: number }[]

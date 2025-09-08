@@ -20,14 +20,6 @@ const itemVarients = {
   hidden: { opacity: 0, y: 20 },
   visible: { opacity: 1, y: 0 },
 };
-const fakeSession = {
-  user: {
-    id: 'test-user-123',
-    name: 'Ayush Tester',
-    email: 'ayush@example.com',
-    image: 'https://api.dicebear.com/6.x/identicon/svg?seed=Ayush',
-  },
-};
 
 // Instead of session?.user
 //http://localhost:5000/room/code/RM-105
@@ -35,14 +27,13 @@ const fakeSession = {
 const RoomPage = (props: { params: Promise<{ code: string }> }) => {
   const { code } = use(props.params);
 
-  const socket = useSocket();
-  //  const {data:session,status} = useSession()
-  const user = fakeSession.user;
-
+  const { data: session, status } = useSession();
   const [roomData, setRoomData] = useState<Room | null>(null);
   const [isRaceStarted, setIsRaceStarted] = useState<boolean>(false);
   const [members, setMembers] = useState<Member[]>([]);
   const [raceText, setRaceText] = useState<string>('');
+
+  const socket = useSocket();
 
   useEffect(() => {
     const getRoomData = async () => {
@@ -57,34 +48,17 @@ const RoomPage = (props: { params: Promise<{ code: string }> }) => {
   }, [code]);
 
   const joinRoom = useCallback(() => {
-    // if (status === 'loading') return;
-    // if (!session?.user || !socket) return
-    if (!socket) return;
-
-    const userId = fakeSession.user.id;
-    const userName = fakeSession.user.name;
-    const userImage = fakeSession.user.image;
-
-    // socket.send(
-    //   JSON.stringify({
-    //     type:'JOIN_ROOM',
-    //     userId:session?.user?.id,
-    //     roomCode:code,
-    //     userData:{
-    //       name:session?.user?.name,
-    //       image:session?.user?.image
-    //     }
-    //   })
-    // )
+    if (status === 'loading') return;
+    if (!session?.user || !socket) return;
 
     socket.send(
       JSON.stringify({
         type: 'JOIN_ROOM',
+        userId: session?.user?.id,
         roomCode: code,
-        userId,
         userData: {
-          name: userName,
-          image: userImage,
+          name: session?.user?.name,
+          image: session?.user?.image,
         },
       })
     );
@@ -119,25 +93,24 @@ const RoomPage = (props: { params: Promise<{ code: string }> }) => {
           break;
       }
     };
-  }, [code, socket]);
+  }, [code, socket, isRaceStarted, status]);
 
   useEffect(() => {
     joinRoom();
   }, [joinRoom]);
 
-  // if (status === 'loading') {
-  //   return (
-  //     <div className="h-screen grid place-items-center">
-  //       <LoaderPinwheel className="animate-spin mx-auto size-10 text-yellow-400" />
-  //     </div>
-  //   );
-  // }
+  if (status === 'loading') {
+    return (
+      <div className="h-screen grid place-items-center">
+        <LoaderPinwheel className="animate-spin mx-auto size-10 text-yellow-400" />
+      </div>
+    );
+  }
 
   const isHost = members.some(
-    (member) => member.id === fakeSession.user.id && member.isHost
+    (member) => member.id === session?.user?.id && member.isHost
   );
 
-  // Add a loading state
   if (!roomData) {
     return <div>Loading room data...</div>;
   }

@@ -4,7 +4,7 @@ export const getVerificationTokenByEmail = async (email: string) => {
   try {
     const token = await prisma.verificationToken.findFirst({
       where: { email },
-    //   orderBy: { expiresAt: 'desc' },
+      orderBy: { expiresAt: 'desc' },
     });
     return token;
   } catch (err) {

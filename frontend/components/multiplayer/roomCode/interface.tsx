@@ -24,12 +24,12 @@ const Interface = ({ mode, modeOption, text, onProgress }: InterfaceProps) => {
   const charRef = useRef<(HTMLSpanElement | null)[]>([]);
   const containerRef = useRef<HTMLDivElement>(null);
 
-  //   useEffect(() => {
-  //     if (userInput.length === 1 && !timeStarted) {
-  //       setRaceStarted(true);
-  //       setTimeStarted(true);
-  //     }
-  //   }, [userInput, timeStarted]);
+  useEffect(() => {
+    if (userInput.length === 1 && !timeStarted) {
+      setRaceStarted(true);
+      setTimeStarted(true);
+    }
+  }, [userInput, timeStarted]);
 
   useEffect(() => {
     let timer: ReturnType<typeof setInterval> | null = null;

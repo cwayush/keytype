@@ -5,12 +5,12 @@ import { Avatar, AvatarFallback } from '@/UI/components/avatar';
 import { ScrollArea } from '@/UI/components/scrollarea';
 import { AvatarImage } from '@radix-ui/react-avatar';
 import { MessageSquare, Send } from 'lucide-react';
-// import { useSession } from 'next-auth/react';
+import { useSession } from 'next-auth/react';
 import { Button } from '@/UI/components/button';
 import { Input } from '@/UI/components/input';
 import useWsStore from '@/store/useWsStore';
 import { v4 as uidv4 } from 'uuid';
-//
+
 const Chat = ({ code }: ChatProps) => {
   const [messages, setMessages] = useState<Message[]>([]);
   const [inputMessage, setInputMessage] = useState<string>('');
@@ -18,7 +18,7 @@ const Chat = ({ code }: ChatProps) => {
 
   const { wsref } = useWsStore((state) => state);
 
-  // const {data:session} = useSession();
+  const { data: session } = useSession();
 
   const scrollToBottom = useCallback(() => {
     if (scrollAreaRef.current) {
@@ -30,26 +30,19 @@ const Chat = ({ code }: ChatProps) => {
     (e: React.FormEvent) => {
       e.preventDefault();
 
-      // if (!inputMessage.trim() || !wsref || !session?.user) return;
-      if (!inputMessage.trim() || !wsref) return;
+      if (!inputMessage.trim() || !wsref || !session?.user) return;
 
       wsref.send(
         JSON.stringify({
           type: 'SEND_MESSAGE',
-          // userId:session?.user.id,
-          // userId: user.id, //// extract userid from session but currently i not setup that
+          userId: session?.user.id,
           roomCode: code,
           messages: inputMessage.trim(),
         })
       );
       setInputMessage('');
     },
-    [
-      inputMessage,
-      wsref,
-      // session,
-      code,
-    ]
+    [inputMessage, wsref, session, code]
   );
 
   useEffect(() => {

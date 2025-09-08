@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { roomSchema } from '@/config/zvalidate';
 import { geneateRoomCode } from '@/lib/utils';
-import { auth } from '@/option';
+import { auth } from '@/auth';
 import prisma from '@repo/db';
 
 export const POST = async (req: NextRequest) => {

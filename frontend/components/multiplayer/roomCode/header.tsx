@@ -6,6 +6,7 @@ import { useSession } from 'next-auth/react';
 import useWsStore from '@/store/useWsStore';
 import { motion } from 'framer-motion';
 import { useCallback } from 'react';
+import { toast } from 'sonner';
 
 const itemVariants = {
   hidden: { opacity: 0, y: 20 },
@@ -40,9 +41,10 @@ const Header = ({
         );
       } catch (err) {
         console.log('Error starting race:', err);
+        toast.error('Failed to start race. Please try again.');
       }
     } else {
-      console.error('Connection lost. Reconnecting...');
+      toast.error('Connection lost. Reconnecting...');
     }
   }, [wsref, roomData, session?.user?.id]);
 
@@ -52,9 +54,10 @@ const Header = ({
     try {
       const inviteURL = `${window.location.origin}/multiplayer/room/${roomData.code}`;
       navigator.clipboard.writeText(inviteURL);
-      console.log('Invite link copied to clipboard');
+      toast.success('Invite link copied to clipboard');
     } catch (err) {
-      console.log('Error copying invite:', err);
+      console.error('Error copying invite link:', err);
+      toast.error('Error copying invite');
     }
   }, [roomData]);
 

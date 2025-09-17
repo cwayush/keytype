@@ -3,6 +3,7 @@ import { Geist_Mono } from 'next/font/google';
 import { Header } from '@/components/header';
 import './globals.css';
 import { Providers } from './provider';
+import { Toaster } from '@/UI/components/sonner';
 
 const geistMono = Geist_Mono({
   subsets: ['latin'],
@@ -26,6 +27,7 @@ export default function RootLayout({
         <Providers>
           <Header />
           {children}
+          <Toaster position="top-center" richColors />
         </Providers>
       </body>
     </html>

@@ -1,5 +1,5 @@
 import { useEffect, useState, useTransition } from 'react';
-import { LoaderPinwheel } from 'lucide-react';
+import { LoaderPinwheel, PlusIcon } from 'lucide-react';
 import { motion } from 'framer-motion';
 import {
   Card,
@@ -41,13 +41,24 @@ const Reports = () => {
           variants={itemVarients}
           initial="hidden"
           animate="visible"
-          className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-12 text-neutral-200"
+          className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-6 text-neutral-200"
         >
-          keyType by{' '}
-          <span className="underline underline-offset-8 decoration-blue-800 ">
-            Numbers
+          Power in{' '}
+          <span className="relative">
+            <span className="bg-gradient-to-r from-blue-600 to-emerald-500 bg-clip-text text-transparent">
+              Numbers
+            </span>
+            <span className="absolute left-0 -bottom-1 w-full h-[3px] bg-gradient-to-r from-blue-800 to-emerald-800 rounded"></span>
           </span>
         </motion.h2>
+        <motion.p
+          variants={itemVarients}
+          initial="hidden"
+          animate="visible"
+          className="text-lg text-neutral-400 text-center max-w-xl mx-auto mb-6"
+        >
+          A quick look at our growing community.
+        </motion.p>
         <div className="flex justify-center gap-8">
           {isPending ? (
             <LoaderPinwheel className="nimate-spin mx-auto size-10 text-blue-700" />
@@ -58,11 +69,12 @@ const Reports = () => {
                 className="bg-neutral-900/50 border-neutral-800 w-full max-w-xs"
               >
                 <CardContent className="p-5 text-center space-y-2">
-                  <CardTitle className="text-blue-800 text-4xl">
+                  <CardTitle className="text-blue-800 text-2xl">
                     {report.name}
                   </CardTitle>
-                  <CardDescription className="text-neutral-400 text-base">
-                    {report.value}
+                  <CardDescription className="flex items-center justify-center gap-2 text-neutral-400 text-xl">
+                    <span>{report.value}</span>
+                    <PlusIcon className="w-4 h-4 font-bold" />
                   </CardDescription>
                 </CardContent>
               </Card>

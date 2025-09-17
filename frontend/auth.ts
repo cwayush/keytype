@@ -2,7 +2,7 @@ import NextAuth from 'next-auth';
 import authConfig from './auth.config';
 import { getUserById } from './dboper/user';
 import prisma from '@repo/db';
-import { PrismaAdapter } from '@auth/prisma-adapter';
+// import { PrismaAdapter } from '@auth/prisma-adapter';
 
 export const { handlers, auth, signIn, signOut } = NextAuth({
   pages: {
@@ -30,7 +30,7 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
       return session;
     },
   },
-  adapter: PrismaAdapter(prisma),
+  // adapter: PrismaAdapter(prisma),
   session: { strategy: 'jwt' },
   ...authConfig,
 });

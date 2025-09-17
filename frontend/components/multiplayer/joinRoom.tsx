@@ -8,6 +8,7 @@ import { Loader2, LogIn } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import { useForm } from 'react-hook-form';
 import { useTransition } from 'react';
+import { toast } from 'sonner';
 
 const JoinRoom = () => {
   const [isPending, startTransition] = useTransition();
@@ -25,17 +26,16 @@ const JoinRoom = () => {
       try {
         const response = await fetch(`/api/room/${data.code}`);
         const room = await response.json();
-        console.log(room);
 
         if (response.ok) {
           router.push(`/multiplayer/room/${data.code}`);
-          console.log('Room Successfully Joined');
+          toast.success('Room Successfully Joined');
         } else {
-          console.error('Room Not Found');
+          toast.error(room.error || 'Room Not Found');
         }
       } catch (err) {
         console.error(err);
-        console.error('Something went wrong');
+        toast.error('Failed to join room');
       }
     });
   };

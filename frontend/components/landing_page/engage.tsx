@@ -41,18 +41,23 @@ const Engage = () => {
           variants={itemVarients}
           className="text-3xl sm:text-4xl md:text-5xl font-bold text-neutral-200 tracking-tight"
         >
-          Ready to Become a{' '}
-          <span className="underline underline-offset-8 decoration-blue-800">
-            Typing pro
+          Unlock Your True Typing{' '}
+          <span className="relative">
+            <span className="bg-gradient-to-r from-blue-800 to-emerald-800 bg-clip-text text-transparent">
+              Potential
+            </span>
+            <span className="absolute left-0 -bottom-1 w-full h-[3px] bg-gradient-to-r from-blue-800 to-emerald-800 rounded"></span>
           </span>
-          ?
         </motion.h2>
         <motion.p
           variants={itemVarients}
-          className="text-xl text-normal-400 max-w-2xl mx-auto leading-relaxed"
+          className="text-xl text-normal-400 max-w-3xl mx-auto leading-relaxed"
         >
-          Join thousands of users who have improves their typing speed and
-          accuracy with keyType
+          Don&apos;t just type faster — type smarter. Track your progress,
+          challenge friends, and turn every keystroke into growth with{' '}
+          <span className="font-bold bg-gradient-to-r from-blue-800 to-emerald-800 bg-clip-text text-transparent">
+            keyType
+          </span>
         </motion.p>
         <motion.div variants={itemVarients}>
           <Button size="lg" asChild>

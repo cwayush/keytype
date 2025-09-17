@@ -41,11 +41,14 @@ const Features = () => {
         animate="visible"
         className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-12 text-neutral-200"
       >
-        Why Choose{' '}
-        <span className="underline underline-offset-8 decoration-blue-800 ">
-          keyType
-        </span>
-        ?
+        Discover why{' '}
+        <span className="relative">
+          <span className="bg-gradient-to-r from-blue-600 to-emerald-500 bg-clip-text text-transparent">
+            keyType
+          </span>
+          <span className="absolute left-0 -bottom-1 w-full h-[3px] bg-gradient-to-r from-blue-800 to-emerald-800 rounded"></span>
+        </span>{' '}
+        stands out!
       </motion.h2>
       <motion.div
         variants={containerVarients}
@@ -77,7 +80,7 @@ const FeatureCard = ({ icon, title, description }: FeatureCardProps) => {
     <motion.div variants={itemVarients}>
       <Card className="bg-neutral-900/50 border-neutral-800 h-full max-w-xs">
         <CardHeader>
-          <CardTitle className="flex item-center space-x-4 text-neutral-200 text-2xl">
+          <CardTitle className="flex item-center space-x-4 text-neutral-200 text-xl">
             {icon}
             <span>{title}</span>
           </CardTitle>

@@ -15,31 +15,39 @@ import {
   CardHeader,
   CardTitle,
 } from '@/UI/components/card';
+import { DEFAULT_LOGIN_REDIRECT } from '@/constants';
 
-
-const containerVarients = {
-  hidden: { opacity: 0 },
-  visible: { opacity: 1, transition: { staggerChildren: 0.1 } },
+const containerVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      type: 'spring' as const,
+      damping: 20,
+      stiffness: 100,
+    },
+  },
 };
 
 const AuthPage = () => {
   const handleClick = () => {
     signIn('google', {
-      callbackUrl: '/',
+      callbackUrl: DEFAULT_LOGIN_REDIRECT,
     });
   };
 
   return (
     <div className="flex items-center justify-center mt-10 p-4">
       <motion.div
-        variants={containerVarients}
+        variants={containerVariants}
         initial="hidden"
         animate="visible"
-        className="w-full max-w-lg "
+        className="w-full max-w-lg"
       >
-        <Card className="bg-neutral-900/50 border-neutral-800">
+        <Card className="bg-neutral-900/50 backdrop-blur-xl border border-neutral-800/60 shadow-2xl rounded-2xl">
           <CardHeader>
-            <CardTitle className="text-2xl font-bold text-center text-neutral-200">
+            <CardTitle className="text-3xl font-extrabold text-center text-white">
               Welcome to KeyType
             </CardTitle>
             <CardDescription className="text-center text-neutral-400">
@@ -47,17 +55,21 @@ const AuthPage = () => {
             </CardDescription>
           </CardHeader>
           <CardContent>
-            <Tabs defaultValue="signin" className="w-full space-y-4">
-              <TabsList className="grid w-full grid-cols-2 bg-neutral-800 text-neutral-300">
+            <Tabs defaultValue="signin" className="w-full space-y-6">
+              <TabsList className="grid w-full grid-cols-2 rounded-lg bg-neutral-800/60 p-1">
                 <TabsTrigger
                   value="signin"
-                  className="inline-flex items-center justify-center whitespace-nowrap rounded-sm px-3 text-sm font-medium ring-offset-neutral-900 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-400 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-neutral-700 data-[state=active]:text-neutral-50 data-[state=active]:shadow-sm"
+                  className="rounded-lg px-4 py-2 text-sm font-medium transition-all duration-200 
+                    data-[state=active]:bg-gradient-to-r data-[state=active]:from-blue-800 data-[state=active]:to-emerald-800 
+                    data-[state=active]:text-white hover:bg-neutral-700"
                 >
                   Sign In
                 </TabsTrigger>
                 <TabsTrigger
                   value="signup"
-                  className="inline-flex items-center justify-center whitespace-nowrap rounded-sm px-3 text-sm font-medium ring-offset-neutral-900 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-400 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-neutral-700 data-[state=active]:text-neutral-50 data-[state=active]:shadow-sm"
+                  className="rounded-lg px-4 py-2 text-sm font-medium transition-all duration-200 
+                    data-[state=active]:bg-gradient-to-r data-[state=active]:from-blue-800 data-[state=active]:to-emerald-800 
+                    data-[state=active]:text-white hover:bg-neutral-700"
                 >
                   Sign Up
                 </TabsTrigger>
@@ -72,12 +84,12 @@ const AuthPage = () => {
           </CardContent>
           <CardFooter>
             <Button
-              className="w-full bg-neutral-200 text-neutral-900"
+              className="w-full mt-2 flex items-center justify-center gap-2 
+              bg-white text-neutral-900 font-semibold py-2 rounded-lg shadow-md hover:bg-neutral-100 transition"
               onClick={handleClick}
             >
-              <Chrome />
-
-              <span>Continue with Google</span>
+              <Chrome className="h-5 w-5" />
+              Continue with Google
             </Button>
           </CardFooter>
         </Card>

@@ -5,7 +5,6 @@ import { ChartContainer, ChartTooltip } from '@/UI/components/chart';
 import { Button } from '@/UI/components/button';
 import { ResultProps } from '@/constants/type';
 import ReportCard from '../profile/reportCard';
-import { addTest } from '@/actions/test';
 import { motion } from 'framer-motion';
 import { useEffect } from 'react';
 import {
@@ -35,22 +34,6 @@ const Result = ({
   modeOption,
 }: ResultProps) => {
   useEffect(() => {
-    const saveTest = async () => {
-      try {
-        if (!wpm || !accuracy || !time || !mode || !modeOption) return;
-
-        await addTest({
-          wpm,
-          accuracy: parseFloat(accuracy.toFixed(2)),
-          time,
-          mode,
-          modeOption,
-        });
-      } catch (err) {
-        console.log('Failed to save test result:', err);
-      }
-    };
-
     const addToLeaderboard = async () => {
       try {
         if (!wpm || !accuracy || !time || !mode || !modeOption) return;
@@ -72,7 +55,6 @@ const Result = ({
       }
     };
 
-    saveTest();
     addToLeaderboard();
   }, [wpm, accuracy, time, mode, modeOption]);
 

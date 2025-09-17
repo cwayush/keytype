@@ -7,7 +7,7 @@ export const GET = async () => {
     const totalTests = await prisma.test.count();
 
     return NextResponse.json([
-      { name: 'Typer Registerd', value: totalUsers },
+      { name: 'Typers Registered', value: totalUsers },
       { name: 'Tests Completed', value: totalTests },
     ]);
   } catch (err) {

@@ -1,3 +1,5 @@
+'use client';
+
 import { SignUpInput, signUpSchema } from '@/config/zvalidate';
 import { ArrowRight, Lock, Mail, User } from 'lucide-react';
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -15,17 +17,14 @@ import {
   FormLabel,
   FormMessage,
 } from '@/UI/components/form';
+import { toast } from 'sonner';
 
-const childVarients = {
+const childVariants = {
   hidden: { opacity: 0, y: 20 },
   visible: {
     opacity: 1,
     y: 0,
-    transition: {
-      type: 'spring' as const,
-      damping: 20,
-      stiffness: 100,
-    },
+    transition: { type: 'spring' as const, damping: 20, stiffness: 100 },
   },
 };
 
@@ -34,25 +33,21 @@ const SignUpForm = () => {
 
   const signUpForm = useForm<SignUpInput>({
     resolver: zodResolver(signUpSchema),
-    defaultValues: {
-      name: '',
-      email: '',
-      password: '',
-    },
+    defaultValues: { name: '', email: '', password: '' },
   });
 
   const onSignUp = async (values: SignUpInput) => {
     startTransition(async () => {
       try {
         const result = await register(values);
-
         if (result.success) {
-          console.log(result.message);
+          toast.success(result.message);
         } else {
-          console.error(result.message);
+          toast.error(result.message);
         }
       } catch (err) {
         console.error('Registration error:', err);
+        toast.error('Something went wrong!');
       }
     });
   };
@@ -61,23 +56,24 @@ const SignUpForm = () => {
     <Form {...signUpForm}>
       <form
         onSubmit={signUpForm.handleSubmit(onSignUp)}
-        className="space-y-4 text-neutral-200"
+        className="space-y-5 text-neutral-200"
       >
-        <motion.div variants={childVarients}>
+        <motion.div variants={childVariants} initial="hidden" animate="visible">
           <FormField
             control={signUpForm.control}
             name="name"
             render={({ field }) => (
               <FormItem>
-                <FormLabel className="text-neutral-200">Full Name</FormLabel>
+                <FormLabel>Full Name</FormLabel>
                 <FormControl>
                   <div className="relative">
                     <User className="absolute left-3 top-2 h-5 w-5 text-neutral-400" />
                     <Input
                       type="text"
-                      placeholder="Example Singh"
+                      placeholder="John Doe"
                       {...field}
-                      className="pl-10 bg-neutral-800 border-neutral-700 text-neutral-200 placeholder-neutral-400"
+                      className="pl-10 bg-neutral-800/70 border-neutral-700 rounded-lg text-neutral-200 placeholder-neutral-400 
+                      focus:border-blue-500 focus:ring-2 focus:ring-blue-500/50 transition"
                     />
                   </div>
                 </FormControl>
@@ -86,21 +82,23 @@ const SignUpForm = () => {
             )}
           />
         </motion.div>
-        <motion.div variants={childVarients}>
+
+        <motion.div variants={childVariants} initial="hidden" animate="visible">
           <FormField
             control={signUpForm.control}
             name="email"
             render={({ field }) => (
               <FormItem>
-                <FormLabel className="text-neutral-200">Email</FormLabel>
+                <FormLabel>Email</FormLabel>
                 <FormControl>
                   <div className="relative">
                     <Mail className="absolute left-3 top-2 h-5 w-5 text-neutral-400" />
                     <Input
-                      type="text"
-                      placeholder="example@gmail.xyz"
+                      type="email"
+                      placeholder="example@gmail.com"
                       {...field}
-                      className="pl-10 bg-neutral-800 border-neutral-700 text-neutral-200 placeholder-neutral-400"
+                      className="pl-10 bg-neutral-800/70 border-neutral-700 rounded-lg text-neutral-200 placeholder-neutral-400 
+                      focus:border-blue-500 focus:ring-2 focus:ring-blue-500/50 transition"
                     />
                   </div>
                 </FormControl>
@@ -109,21 +107,23 @@ const SignUpForm = () => {
             )}
           />
         </motion.div>
-        <motion.div variants={childVarients}>
+
+        <motion.div variants={childVariants} initial="hidden" animate="visible">
           <FormField
             control={signUpForm.control}
             name="password"
             render={({ field }) => (
               <FormItem>
-                <FormLabel className="text-neutral-200">PassWord</FormLabel>
+                <FormLabel>Password</FormLabel>
                 <FormControl>
                   <div className="relative">
                     <Lock className="absolute left-3 top-2 h-5 w-5 text-neutral-400" />
                     <Input
                       type="password"
-                      placeholder="●●●●●●●●●●"
+                      placeholder="•••••••••"
                       {...field}
-                      className="pl-10 bg-neutral-800 border-neutral-700 text-neutral-200 placeholder-neutral-400"
+                      className="pl-10 bg-neutral-800/70 border-neutral-700 rounded-lg text-neutral-200 placeholder-neutral-400 
+                      focus:border-blue-500 focus:ring-2 focus:ring-blue-500/50 transition"
                     />
                   </div>
                 </FormControl>
@@ -132,6 +132,7 @@ const SignUpForm = () => {
             )}
           />
         </motion.div>
+
         <Button className="w-full" type="submit" disabled={isPending}>
           {isPending ? (
             <motion.div

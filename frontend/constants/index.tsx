@@ -38,72 +38,86 @@ export const NAVLINKS = [
 
 export const FeaturesData = [
   {
-    icon: <Activity className="size-10 text-emerald-400" />,
-    title: 'Real-time Feedback',
-    description: 'Get instant feedback of your typing speed, and accuracy.',
+    icon: <Activity className="size-10 text-red-400" />,
+    title: 'Instant Typing Feedback',
+    description: 'See your speed and accuracy improve with real-time insights.',
   },
   {
-    icon: <Swords className="size-10 text-sky-400" />,
-    title: 'Challenge Friends',
-    description: 'Compete with friends in real-time typing races.',
+    icon: <Swords className="size-10 text-blue-500" />,
+    title: 'Race Your Friends',
+    description:
+      'Challenge friends in live typing battles and see who types fastest.',
   },
   {
-    icon: <ChartNoAxesCombined className="size-10 text-yellow-400" />,
-    title: 'Detailed Statistics',
-    description: 'Track progress over time with comprehensive stats.',
+    icon: <ChartNoAxesCombined className="size-10 text-orange-400" />,
+    title: 'In-Depth Progress Reports',
+    description:
+      'Monitor your typing growth with detailed statistics over time.',
   },
   {
-    icon: <Bolt className="size-10 text-violet-400" />,
-    title: 'Customizable Options',
-    description: 'Choose from different typing modes to suit your needs.',
+    icon: <Bolt className="size-10 text-purple-500" />,
+    title: 'Flexible Typing Modes',
+    description: 'Select from multiple modes tailored to your practice style.',
   },
   {
-    icon: <Zap className="size-10 text-emerald-400" />,
-    title: 'Minimalist Interface',
-    description: 'Enjoy a sleek design that enhances your focus.',
+    icon: <Zap className="size-10 text-teal-400" />,
+    title: 'Clean & Focused Design',
+    description: 'Type in a distraction-free interface made for maximum focus.',
   },
 ];
-
 
 export const ReviewsData = [
   {
-    name: "Sarah L.",
-    username: "sarah_l",
-    image: "",
+    name: 'Aarav K.',
+    username: 'aarav_k',
+    image: '',
     tweet:
-      "TypeFast has dramatically improved my typing speed. I've gone from 40 WPM to over 80 WPM in just a month!",
+      'I never thought practicing typing could feel this addictive. My accuracy has improved way more than I expected!',
   },
   {
-    name: "Michael R.",
-    username: "michael_r",
-    image: "",
+    name: 'Sophia M.',
+    username: 'sophia_m',
+    image: '',
     tweet:
-      "The real-time feedback and analytics have been crucial in identifying and correcting my typing mistakes.",
+      'The clean design and smooth interface make me want to practice every single day. It feels like a game, not work.',
   },
   {
-    name: "Emily T.",
-    username: "emily_t",
-    image: "",
+    name: 'James P.',
+    username: 'james_p',
+    image: '',
     tweet:
-      "Challenging friends has made practicing typing so much more fun and engaging. I look forward to it every day!",
+      'I used to hate typing tests, but the challenges here actually make me excited to compete with my friends!',
+  },
+  {
+    name: 'Liam W.',
+    username: 'liam_w',
+    image: '',
+    tweet:
+      'Within just two weeks, my typing speed jumped from 55 WPM to 90 WPM. The progress tracking really keeps me motivated.',
+  },
+  {
+    name: 'Isabella C.',
+    username: 'isabella_c',
+    image: '',
+    tweet:
+      "I love how it gives instant feedback on mistakes. It's like having a personal coach for typing right on my screen.",
   },
 ];
 
-export const modes = ["time", "words"];
+export const modes = ['time', 'words'];
 export const timeOptions = [15, 30];
 export const wordOptions = [10, 25, 50];
 
-export const DEFAULT_TEST_MODE = "time";
+export const DEFAULT_TEST_MODE = 'time';
 export const DEFAULT_TEST_MODE_OPTION = 15;
 
-
 export const publicRoutes = [
-  "/",
-  "/leaderboard",
-  "/type",
-  "/api/leaderboard",
-  "/api/stats",
+  '/',
+  '/leaderboard',
+  '/type',
+  '/api/leaderboard',
+  '/api/stats',
 ];
-export const authRoutes = ["/auth", "/auth/verification"];
-export const apiAuthPrefix = "/api/auth";
-export const DEFAULT_LOGIN_REDIRECT = "/type";
+export const authRoutes = ['/auth', '/auth/verification'];
+export const apiAuthPrefix = '/api/auth';
+export const DEFAULT_LOGIN_REDIRECT = '/type';

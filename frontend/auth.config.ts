@@ -5,7 +5,7 @@ import { signInSchema } from './config/zvalidate';
 import { getUserByEmail } from './dboper/user';
 import type { NextAuthConfig } from 'next-auth';
 
-const authConfig: NextAuthConfig = {
+export default {
   providers: [
     GoogleProvider({
       clientId: process.env.GOOGLE_CLIENT_ID!,
@@ -31,6 +31,5 @@ const authConfig: NextAuthConfig = {
       },
     }),
   ],
-};
+} satisfies NextAuthConfig;
 
-export default authConfig;

@@ -17,7 +17,7 @@ export const addTest = async ({
       throw new Error('Missing required parameters');
     }
 
-    const session = auth();
+    const session = await auth();
 
     if (!session?.user?.email) {
       throw new Error('Unauthorized: No valid session found');

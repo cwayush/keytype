@@ -24,6 +24,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/UI/components/select';
+import { toast } from 'sonner';
 
 const CreateRoom = () => {
   const [isPending, startTransition] = useTransition();
@@ -48,11 +49,11 @@ const CreateRoom = () => {
           body: JSON.stringify(data),
         });
         const room = await response.json();
-        console.log(room);
         router.push(`/multiplayer/room/${room.code}`);
-        console.log('Room Successfully Created');
+        toast.success('Room Successfully Created');
       } catch (err) {
         console.log('Room Not Created', err);
+        toast.error('Something went wrong!');
       }
     });
   };

@@ -2,7 +2,7 @@
 
 import { signOut, useSession } from 'next-auth/react';
 import { Button } from '@/UI/components/button';
-import { LogOut, Zap } from 'lucide-react';
+import { GhostIcon, LogOut } from 'lucide-react';
 import { NAVLINKS } from '@/constants';
 import Link from 'next/link';
 
@@ -12,22 +12,29 @@ export function Header() {
     <header className="w-full max-w-5xl mx-auto flex items-center justify-between py-5 px-0">
       <Link
         href="/"
-        className="text-2xl font-bold text-neutral-200 flex items-center space-x-1"
+        className="relative group inline-flex items-center px-6 py-2 rounded-xl transition-all duration-500"
       >
-        <Zap className="size-6  text-blue-700" />
-        <p>
-          key<span className="text-blue-700">Type</span>
-        </p>
+        <span className="absolute inset-0 rounded-xl bg-gradient-to-r from-indigo-500 via-sky-500 to-green-400 opacity-0 group-hover:opacity-40 blur-2xl group-hover:scale-400 transition-all duration-500"></span>
+
+        <span className="relative z-10 flex items-center gap-3 font-extrabold text-3xl tracking-wide">
+          <GhostIcon className="w-8 h-8 text-white" />
+          <span>
+            <span className="text-white">key</span>
+            <span className="text-blue-500">Type</span>
+          </span>
+        </span>
       </Link>
-      <nav className="flex items-center gap-x-6">
+      <nav className="flex items-center gap-x-4">
         {NAVLINKS.map((link) => (
           <Link
             key={link.name}
             href={link.href}
-            className="flex items-center gap-x-2.5 text-neutral-200 hover:text-neutral-100 transition-colors duration-300"
+            className="relative group flex items-center gap-x-1 text-neutral-200 hover:text-blue-500 transition-colors duration-300 px-3 py-2 rounded-lg"
           >
-            <link.icon />
-            <p className="hidden md:block">{link.name}</p>
+            <span className="relative z-10 flex items-center gap-x-2">
+              <link.icon className="w-5 h-5" />
+              <p className="hidden md:block">{link.name}</p>
+            </span>
           </Link>
         ))}
 
@@ -36,7 +43,7 @@ export function Header() {
             variant="ghost"
             size="icon"
             onClick={() => signOut()}
-            className="hover:bg-red-400 hover:text-white transition-colors duration-300"
+            className="hover:bg-gradient-to-r from-indigo-500 via-sky-500 to-green-400 hover:text-black transition-colors duration-300"
           >
             <LogOut className="size-6" />
           </Button>

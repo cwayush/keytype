@@ -27,11 +27,13 @@ const Reviews = () => {
           transition={{ duration: 0.5 }}
           className="text-3xl sm:text-4xl md:text-5xl text-neutral-200 font-bold text-center mb-12"
         >
-          What Our{' '}
-          <span className="underline underline-offset-8 decoration-emerald-400">
-            Users
-          </span>{' '}
-          Say
+          Every Key{' '}
+          <span className="relative">
+            <span className="bg-gradient-to-r from-blue-800 to-emerald-800 bg-clip-text text-transparent">
+              Tells a Story
+            </span>
+            <span className="absolute left-0 -bottom-1 w-full h-[3px] bg-gradient-to-r from-blue-800 to-emerald-800 rounded"></span>
+          </span>
         </motion.h2>
         <motion.div
           variants={containerVariants}

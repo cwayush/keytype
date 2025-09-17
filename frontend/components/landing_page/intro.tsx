@@ -41,16 +41,22 @@ const Intro = () => {
           variants={itemVarients}
           className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-neutral-200"
         >
-          Develop your Typing Skills <br />
-          with <span className="text-blue-800">keyType</span>
+          Level Up Your Typing Skills <br />
+          with{' '}
+          <span className="relative">
+            <span className="bg-gradient-to-r from-blue-600 to-emerald-500 bg-clip-text text-transparent">
+              keyType
+            </span>
+            <span className="absolute left-0 -bottom-1 w-full h-[3px] bg-gradient-to-r from-blue-800 to-emerald-800 rounded"></span>
+          </span>
         </motion.h1>
 
         <motion.p
           variants={itemVarients}
           className="text-lg text-neutral-200 max-w-3xl mx-auto leading-relaxed"
         >
-          Practice typing challenge friends and track jmporovement with
-          real-time stats in a sleek,minimalist interface.
+          Hone your typing, compete with friends, and monitor your progress with
+          real-time stats — all within a clean, minimalist interface.
         </motion.p>
         <motion.div>
           <Button size="lg" asChild>

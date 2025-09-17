@@ -5,6 +5,7 @@ import { Button } from '@/UI/components/button';
 import { useState, useTransition } from 'react';
 import { useRouter } from 'next/navigation';
 import { Room } from '@/constants/type';
+import { toast } from 'sonner';
 
 const PublicRoom = ({ rooms }: { rooms: Room[] }) => {
   const [isPending, startTransition] = useTransition();
@@ -17,16 +18,16 @@ const PublicRoom = ({ rooms }: { rooms: Room[] }) => {
       try {
         const response = await fetch(`/api/room/${roomCode}`);
         const room = await response.json();
-        console.log(room);
 
         if (response.ok) {
           router.push(`/multiplayer/room/${roomCode}`);
+          toast.success('Joined room successfully!');
         } else {
-          console.error('Room Not Found');
+          toast.error(room.error || 'Room not found!');
         }
       } catch (error) {
         console.log(error);
-        console.error('Something went wrong');
+        toast.error('Failed to join room');
       } finally {
         setRoomId(null);
       }

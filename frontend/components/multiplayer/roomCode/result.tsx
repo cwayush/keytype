@@ -67,7 +67,6 @@ const Result = ({
 
     saveTest();
     addToLeaderboard();
-    console.log('Test saved and added to leaderboard');
   }, [wpm, accuracy, time, mode, modeOption]);
 
   const averageWPM = Math.round(

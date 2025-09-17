@@ -16,6 +16,7 @@ import {
   cn,
   generateRandomWords,
 } from '@/lib/utils';
+import { addTest } from '@/actions/test';
 
 const Interface = () => {
   const [currentIndex, setCurrentIndex] = useState<number>(0);
@@ -40,6 +41,7 @@ const Interface = () => {
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
   const charRef = useRef<(HTMLSpanElement | null)[]>([]);
   const containerRef = useRef<HTMLDivElement>(null);
+  const completedRef = useRef(false);
 
   const generateNewText = useCallback(() => {
     let newText;
@@ -119,7 +121,7 @@ const Interface = () => {
   }, [userInput, timeStarted]);
 
   useEffect(() => {
-    let timer: ReturnType<typeof setInterval> | null = null;
+    let timer: NodeJS.Timeout | null = null;
 
     if (timeStarted && !raceCompleted) {
       timer = setInterval(() => {
@@ -141,6 +143,9 @@ const Interface = () => {
   }, [timeStarted, raceCompleted, mode, modeOption]);
 
   const completeTest = () => {
+    if (completedRef.current) return;
+    completedRef.current = true;
+
     setRaceStarted(false);
     setTimeStarted(false);
     setRaceCompleted(true);
@@ -163,24 +168,15 @@ const Interface = () => {
       clearInterval(intervalRef.current);
       intervalRef.current = null;
     }
-  };
 
-  useEffect(() => {
-    if (raceStarted && timePassed > 0) {
-      const currentWpm = calculateWPM(userInput.length, timePassed);
-      setWpmData((prev) => {
-        const lastEntry = prev[prev.length - 1];
-        if (
-          !lastEntry ||
-          lastEntry.wpm !== currentWpm ||
-          lastEntry.time !== timePassed
-        ) {
-          return [...prev, { time: timePassed, wpm: currentWpm }];
-        }
-        return prev;
-      });
-    }
-  }, [timePassed, raceStarted, userInput.length]);
+    addTest({
+      wpm: finalWpm,
+      accuracy: parseFloat(finalAccuracy.toFixed(2)),
+      time: timePassed,
+      mode,
+      modeOption,
+    }).catch(console.error);
+  };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (raceCompleted) return;

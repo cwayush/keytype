@@ -35,7 +35,7 @@ const Reports = () => {
     });
   }, []);
   return (
-    <section className="py-20 relative">
+    <section className="py-10 relative">
       <div className="max-w-5xl mx-auto px-4 relative z-10">
         <motion.h2
           variants={itemVarients}
@@ -55,7 +55,7 @@ const Reports = () => {
           variants={itemVarients}
           initial="hidden"
           animate="visible"
-          className="text-lg text-neutral-400 text-center max-w-xl mx-auto mb-6"
+          className="text-lg text-neutral-300 text-center max-w-xl mx-auto mb-6"
         >
           A quick look at our growing community.
         </motion.p>
@@ -69,10 +69,10 @@ const Reports = () => {
                 className="bg-neutral-900/50 border-neutral-800 w-full max-w-xs"
               >
                 <CardContent className="p-5 text-center space-y-2">
-                  <CardTitle className="text-blue-800 text-2xl">
+                  <CardTitle className="text-2xl bg-gradient-to-r from-blue-600 to-emerald-500 bg-clip-text text-transparent">
                     {report.name}
                   </CardTitle>
-                  <CardDescription className="flex items-center justify-center gap-2 text-neutral-400 text-xl">
+                  <CardDescription className="flex items-center justify-center gap-2 text-neutral-300 text-xl">
                     <span>{report.value}</span>
                     <PlusIcon className="w-4 h-4 font-bold" />
                   </CardDescription>

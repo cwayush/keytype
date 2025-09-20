@@ -29,10 +29,10 @@ const Reviews = () => {
         >
           Every Key{' '}
           <span className="relative">
-            <span className="bg-gradient-to-r from-blue-800 to-emerald-800 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-blue-700 to-emerald-700 bg-clip-text text-transparent">
               Tells a Story
             </span>
-            <span className="absolute left-0 -bottom-1 w-full h-[3px] bg-gradient-to-r from-blue-800 to-emerald-800 rounded"></span>
+            <span className="absolute left-0 -bottom-1 w-full h-[3px] bg-gradient-to-r from-blue-700 to-emerald-700 rounded"></span>
           </span>
         </motion.h2>
         <motion.div
@@ -82,17 +82,22 @@ export const ReviewsCard = ({
       <Card className="bg-neutral-900/50 border-neutral-800 max-w-md">
         <CardContent className="p-5">
           <div className="flex items-center gap-x-3">
-            <Avatar className="size-8">
-              <AvatarImage src={image} />
-              <AvatarFallback>{name.split(' ')?.[0]?.[0]}</AvatarFallback>
-            </Avatar>
+            {/* Gradient Border Wrapper */}
+            <div className="rounded-full bg-gradient-to-r from-blue-700 to-emerald-700 p-[2px]">
+              <Avatar className="size-8 rounded-full bg-neutral-900">
+                <AvatarImage src={image} />
+                <AvatarFallback>{name.split(' ')?.[0]?.[0]}</AvatarFallback>
+              </Avatar>
+            </div>
+
             <div className="flex gap-x-1 items-center">
               <span className="font-bold text-neutral-200">{name}</span>
               <BadgeCheck className="text-emerald-400 size-5" />
             </div>
             <span className="text-neutral-500">@{username}</span>
           </div>
-          <CardDescription className="ml-10 pt-1 text-neutral-300 text-base">
+
+          <CardDescription className="ml-10 pt-1 text-neutral-400 text-base">
             {tweet}
           </CardDescription>
         </CardContent>

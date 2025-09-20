@@ -129,7 +129,7 @@ function LeaderBoard() {
               <CardTitle className="text-xl sm:text-2xl flex items-center space-x-3 text-neutral-200">
                 <CrownIcon className="size-6 sm:size-8 text-yellow-400" />
                 <span>Leaderboard</span>
-                <Badge variant="secondary" className="text-xs sm:text-sm">
+                <Badge variant="secondary" className="text-xs sm:text-sm border-2 border-red-400">
                   Updates in {countdown}s
                 </Badge>
               </CardTitle>
@@ -234,7 +234,7 @@ function LeaderBoard() {
                       {filteredData.map((entry) => (
                         <TableRow
                           key={entry.rank}
-                          className="hover:bg-neutral-800/50"
+                          className="hover:bg-blue-600/50"
                         >
                           <TableCell className="font-medium text-gray-100">
                             {entry.rank <= 3 ? (
@@ -250,10 +250,10 @@ function LeaderBoard() {
                           <TableCell className="text-gray-100">
                             {entry.name}
                           </TableCell>
-                          <TableCell className="text-sky-400">
+                          <TableCell className="text-orange-400/80">
                             {entry.wpm}
                           </TableCell>
-                          <TableCell className="text-emerald-400 hidden sm:table-cell">
+                          <TableCell className="text-green-400/80 hidden sm:table-cell">
                             {entry.accuracy}%
                           </TableCell>
                           <TableCell className="text-gray-100 hidden md:table-cell">

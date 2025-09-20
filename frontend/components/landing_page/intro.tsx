@@ -53,7 +53,7 @@ const Intro = () => {
 
         <motion.p
           variants={itemVarients}
-          className="text-lg text-neutral-200 max-w-3xl mx-auto leading-relaxed"
+          className="text-lg text-neutral-300 max-w-3xl mx-auto leading-relaxed"
         >
           Hone your typing, compete with friends, and monitor your progress with
           real-time stats — all within a clean, minimalist interface.

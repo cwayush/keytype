@@ -4,17 +4,25 @@ if (!process.env.RESEND_API_KEY) {
   throw new Error('RESEND_API_KEY is not defined');
 }
 
-if (!process.env.NEXT_PUBLIC_FRONTEND_URL) {
+if (!process.env.FRONTEND_URL) {
   throw new Error('FRONTEND_URL is not defined');
 }
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+if (!process.env.VERIFIED_SENDER) {
+  throw new Error('VERIFIED_SENDER is not defined');
+}
+
+const RESEND_API_KEY: string = process.env.RESEND_API_KEY as string;
+const FRONTEND_URL: string = process.env.FRONTEND_URL as string;
+const VERIFIED_SENDER: string = process.env.VERIFIED_SENDER as string;
+
+const resend = new Resend(RESEND_API_KEY);
 
 export const sendVerificationEmail = async (email: string, token: string) => {
-  const confirmLink = `${process.env.FRONTEND_URL}/auth/verification?token=${token}`;
+  const confirmLink = `${FRONTEND_URL}/auth/verification?token=${token}`; 
   await resend.emails.send({
-    from: 'mail@keytype.com',
-    subject: 'Verify your email',
+    from: VERIFIED_SENDER,
+    subject: 'Verify your keyType account',
     html: `
         <!DOCTYPE html>
       <html>
@@ -33,7 +41,7 @@ export const sendVerificationEmail = async (email: string, token: string) => {
                 Thanks for signing up! Please verify your email address to get started.
               </p>
               <div style="text-align: center; margin: 32px 0;">
-                <a href="${confirmLink}" 
+                <a href="${confirmLink}"
                    style="display: inline-block; background-color: #34D399; color: #e5e5e5; padding: 12px 24px; border-radius: 6px; text-decoration: none; font-weight: 500; transition: background-color 0.2s;">
                   Verify Email Address
                 </a>

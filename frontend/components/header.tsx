@@ -20,7 +20,9 @@ export function Header() {
           <GhostIcon className="w-8 h-8 text-white" />
           <span>
             <span className="text-white">key</span>
-            <span className="text-blue-500">Type</span>
+            <span className="bg-gradient-to-r from-blue-700 to-emerald-700 bg-clip-text text-transparent">
+              Type
+            </span>
           </span>
         </span>
       </Link>
@@ -43,7 +45,7 @@ export function Header() {
             variant="ghost"
             size="icon"
             onClick={() => signOut()}
-            className="hover:bg-gradient-to-r from-indigo-500 via-sky-500 to-green-400 hover:text-black transition-colors duration-300"
+            className="hover:bg-gradient-to-r from-blue-800 to-emerald-800 hover:text-black transition-colors duration-300 p-0"
           >
             <LogOut className="size-6" />
           </Button>

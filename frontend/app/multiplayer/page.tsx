@@ -9,7 +9,6 @@ import { Hash, LoaderPinwheel } from 'lucide-react';
 import { Room } from '@/constants/type';
 import { motion } from 'framer-motion';
 
-
 const containerVarient = {
   hidden: { opacity: 0 },
   visible: {
@@ -35,8 +34,7 @@ const Multiplayer = () => {
         const response = await fetch('/api/room');
         const data = await response.json();
         console.log(data);
-
-        setRooms(data || []);
+        setRooms(data);
       } catch (err) {
         console.log('Error fetching rooms', err);
       }
@@ -45,7 +43,7 @@ const Multiplayer = () => {
       fetchRooms();
     });
 
-    const interval = setInterval(fetchRooms, 3000);
+    const interval = setInterval(fetchRooms, 5000);
 
     return () => clearInterval(interval);
   }, []);

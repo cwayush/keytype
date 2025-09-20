@@ -1,5 +1,5 @@
 import { useEffect, useState, useTransition } from 'react';
-import { LoaderPinwheel, PlusIcon } from 'lucide-react';
+import { Loader, PlusIcon } from 'lucide-react';
 import { motion } from 'framer-motion';
 import {
   Card,
@@ -61,7 +61,7 @@ const Reports = () => {
         </motion.p>
         <div className="flex justify-center gap-8">
           {isPending ? (
-            <LoaderPinwheel className="nimate-spin mx-auto size-10 text-blue-700" />
+            <Loader className="animate-spin mx-auto size-10 text-blue-700" />
           ) : (
             reports?.map((report, index) => (
               <Card

@@ -30,7 +30,7 @@ import {
   ChevronDown,
   CrownIcon,
   Hourglass,
-  LoaderPinwheel,
+  Loader,
   Medal,
 } from 'lucide-react';
 
@@ -127,9 +127,12 @@ function LeaderBoard() {
           <CardHeader className="pb-2">
             <div className="flex flex-col space-y-4 sm:flex-row sm:items-center sm:justify-between sm:space-y-0">
               <CardTitle className="text-xl sm:text-2xl flex items-center space-x-3 text-neutral-200">
-                <CrownIcon className="size-6 sm:size-8 text-yellow-400" />
+                <CrownIcon className="size-6 sm:size-8 text-yellow-400/70" />
                 <span>Leaderboard</span>
-                <Badge variant="secondary" className="text-xs sm:text-sm border-2 border-red-400">
+                <Badge
+                  variant="secondary"
+                  className="text-xs sm:text-sm border-2 border-red-400"
+                >
                   Updates in {countdown}s
                 </Badge>
               </CardTitle>
@@ -208,7 +211,7 @@ function LeaderBoard() {
             </div>
             <div className="overflow-x-auto">
               {isLoading ? (
-                <LoaderPinwheel className="animate-spin mx-auto size-10 text-yellow-400" />
+                <Loader className="animate-spin mx-auto size-10 text-blue-700" />
               ) : error ? (
                 <div className="text-red-400 text-center py-8">{error}</div>
               ) : (
@@ -250,7 +253,7 @@ function LeaderBoard() {
                           <TableCell className="text-gray-100">
                             {entry.name}
                           </TableCell>
-                          <TableCell className="text-orange-400/80">
+                          <TableCell className="text-blue-600">
                             {entry.wpm}
                           </TableCell>
                           <TableCell className="text-green-400/80 hidden sm:table-cell">
@@ -286,10 +289,10 @@ function LeaderBoard() {
 
 const MedalColour: { [key: number]: string } = {
   1: 'text-yellow-400',
-  2: 'text-gray-400',
-  3: 'text-amber-600',
+  2: 'text-orange-400/50',
+  3: 'text-zinc-400',
 };
 
-const getMedalColor = (rank: number) => MedalColour[rank] || 'text-gray-400';
+const getMedalColor = (rank: number) => MedalColour[rank] || 'text-zinc-100';
 
 export default LeaderBoard;

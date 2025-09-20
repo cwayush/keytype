@@ -21,9 +21,6 @@ const itemVarients = {
   visible: { opacity: 1, y: 0 },
 };
 
-// Instead of session?.user
-//http://localhost:5000/room/code/RM-105
-
 const RoomPage = (props: { params: Promise<{ code: string }> }) => {
   const { code } = use(props.params);
 
@@ -93,7 +90,7 @@ const RoomPage = (props: { params: Promise<{ code: string }> }) => {
           break;
       }
     };
-  }, [code, socket, isRaceStarted, status]);
+  }, [code, socket, status, session?.user]);
 
   useEffect(() => {
     joinRoom();

@@ -6,11 +6,11 @@
     "frontend",
     "packages/*"
   ],
-  "devDependencies": {
-    "turbo": "^2.5.6"
-  },
   "scripts": {
     "dev": "turbo run dev --parallel",
-    "build": "turbo run build"
+    "build": "turbo run build --filter=frontend"
+  },
+  "devDependencies": {
+    "turbo": "^2.5.6"
   }
 }

@@ -1,15 +1,15 @@
-import { Resend } from 'resend';
+import { Resend } from "resend";
 
 if (!process.env.RESEND_API_KEY) {
-  throw new Error('RESEND_API_KEY is not defined');
+  throw new Error("RESEND_API_KEY is not defined");
 }
 
 if (!process.env.FRONTEND_URL) {
-  throw new Error('FRONTEND_URL is not defined');
+  throw new Error("FRONTEND_URL is not defined");
 }
 
 if (!process.env.VERIFIED_SENDER) {
-  throw new Error('VERIFIED_SENDER is not defined');
+  throw new Error("VERIFIED_SENDER is not defined");
 }
 
 const RESEND_API_KEY: string = process.env.RESEND_API_KEY as string;
@@ -19,10 +19,10 @@ const VERIFIED_SENDER: string = process.env.VERIFIED_SENDER as string;
 const resend = new Resend(RESEND_API_KEY);
 
 export const sendVerificationEmail = async (email: string, token: string) => {
-  const confirmLink = `${FRONTEND_URL}/auth/verification?token=${token}`; 
+  const confirmLink = `${FRONTEND_URL}/auth/verification?token=${token}`;
   await resend.emails.send({
     from: VERIFIED_SENDER,
-    subject: 'Verify your keyType account',
+    subject: "Verify your keyType account",
     html: `
         <!DOCTYPE html>
       <html>

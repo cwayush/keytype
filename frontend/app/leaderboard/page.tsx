@@ -1,21 +1,21 @@
-'use client';
+"use client";
 
-import { Card, CardContent, CardHeader, CardTitle } from '@/ui/components/card';
-import { useCallback, useEffect, useState } from 'react';
-import { ScrollArea } from '@/ui/components/scrollarea';
-import { LeaderboardDataType } from '@/constants/type';
-import { Button } from '@/ui/components/button';
-import { Input } from '@/ui/components/input';
-import { Badge } from '@/ui/components/bages';
-import { motion } from 'framer-motion';
-import { modes } from '@/constants';
-import Link from 'next/link';
+import { Card, CardContent, CardHeader, CardTitle } from "@/ui/components/card";
+import { useCallback, useEffect, useState } from "react";
+import { ScrollArea } from "@/ui/components/scrollarea";
+import { LeaderboardDataType } from "@/constants/type";
+import { Button } from "@/ui/components/button";
+import { Input } from "@/ui/components/input";
+import { Badge } from "@/ui/components/bages";
+import { motion } from "framer-motion";
+import { modes } from "@/constants";
+import Link from "next/link";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from '@/ui/components/dropdown';
+} from "@/ui/components/dropdown";
 import {
   Table,
   TableBody,
@@ -23,7 +23,7 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from '@/ui/components/table';
+} from "@/ui/components/table";
 import {
   Activity,
   ArrowRight,
@@ -32,17 +32,17 @@ import {
   Hourglass,
   Loader,
   Medal,
-} from 'lucide-react';
+} from "lucide-react";
 
 function LeaderBoard() {
   const [countdown, setCountDown] = useState(30);
   const [isAllTime, setIsAllTime] = useState(true);
-  const [selectedMode, setSelectedMode] = useState('all');
-  const [searchTerm, setSearchTerm] = useState('');
+  const [selectedMode, setSelectedMode] = useState("all");
+  const [searchTerm, setSearchTerm] = useState("");
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<null | string>(null);
   const [leaderboardData, setLeaderboardData] = useState<LeaderboardDataType[]>(
-    []
+    [],
   );
 
   const fetchUsersData = useCallback(async () => {
@@ -50,14 +50,14 @@ function LeaderBoard() {
       setIsLoading(true);
       setError(null);
       setCountDown(30);
-      const timeFrame = isAllTime ? 'alltime' : 'daily';
+      const timeFrame = isAllTime ? "alltime" : "daily";
       const response = await fetch(
         `/api/leaderboard?mode=${selectedMode}&timeFrame=${timeFrame}&limit=10`,
         {
           headers: {
-            'Cache-Control': 'no-store',
+            "Cache-Control": "no-store",
           },
-        }
+        },
       );
       const data = await response.json();
 
@@ -67,8 +67,8 @@ function LeaderBoard() {
         setLeaderboardData([]);
       }
     } catch (err) {
-      console.error('Error fetching leaderboard:', err);
-      setError('Failed to fetch leaderboard');
+      console.error("Error fetching leaderboard:", err);
+      setError("Failed to fetch leaderboard");
       setLeaderboardData([]);
     } finally {
       setIsLoading(false);
@@ -92,7 +92,7 @@ function LeaderBoard() {
   }, [isAllTime, selectedMode, fetchUsersData]);
 
   const filteredData = leaderboardData.filter((entry) =>
-    entry?.name?.toLowerCase().includes(searchTerm?.toLowerCase())
+    entry?.name?.toLowerCase().includes(searchTerm?.toLowerCase()),
   );
 
   const containerVariants = {
@@ -138,8 +138,8 @@ function LeaderBoard() {
                     size="sm"
                     className={`w-full text-xs sm:text-sm ${
                       isAllTime
-                        ? 'bg-neutral-700 text-neutral-200'
-                        : 'text-neutral-400'
+                        ? "bg-neutral-700 text-neutral-200"
+                        : "text-neutral-400"
                     }`}
                     onClick={() => setIsAllTime(true)}
                   >
@@ -151,8 +151,8 @@ function LeaderBoard() {
                     size="sm"
                     className={`w-full text-xs sm:text-sm ${
                       !isAllTime
-                        ? 'bg-neutral-700 text-neutral-200'
-                        : 'text-neutral-400'
+                        ? "bg-neutral-700 text-neutral-200"
+                        : "text-neutral-400"
                     }`}
                     onClick={() => setIsAllTime(false)}
                   >
@@ -166,8 +166,8 @@ function LeaderBoard() {
                       variant="outline"
                       className="bg-neutral-800 border-neutral-700 text-neutral-200 text-xs sm:text-sm w-full sm:w-auto"
                     >
-                      {selectedMode === 'all'
-                        ? 'All Modes'
+                      {selectedMode === "all"
+                        ? "All Modes"
                         : selectedMode.charAt(0).toUpperCase() +
                           selectedMode.slice(1)}
                       <ChevronDown className="ml-2 size-3 sm:size-4" />
@@ -176,7 +176,7 @@ function LeaderBoard() {
                   <DropdownMenuContent className="bg-neutral-800 border-neutral-700">
                     <DropdownMenuItem
                       className="text-neutral-400 min-w-full cursor-pointer"
-                      onClick={() => setSelectedMode('all')}
+                      onClick={() => setSelectedMode("all")}
                     >
                       All Modes
                     </DropdownMenuItem>
@@ -238,7 +238,7 @@ function LeaderBoard() {
                             {entry.rank <= 3 ? (
                               <Medal
                                 className={`size-4 sm:size-5 ${getMedalColor(
-                                  entry.rank
+                                  entry.rank,
                                 )}`}
                               />
                             ) : (
@@ -283,11 +283,11 @@ function LeaderBoard() {
 }
 
 const MedalColour: { [key: number]: string } = {
-  1: 'text-yellow-400',
-  2: 'text-orange-400/50',
-  3: 'text-zinc-400',
+  1: "text-yellow-400",
+  2: "text-orange-400/50",
+  3: "text-zinc-400",
 };
 
-const getMedalColor = (rank: number) => MedalColour[rank] || 'text-zinc-100';
+const getMedalColor = (rank: number) => MedalColour[rank] || "text-zinc-100";
 
 export default LeaderBoard;

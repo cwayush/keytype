@@ -1,9 +1,9 @@
-import GoogleProvider from 'next-auth/providers/google';
-import CredentialsProvider from 'next-auth/providers/credentials';
-import bcrypt from 'bcryptjs';
-import { signInSchema } from './config/zvalidate';
-import { getUserByEmail } from './dboper/user';
-import type { NextAuthConfig } from 'next-auth';
+import GoogleProvider from "next-auth/providers/google";
+import CredentialsProvider from "next-auth/providers/credentials";
+import bcrypt from "bcryptjs";
+import { signInSchema } from "./config/zvalidate";
+import { getUserByEmail } from "./dboper/user";
+import type { NextAuthConfig } from "next-auth";
 
 export default {
   providers: [
@@ -12,10 +12,10 @@ export default {
       clientSecret: process.env.GOOGLE_CLIENT_SECRET!,
     }),
     CredentialsProvider({
-      name: 'Credentials',
+      name: "Credentials",
       credentials: {
-        email: { label: 'Email', type: 'text' },
-        password: { label: 'Password', type: 'password' },
+        email: { label: "Email", type: "text" },
+        password: { label: "Password", type: "password" },
       },
       async authorize(credentials) {
         const validation = signInSchema.safeParse(credentials);
@@ -32,4 +32,3 @@ export default {
     }),
   ],
 } satisfies NextAuthConfig;
-

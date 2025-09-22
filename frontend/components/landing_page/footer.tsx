@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import Link from "next/link";
 
 const Footer = () => {
   return (
@@ -18,7 +18,7 @@ const Footer = () => {
           </div>
           <div>
             <nav className="flex space-x-4">
-              {['Privacy Ploicy', 'Terms of Services', 'Contact Us'].map(
+              {["Privacy Ploicy", "Terms of Services", "Contact Us"].map(
                 (link) => (
                   <Link
                     key={link}
@@ -27,7 +27,7 @@ const Footer = () => {
                   >
                     {link}
                   </Link>
-                )
+                ),
               )}
             </nav>
           </div>

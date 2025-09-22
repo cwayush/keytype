@@ -1,8 +1,8 @@
-import { NextRequest, NextResponse } from 'next/server';
-import { roomSchema } from '@/config/zvalidate';
-import { geneateRoomCode } from '@/lib/utils';
-import { auth } from '@/auth';
-import prisma from '@repo/db';
+import { NextRequest, NextResponse } from "next/server";
+import { roomSchema } from "@/config/zvalidate";
+import { geneateRoomCode } from "@/lib/utils";
+import { auth } from "@/auth";
+import prisma from "@repo/db";
 
 export const POST = async (req: NextRequest) => {
   try {
@@ -10,8 +10,8 @@ export const POST = async (req: NextRequest) => {
 
     if (!session || !session?.user || !session?.user?.id) {
       return NextResponse.json(
-        { error: 'Unauthorized: No valid session found' },
-        { status: 401 }
+        { error: "Unauthorized: No valid session found" },
+        { status: 401 },
       );
     }
     const data = await req.json();
@@ -36,10 +36,10 @@ export const POST = async (req: NextRequest) => {
     });
     return NextResponse.json(room, { status: 201 });
   } catch (err) {
-    console.error('Error creating room:', err);
+    console.error("Error creating room:", err);
     return NextResponse.json(
-      { error: 'Failed to create room' },
-      { status: 500 }
+      { error: "Failed to create room" },
+      { status: 500 },
     );
   }
 };
@@ -54,15 +54,15 @@ export const GET = async () => {
         mode: true,
         modeOption: true,
       },
-      orderBy: { createdAt: 'desc' },
+      orderBy: { createdAt: "desc" },
     });
     console.log(rooms);
     return NextResponse.json(rooms, { status: 200 });
   } catch (err) {
-    console.error('Error fetching rooms:', err);
+    console.error("Error fetching rooms:", err);
     return NextResponse.json(
-      { error: 'Failed to fetch rooms' },
-      { status: 500 }
+      { error: "Failed to fetch rooms" },
+      { status: 500 },
     );
   }
 };

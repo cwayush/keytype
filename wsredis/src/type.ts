@@ -1,4 +1,4 @@
-import WebSocket from 'ws';
+import WebSocket from "ws";
 
 export type User = {
   userId: string;
@@ -13,4 +13,3 @@ export interface ProgressUpdate {
   userId: string;
   progress: { wpm: number; accuracy: number; progress: number };
 }
-

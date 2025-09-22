@@ -1,16 +1,16 @@
-'use client';
+"use client";
 
-import { SignInInput, signInSchema } from '@/config/zvalidate';
-import { zodResolver } from '@hookform/resolvers/zod';
-import { ArrowRight, Lock, Mail } from 'lucide-react';
-import { DEFAULT_LOGIN_REDIRECT } from '@/constants';
-import { Button } from '@/ui/components/button';
-import { Input } from '@/ui/components/input';
-import { useForm } from 'react-hook-form';
-import { signIn } from 'next-auth/react';
-import { login } from '@/actions/login';
-import { useTransition } from 'react';
-import { motion } from 'framer-motion';
+import { SignInInput, signInSchema } from "@/config/zvalidate";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { ArrowRight, Lock, Mail } from "lucide-react";
+import { DEFAULT_LOGIN_REDIRECT } from "@/constants";
+import { Button } from "@/ui/components/button";
+import { Input } from "@/ui/components/input";
+import { useForm } from "react-hook-form";
+import { signIn } from "next-auth/react";
+import { login } from "@/actions/login";
+import { useTransition } from "react";
+import { motion } from "framer-motion";
 import {
   Form,
   FormControl,
@@ -18,15 +18,15 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from '@/ui/components/form';
-import { toast } from 'sonner';
+} from "@/ui/components/form";
+import { toast } from "sonner";
 
 const childVariants = {
   hidden: { opacity: 0, y: 20 },
   visible: {
     opacity: 1,
     y: 0,
-    transition: { type: 'spring' as const, damping: 20, stiffness: 100 },
+    transition: { type: "spring" as const, damping: 20, stiffness: 100 },
   },
 };
 
@@ -35,7 +35,7 @@ const SignInForm = () => {
 
   const signInForm = useForm<SignInInput>({
     resolver: zodResolver(signInSchema),
-    defaultValues: { email: '', password: '' },
+    defaultValues: { email: "", password: "" },
   });
 
   const onSignIn = async (values: SignInInput) => {
@@ -43,7 +43,7 @@ const SignInForm = () => {
       try {
         const result = await login(values);
         if (result.success) {
-          await signIn('credentials', {
+          await signIn("credentials", {
             email: values.email,
             password: values.password,
             redirect: true,
@@ -54,8 +54,8 @@ const SignInForm = () => {
           toast.error(result.message);
         }
       } catch (err) {
-        console.error('Sign in error:', err);
-        toast.error('Something went wrong!');
+        console.error("Sign in error:", err);
+        toast.error("Something went wrong!");
       }
     });
   };
@@ -120,7 +120,7 @@ const SignInForm = () => {
             <motion.div
               className="h-5 w-5 rounded-full border-t-2 border-r-2 border-white"
               animate={{ rotate: 360 }}
-              transition={{ duration: 1, repeat: Infinity, ease: 'linear' }}
+              transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
             />
           ) : (
             <>

@@ -1,8 +1,8 @@
-import { Card, CardContent, CardHeader, CardTitle } from '@/ui/components/card';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/ui/components/tabs';
-import { Hourglass, Trophy, Type } from 'lucide-react';
-import { BestScoresProps } from '@/constants/type';
-import ReportCard from './reportCard';
+import { Card, CardContent, CardHeader, CardTitle } from "@/ui/components/card";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/ui/components/tabs";
+import { Hourglass, Trophy, Type } from "lucide-react";
+import { BestScoresProps } from "@/constants/type";
+import ReportCard from "./reportCard";
 
 const BestScore = ({ allTimeBestScores }: BestScoresProps) => {
   return (
@@ -36,12 +36,12 @@ const BestScore = ({ allTimeBestScores }: BestScoresProps) => {
               <ReportCard
                 icon={<Hourglass className="size-8 mr-2 text-sky-400" />}
                 title="15 Seconds"
-                value={`${allTimeBestScores.time['15s']} WPM`}
+                value={`${allTimeBestScores.time["15s"]} WPM`}
               />
               <ReportCard
                 icon={<Hourglass className="size-8 mr-2 text-sky-400" />}
                 title="30 Seconds"
-                value={`${allTimeBestScores.time['30s']} WPM`}
+                value={`${allTimeBestScores.time["30s"]} WPM`}
               />
             </div>
           </TabsContent>
@@ -50,17 +50,17 @@ const BestScore = ({ allTimeBestScores }: BestScoresProps) => {
               <ReportCard
                 icon={<Type className="size-8 mr-2 text-violet-400" />}
                 title="10 Words"
-                value={`${allTimeBestScores.words['10']} WPM`}
+                value={`${allTimeBestScores.words["10"]} WPM`}
               />
               <ReportCard
                 icon={<Type className="size-8 mr-2 text-violet-400" />}
                 title="25 Words"
-                value={`${allTimeBestScores.words['25']} WPM`}
+                value={`${allTimeBestScores.words["25"]} WPM`}
               />
               <ReportCard
                 icon={<Type className="size-8 mr-2 text-violet-400" />}
                 title="50 Words"
-                value={`${allTimeBestScores.words['50']} WPM`}
+                value={`${allTimeBestScores.words["50"]} WPM`}
               />
             </div>
           </TabsContent>

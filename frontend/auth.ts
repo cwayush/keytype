@@ -1,12 +1,12 @@
-import { PrismaAdapter } from '@auth/prisma-adapter';
-import NextAuth from 'next-auth';
-import authConfig from './auth.config';
-import { getUserById } from './dboper/user';
-import prisma from '@repo/db';
+import { PrismaAdapter } from "@auth/prisma-adapter";
+import NextAuth from "next-auth";
+import authConfig from "./auth.config";
+import { getUserById } from "./dboper/user";
+import prisma from "@repo/db";
 
 export const { handlers, auth, signIn, signOut } = NextAuth({
   pages: {
-    signIn: '/auth',
+    signIn: "/auth",
   },
   events: {
     async linkAccount({ user }) {
@@ -18,7 +18,7 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
   },
   callbacks: {
     async signIn({ user, account }) {
-      if (account?.provider !== 'credentials') return true;
+      if (account?.provider !== "credentials") return true;
       const existingUser = await getUserById(user.id!);
       if (!existingUser || !existingUser?.emailVerified) return false;
       return true;
@@ -31,6 +31,6 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
     },
   },
   adapter: PrismaAdapter(prisma),
-  session: { strategy: 'jwt' },
+  session: { strategy: "jwt" },
   ...authConfig,
 });

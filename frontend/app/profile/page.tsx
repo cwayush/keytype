@@ -1,11 +1,11 @@
-import BestScore from '@/components/profile/bestScore';
-import Header from '@/components/profile/header';
-import RecentPerformance from '@/components/profile/recentPerform';
-import { ReportsGrid } from '@/components/profile/reports';
-import { getProfileData } from '@/actions/profile';
+import BestScore from "@/components/profile/bestScore";
+import Header from "@/components/profile/header";
+import RecentPerformance from "@/components/profile/recentPerform";
+import { ReportsGrid } from "@/components/profile/reports";
+import { getProfileData } from "@/actions/profile";
 
-export const fetchCache = 'force-no-store';
-export const dynamic = 'force-dynamic';
+export const fetchCache = "force-no-store";
+export const dynamic = "force-dynamic";
 
 const ProfilePage = async () => {
   const { data } = await getProfileData();

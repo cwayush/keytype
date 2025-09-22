@@ -1,6 +1,6 @@
-import Verification from '@/components/auth/verification';
-import BeatLoader from 'react-spinners/BeatLoader';
-import { Suspense } from 'react';
+import Verification from "@/components/auth/verification";
+import BeatLoader from "react-spinners/BeatLoader";
+import { Suspense } from "react";
 
 const VerificationPage = () => {
   return (

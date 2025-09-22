@@ -1,4 +1,4 @@
-import { Card, CardContent } from '@/ui/components/card';
+import { Card, CardContent } from "@/ui/components/card";
 
 const ReportCard = ({
   icon,

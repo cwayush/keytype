@@ -1,15 +1,15 @@
-'use client';
+"use client";
 
-import Members from '@/components/multiplayer/roomCode/member/members';
-import Header from '@/components/multiplayer/roomCode/header';
-import { useEffect, useState, use, useCallback } from 'react';
-import Compe from '@/components/multiplayer/roomCode/compe';
-import Chat from '@/components/multiplayer/roomCode/chat';
-import { Room, Member } from '@/constants/type';
-import { LoaderPinwheel } from 'lucide-react';
-import { useSession } from 'next-auth/react';
-import useSocket from '@/hooks/useSocket';
-import { motion } from 'framer-motion';
+import Members from "@/components/multiplayer/roomCode/member/members";
+import Header from "@/components/multiplayer/roomCode/header";
+import { useEffect, useState, use, useCallback } from "react";
+import Compe from "@/components/multiplayer/roomCode/compe";
+import Chat from "@/components/multiplayer/roomCode/chat";
+import { Room, Member } from "@/constants/type";
+import { LoaderPinwheel } from "lucide-react";
+import { useSession } from "next-auth/react";
+import useSocket from "@/hooks/useSocket";
+import { motion } from "framer-motion";
 
 const containerVarients = {
   hidden: { opacity: 0 },
@@ -28,7 +28,7 @@ const RoomPage = (props: { params: Promise<{ code: string }> }) => {
   const [roomData, setRoomData] = useState<Room | null>(null);
   const [isRaceStarted, setIsRaceStarted] = useState<boolean>(false);
   const [members, setMembers] = useState<Member[]>([]);
-  const [raceText, setRaceText] = useState<string>('');
+  const [raceText, setRaceText] = useState<string>("");
 
   const socket = useSocket();
 
@@ -45,34 +45,34 @@ const RoomPage = (props: { params: Promise<{ code: string }> }) => {
   }, [code]);
 
   const joinRoom = useCallback(() => {
-    if (status === 'loading') return;
+    if (status === "loading") return;
     if (!session?.user || !socket) return;
 
     socket.send(
       JSON.stringify({
-        type: 'JOIN_ROOM',
+        type: "JOIN_ROOM",
         userId: session?.user?.id,
         roomCode: code,
         userData: {
           name: session?.user?.name,
           image: session?.user?.image,
         },
-      })
+      }),
     );
 
     socket.onmessage = (e) => {
       const data = JSON.parse(e.data);
       switch (data.type) {
-        case 'ROOM_MEMBERS':
+        case "ROOM_MEMBERS":
           setMembers(data.members);
           break;
 
-        case 'START_RACE':
+        case "START_RACE":
           setIsRaceStarted(true);
           setRaceText(data.text);
           break;
 
-        case 'PROGRESS_UPDATE':
+        case "PROGRESS_UPDATE":
           setMembers((prevMembers) => {
             return prevMembers.map((member) =>
               member.id === data.userId
@@ -84,7 +84,7 @@ const RoomPage = (props: { params: Promise<{ code: string }> }) => {
                       progress: data.progress.progress,
                     },
                   }
-                : member
+                : member,
             );
           });
           break;
@@ -96,7 +96,7 @@ const RoomPage = (props: { params: Promise<{ code: string }> }) => {
     joinRoom();
   }, [joinRoom]);
 
-  if (status === 'loading') {
+  if (status === "loading") {
     return (
       <div className="h-screen grid place-items-center">
         <LoaderPinwheel className="animate-spin mx-auto size-10 text-yellow-400" />
@@ -105,7 +105,7 @@ const RoomPage = (props: { params: Promise<{ code: string }> }) => {
   }
 
   const isHost = members.some(
-    (member) => member.id === session?.user?.id && member.isHost
+    (member) => member.id === session?.user?.id && member.isHost,
   );
 
   if (!roomData) {

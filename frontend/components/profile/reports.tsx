@@ -1,6 +1,6 @@
-import { Activity, BarChart3, Clock, Target } from 'lucide-react';
-import { ReportsGridProps } from '@/constants/type';
-import  ReportCard  from './reportCard';
+import { Activity, BarChart3, Clock, Target } from "lucide-react";
+import { ReportsGridProps } from "@/constants/type";
+import ReportCard from "./reportCard";
 
 export const ReportsGrid = ({ stats }: ReportsGridProps) => {
   return (

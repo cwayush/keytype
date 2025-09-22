@@ -1,8 +1,8 @@
-import WebSocket, { WebSocketServer } from 'ws';
-import { UserManager } from './user';
-import { RedisManager } from './redis';
-import { Server } from 'node:http';
-import type { ProgressUpdate } from '../type';
+import WebSocket, { WebSocketServer } from "ws";
+import { UserManager } from "./user";
+import { RedisManager } from "./redis";
+import { Server } from "node:http";
+import type { ProgressUpdate } from "../type";
 
 export class ChatWithServer {
   private pubsub: RedisManager;
@@ -19,21 +19,21 @@ export class ChatWithServer {
     this.subscribedRooms = new Set();
     this.wsocket = new WebSocketServer({ server: httpServer });
 
-    this.wsocket.on('connection', this.handleConnection.bind(this));
+    this.wsocket.on("connection", this.handleConnection.bind(this));
 
     this.setupPubSub();
   }
 
   // Handle Connection for WebSocket
   private handleConnection(ws: WebSocket) {
-    ws.on('error', console.error);
-    ws.on('message', (data) => this.handleMessage(ws, data));
-    ws.on('close', () => this.handleClose(ws));
+    ws.on("error", console.error);
+    ws.on("message", (data) => this.handleMessage(ws, data));
+    ws.on("close", () => this.handleClose(ws));
   }
 
   // Setup PubSub for Redis
   private setupPubSub() {
-    this.pubsub.subscriber.on('message', (channel, message) => {
+    this.pubsub.subscriber.on("message", (channel, message) => {
       const parsedMessage = JSON.parse(message);
       const users = this.userManage.getUserInRoom(channel);
 
@@ -72,7 +72,7 @@ export class ChatWithServer {
         }));
 
       await this.pubsub.publish(roomCode, {
-        type: 'ROOM_MEMBERS',
+        type: "ROOM_MEMBERS",
         members: roomMembers,
       });
     } catch (err) {
@@ -84,7 +84,7 @@ export class ChatWithServer {
   private async handleSendMessage(
     userId: string,
     roomCode: string,
-    message: string
+    message: string,
   ) {
     try {
       const user = this.userManage.getUser(userId);
@@ -93,7 +93,7 @@ export class ChatWithServer {
       }
 
       await this.pubsub.publish(roomCode, {
-        type: 'MESSAGE',
+        type: "MESSAGE",
         userId,
         message,
         userData: {
@@ -102,7 +102,7 @@ export class ChatWithServer {
         },
       });
     } catch (err) {
-      console.error('Error Handling send Message:', err);
+      console.error("Error Handling send Message:", err);
     }
   }
 
@@ -111,16 +111,16 @@ export class ChatWithServer {
     try {
       const userInRoom = this.userManage.getUserInRoom(roomCode);
       if (!userInRoom.length) {
-        console.error('No users in that room', roomCode);
+        console.error("No users in that room", roomCode);
         return;
       }
       await this.pubsub.publish(roomCode, {
-        type: 'RACE_START',
+        type: "RACE_START",
         timeStamp: Date.now(),
         text,
       });
     } catch (err) {
-      console.error('Error Handle in RaceStarting', err);
+      console.error("Error Handle in RaceStarting", err);
     }
   }
 
@@ -133,23 +133,23 @@ export class ChatWithServer {
     try {
       const userInRoom = this.userManage.getUserInRoom(roomCode);
       if (!userInRoom.length) {
-        console.error('No users in that room for progress update:', roomCode);
+        console.error("No users in that room for progress update:", roomCode);
       }
 
       const user = this.userManage.getUser(userId);
       if (!user) {
-        console.error('User not found for progress update:', userId);
+        console.error("User not found for progress update:", userId);
         return;
       }
 
       this.pubsub.publish(roomCode, {
-        type: 'PROGRESS_UPDATE',
+        type: "PROGRESS_UPDATE",
         userId,
         progress,
         timeStamp: Date.now(),
       });
     } catch (err) {
-      console.error('Error Handle in UsersProgressUpdate:', err);
+      console.error("Error Handle in UsersProgressUpdate:", err);
     }
   }
 
@@ -173,7 +173,7 @@ export class ChatWithServer {
       }
 
       await this.pubsub.publish(roomCode, {
-        type: 'MEMBER_LEFT',
+        type: "MEMBER_LEFT",
         memberId: userId,
       });
 
@@ -199,23 +199,23 @@ export class ChatWithServer {
       }
 
       switch (type) {
-        case 'JOIN_ROOM':
+        case "JOIN_ROOM":
           await this.handleRoomJoin(userId, roomCode);
           break;
-        case 'SEND_MESSAGE':
+        case "SEND_MESSAGE":
           await this.handleSendMessage(userId, roomCode, userData.message);
           break;
-        case 'START_RACE':
+        case "START_RACE":
           await this.handleStartRace(roomCode, userData.text);
           break;
-        case 'UPDATE_PROGRESS':
+        case "UPDATE_PROGRESS":
           await this.handleProgressUpdate(userData);
           break;
         default:
-          console.error('Invalid message type:', type);
+          console.error("Invalid message type:", type);
       }
     } catch (err) {
-      console.error('Error Handle in Message:', err);
+      console.error("Error Handle in Message:", err);
     }
   }
 }

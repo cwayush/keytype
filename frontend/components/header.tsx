@@ -1,10 +1,10 @@
-'use client';
+"use client";
 
-import { signOut, useSession } from 'next-auth/react';
-import { Button } from '@/ui/components/button';
-import { GhostIcon, LogOut } from 'lucide-react';
-import { NAVLINKS } from '@/constants';
-import Link from 'next/link';
+import { signOut, useSession } from "next-auth/react";
+import { Button } from "@/ui/components/button";
+import { GhostIcon, LogOut } from "lucide-react";
+import { NAVLINKS } from "@/constants";
+import Link from "next/link";
 
 export function Header() {
   const { data: session } = useSession();

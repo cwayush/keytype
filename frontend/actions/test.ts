@@ -1,9 +1,9 @@
-'use server';
+"use server";
 
-import { AddTestTypes } from '@/constants/type';
-import { getUserByEmail } from '@/dboper/user';
-import { auth } from '@/auth';
-import prisma from '@repo/db';
+import { AddTestTypes } from "@/constants/type";
+import { getUserByEmail } from "@/dboper/user";
+import { auth } from "@/auth";
+import prisma from "@repo/db";
 
 export const addTest = async ({
   wpm,
@@ -14,19 +14,19 @@ export const addTest = async ({
 }: AddTestTypes) => {
   try {
     if (!wpm || !accuracy || !time || !mode || !modeOption) {
-      throw new Error('Missing required parameters');
+      throw new Error("Missing required parameters");
     }
 
     const session = await auth();
 
     if (!session?.user?.email) {
-      throw new Error('Unauthorized: No valid session found');
+      throw new Error("Unauthorized: No valid session found");
     }
 
     const user = await getUserByEmail(session.user.email);
 
     if (!user) {
-      throw new Error('User not found');
+      throw new Error("User not found");
     }
 
     return await prisma.test.create({
@@ -40,7 +40,7 @@ export const addTest = async ({
       },
     });
   } catch (err) {
-    console.error('Error adding test:', err);
+    console.error("Error adding test:", err);
     throw err;
   }
 };

@@ -1,12 +1,12 @@
-'use client';
+"use client";
 
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/ui/components/tabs';
-import SignInForm from '@/components/auth/signinForm';
-import SignUpForm from '@/components/auth/signupForm';
-import { Button } from '@/ui/components/button';
-import { signIn } from 'next-auth/react';
-import { motion } from 'framer-motion';
-import { Chrome } from 'lucide-react';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/ui/components/tabs";
+import SignInForm from "@/components/auth/signinForm";
+import SignUpForm from "@/components/auth/signupForm";
+import { Button } from "@/ui/components/button";
+import { signIn } from "next-auth/react";
+import { motion } from "framer-motion";
+import { Chrome } from "lucide-react";
 import {
   Card,
   CardContent,
@@ -14,8 +14,8 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from '@/ui/components/card';
-import { DEFAULT_LOGIN_REDIRECT } from '@/constants';
+} from "@/ui/components/card";
+import { DEFAULT_LOGIN_REDIRECT } from "@/constants";
 
 const containerVariants = {
   hidden: { opacity: 0, y: 20 },
@@ -23,7 +23,7 @@ const containerVariants = {
     opacity: 1,
     y: 0,
     transition: {
-      type: 'spring' as const,
+      type: "spring" as const,
       damping: 20,
       stiffness: 100,
     },
@@ -32,7 +32,7 @@ const containerVariants = {
 
 const AuthPage = () => {
   const handleClick = () => {
-    signIn('google', {
+    signIn("google", {
       callbackUrl: DEFAULT_LOGIN_REDIRECT,
     });
   };

@@ -1,4 +1,4 @@
-import { create } from 'zustand';
+import { create } from "zustand";
 
 type wsStore = {
   wsref: WebSocket | null;
@@ -9,10 +9,10 @@ const useWsStore = create<wsStore>((set) => ({
   wsref: null,
   setWsRef: (ws: WebSocket) => {
     ws.onerror = (err) => {
-      console.error('WebSocket error:', err);
+      console.error("WebSocket error:", err);
     };
     ws.onclose = () => {
-      console.log('WebSocket connection closed');
+      console.log("WebSocket connection closed");
       set({ wsref: null });
     };
     set({ wsref: ws });

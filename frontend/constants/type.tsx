@@ -1,4 +1,4 @@
-import { Dispatch, SetStateAction } from 'react';
+import { Dispatch, SetStateAction } from "react";
 
 export type ModesProps = {
   mode: string;
@@ -78,18 +78,18 @@ export type ReviewsCardProps = {
   username: string;
   image: string;
   tweet: string;
-}; 
+};
 
 export type BestScoresProps = {
   allTimeBestScores: {
     time: {
-      '15s': number;
-      '30s': number;
+      "15s": number;
+      "30s": number;
     };
     words: {
-      '10': number;
-      '25': number;
-      '50': number;
+      "10": number;
+      "25": number;
+      "50": number;
     };
   };
 };

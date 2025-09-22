@@ -1,5 +1,5 @@
-import WebSocket from 'ws';
-import type { User } from '../type';
+import WebSocket from "ws";
+import type { User } from "../type";
 
 export class UserManager {
   private users: Map<string, User>;
@@ -11,12 +11,12 @@ export class UserManager {
   addUser(
     userId: string,
     ws: WebSocket,
-    userData?: { name: string; image: string }
+    userData?: { name: string; image: string },
   ) {
     const user = {
       userId,
-      name: userData?.name || 'Anonymous',
-      image: userData?.image || '',
+      name: userData?.name || "Anonymous",
+      image: userData?.image || "",
       ws,
       rooms: [],
     };
@@ -47,7 +47,7 @@ export class UserManager {
 
   getUserInRoom(roomId: string) {
     return Array.from(this.users.values()).filter((user) =>
-      user.rooms.includes(roomId)
+      user.rooms.includes(roomId),
     );
   }
 

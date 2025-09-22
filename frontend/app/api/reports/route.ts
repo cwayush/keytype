@@ -1,5 +1,5 @@
-import { NextResponse } from 'next/server';
-import prisma from '@repo/db';
+import { NextResponse } from "next/server";
+import prisma from "@repo/db";
 
 export const GET = async () => {
   try {
@@ -7,14 +7,14 @@ export const GET = async () => {
     const totalTests = await prisma.test.count();
 
     return NextResponse.json([
-      { name: 'Typers Registered', value: totalUsers },
-      { name: 'Tests Completed', value: totalTests },
+      { name: "Typers Registered", value: totalUsers },
+      { name: "Tests Completed", value: totalTests },
     ]);
   } catch (err) {
-    console.error('Error fetching status:', err);
+    console.error("Error fetching status:", err);
     return NextResponse.json(
-      { error: 'Failed to fetch status' },
-      { status: 500 }
+      { error: "Failed to fetch status" },
+      { status: 500 },
     );
   }
 };

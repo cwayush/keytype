@@ -1,17 +1,17 @@
-import { clsx, type ClassValue } from 'clsx';
-import { generate } from 'random-words';
-import { twMerge } from 'tailwind-merge';
-import { Test } from '../constants/type';
-import { v4 as uuidv4 } from 'uuid';
-import { getVerificationTokenByEmail } from '@/dboper/token';
-import prisma from '@repo/db';
+import { clsx, type ClassValue } from "clsx";
+import { generate } from "random-words";
+import { twMerge } from "tailwind-merge";
+import { Test } from "../constants/type";
+import { v4 as uuidv4 } from "uuid";
+import { getVerificationTokenByEmail } from "@/dboper/token";
+import prisma from "@repo/db";
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
 export const generateRandomWords = (length: number) => {
-  const words = generate({ exactly: length, join: ' ' });
+  const words = generate({ exactly: length, join: " " });
   return words;
 };
 
@@ -29,7 +29,7 @@ export const calculateAccuracy = (userInput: string, text: string) => {
   if (userInput.length === 0) return 0;
 
   const correctChars = userInput
-    .split('')
+    .split("")
     .filter((char, index) => char === text[index]).length;
   const accuracy = (correctChars / userInput.length) * 100;
 
@@ -45,12 +45,12 @@ export const calculateTotalTypingTime = (tests: Test[]): string => {
 
 // TODO: check this function
 export const getRecentTests = (tests: Test[]) => {
-  const daysOfWeek = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+  const daysOfWeek = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
   return tests
     .sort(
       (a, b) =>
-        new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
+        new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime(),
     )
     .slice(0, 7)
     .map((test) => ({
@@ -62,31 +62,31 @@ export const getRecentTests = (tests: Test[]) => {
 export const getAllTimeBestScores = (tests: Test[]) => {
   const bestScores = {
     time: {
-      '15s': 0,
-      '30s': 0,
+      "15s": 0,
+      "30s": 0,
     },
     words: {
-      '10': 0,
-      '25': 0,
-      '50': 0,
+      "10": 0,
+      "25": 0,
+      "50": 0,
     },
   };
 
   tests.forEach((test) => {
-    if (test.mode === 'time' && test.modeOption === 15) {
-      bestScores.time['15s'] = Math.max(bestScores.time['15s'], test.wpm);
+    if (test.mode === "time" && test.modeOption === 15) {
+      bestScores.time["15s"] = Math.max(bestScores.time["15s"], test.wpm);
     }
-    if (test.mode === 'time' && test.modeOption === 30) {
-      bestScores.time['30s'] = Math.max(bestScores.time['30s'], test.wpm);
+    if (test.mode === "time" && test.modeOption === 30) {
+      bestScores.time["30s"] = Math.max(bestScores.time["30s"], test.wpm);
     }
-    if (test.mode === 'words' && test.modeOption === 10) {
-      bestScores.words['10'] = Math.max(bestScores.words['10'], test.wpm);
+    if (test.mode === "words" && test.modeOption === 10) {
+      bestScores.words["10"] = Math.max(bestScores.words["10"], test.wpm);
     }
-    if (test.mode === 'words' && test.modeOption === 25) {
-      bestScores.words['25'] = Math.max(bestScores.words['25'], test.wpm);
+    if (test.mode === "words" && test.modeOption === 25) {
+      bestScores.words["25"] = Math.max(bestScores.words["25"], test.wpm);
     }
-    if (test.mode === 'words' && test.modeOption === 50) {
-      bestScores.words['50'] = Math.max(bestScores.words['50'], test.wpm);
+    if (test.mode === "words" && test.modeOption === 50) {
+      bestScores.words["50"] = Math.max(bestScores.words["50"], test.wpm);
     }
   });
 
@@ -95,8 +95,8 @@ export const getAllTimeBestScores = (tests: Test[]) => {
 
 export const geneateRoomCode = () => {
   const characters =
-    'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
-  let code = '';
+    "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+  let code = "";
   for (let i = 0; i < 6; i++) {
     code += characters.charAt(Math.floor(Math.random() * characters.length));
   }

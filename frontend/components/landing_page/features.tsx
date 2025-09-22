@@ -1,13 +1,13 @@
-'use client';
+"use client";
 
-import { FeaturesData } from '@/constants';
-import { motion } from 'framer-motion';
+import { FeaturesData } from "@/constants";
+import { motion } from "framer-motion";
 import {
   Card,
   CardDescription,
   CardHeader,
   CardTitle,
-} from '@/ui/components/card';
+} from "@/ui/components/card";
 
 const containerVarients = {
   hidden: { opacity: 0 },
@@ -25,7 +25,7 @@ const itemVarients = {
     opacity: 1,
     y: 0,
     transition: {
-      type: 'spring' as const,
+      type: "spring" as const,
       damping: 30,
       stiffness: 100,
     },
@@ -41,13 +41,13 @@ const Features = () => {
         animate="visible"
         className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-12 text-neutral-200"
       >
-        Discover why{' '}
+        Discover why{" "}
         <span className="relative">
           <span className="bg-gradient-to-r from-blue-600 to-emerald-500 bg-clip-text text-transparent">
             keyType
           </span>
           <span className="absolute left-0 -bottom-1 w-full h-[3px] bg-gradient-to-r from-blue-800 to-emerald-800 rounded"></span>
-        </span>{' '}
+        </span>{" "}
         stands out!
       </motion.h2>
       <motion.div

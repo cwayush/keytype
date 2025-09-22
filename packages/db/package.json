@@ -21,13 +21,13 @@
     "db:reset": "prisma migrate reset",
     "db:generate": "prisma generate"
   },
-  "devDependencies": {
-    "@types/node": "^24.3.0",
-    "prisma": "^6.14.0",
-    "typescript": "^5.9.2"
-  },
   "dependencies": {
     "@auth/prisma-adapter": "^2.10.0",
-    "@prisma/client": "^6.14.0"
+    "@prisma/client": "^6.14.0",
+    "prisma": "^6.14.0"
+  },
+  "devDependencies": {
+    "@types/node": "^24.3.0",
+    "typescript": "^5.9.2"
   }
 }

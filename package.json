@@ -2,12 +2,11 @@
   "name": "keytype",
   "private": true,
   "scripts": {
-    "build": "turbo build",
+    "build": "turbo run build --filter=frontend",
+    "postinstall": "cd packages/db && npx prisma generate",
     "dev": "turbo dev",
     "lint": "turbo lint",
     "db:setup": "cd packages/db && npm run db:setup",
-    "prisma:generate": "cd packages/db && npm run db:generate",
-    "postinstall": "npm run prisma:generate",
     "format": "prettier --write \"**/*.{ts,tsx,md}\""
   },
   "devDependencies": {

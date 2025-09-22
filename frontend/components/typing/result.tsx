@@ -1,8 +1,8 @@
 'use client';
 
-import { Card, CardContent, CardHeader, CardTitle } from '@/UI/components/card';
-import { ChartContainer, ChartTooltip } from '@/UI/components/chart';
-import { Button } from '@/UI/components/button';
+import { Card, CardContent, CardHeader, CardTitle } from '@/ui/components/card';
+import { ChartContainer, ChartTooltip } from '@/ui/components/chart';
+import { Button } from '@/ui/components/button';
 import { ResultProps } from '@/constants/type';
 import ReportCard from '../profile/reportCard';
 import { motion } from 'framer-motion';

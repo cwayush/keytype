@@ -1,10 +1,10 @@
 'use client';
 
-import { Card, CardContent, CardHeader, CardTitle } from '@/UI/components/card';
+import { Card, CardContent, CardHeader, CardTitle } from '@/ui/components/card';
 import { RoomInput, roomSchema } from '@/config/zvalidate';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { Button } from '@/UI/components/button';
-import { Input } from '@/UI/components/input';
+import { Button } from '@/ui/components/button';
+import { Input } from '@/ui/components/input';
 import { Loader2, Plus } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import { useForm } from 'react-hook-form';
@@ -16,14 +16,14 @@ import {
   FormField,
   FormItem,
   FormMessage,
-} from '@/UI/components/form';
+} from '@/ui/components/form';
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from '@/UI/components/select';
+} from '@/ui/components/select';
 import { toast } from 'sonner';
 
 const CreateRoom = () => {

@@ -1,4 +1,4 @@
-import { Card, CardContent } from '@/UI/components/card';
+import { Card, CardContent } from '@/ui/components/card';
 
 const ReportCard = ({
   icon,
@@ -25,4 +25,3 @@ const ReportCard = ({
 };
 
 export default ReportCard;
-

@@ -6,7 +6,7 @@ import {
   CardContent,
   CardDescription,
   CardTitle,
-} from '@/UI/components/card';
+} from '@/ui/components/card';
 
 const itemVarients = {
   hidden: { opacity: 0, y: 20 },

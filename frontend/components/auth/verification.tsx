@@ -14,7 +14,7 @@ import {
   CardDescription,
   CardHeader,
   CardTitle,
-} from '@/UI/components/card';
+} from '@/ui/components/card';
 
 const containerVarients = {
   hidden: { opacity: 0 },

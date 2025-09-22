@@ -1,7 +1,7 @@
 'use client';
 
-import { Avatar, AvatarFallback, AvatarImage } from '@/UI/components/avatar';
-import { Card, CardContent, CardDescription } from '@/UI/components/card';
+import { Avatar, AvatarFallback, AvatarImage } from '@/ui/components/avatar';
+import { Card, CardContent, CardDescription } from '@/ui/components/card';
 import { ReviewsCardProps } from '@/constants/type';
 import { ReviewsData } from '@/constants';
 import { BadgeCheck } from 'lucide-react';

@@ -1,7 +1,7 @@
 'use client';
 
 import { signOut, useSession } from 'next-auth/react';
-import { Button } from '@/UI/components/button';
+import { Button } from '@/ui/components/button';
 import { GhostIcon, LogOut } from 'lucide-react';
 import { NAVLINKS } from '@/constants';
 import Link from 'next/link';

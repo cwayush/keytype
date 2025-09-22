@@ -1,9 +1,9 @@
-import { Card, CardContent, CardHeader, CardTitle } from '@/UI/components/card';
-import { Form, FormControl, FormField, FormItem } from '@/UI/components/form';
+import { Card, CardContent, CardHeader, CardTitle } from '@/ui/components/card';
+import { Form, FormControl, FormField, FormItem } from '@/ui/components/form';
 import { JoinRoomInput, joinRoomSchema } from '@/config/zvalidate';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { Button } from '@/UI/components/button';
-import { Input } from '@/UI/components/input';
+import { Button } from '@/ui/components/button';
+import { Input } from '@/ui/components/input';
 import { Loader2, LogIn } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import { useForm } from 'react-hook-form';

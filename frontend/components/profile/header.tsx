@@ -1,4 +1,4 @@
-import { Avatar, AvatarFallback, AvatarImage } from '@/UI/components/avatar';
+import { Avatar, AvatarFallback, AvatarImage } from '@/ui/components/avatar';
 import { ProfileHeaderProps } from '@/constants/type';
 
 const Header = ({ image, name }: ProfileHeaderProps) => {

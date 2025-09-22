@@ -1,4 +1,4 @@
-import { Card, CardContent } from '@/UI/components/card';
+import { Card, CardContent } from '@/ui/components/card';
 import MemberProgress from './member/memberProgress';
 import { useCallback, useEffect } from 'react';
 import { CompeProps } from '@/constants/type';

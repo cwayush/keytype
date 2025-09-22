@@ -1,12 +1,12 @@
 'use client';
 
-import { Card, CardContent, CardHeader, CardTitle } from '@/UI/components/card';
+import { Card, CardContent, CardHeader, CardTitle } from '@/ui/components/card';
 import { useCallback, useEffect, useState } from 'react';
-import { ScrollArea } from '@/UI/components/scrollarea';
+import { ScrollArea } from '@/ui/components/scrollarea';
 import { LeaderboardDataType } from '@/constants/type';
-import { Button } from '@/UI/components/button';
-import { Input } from '@/UI/components/input';
-import { Badge } from '@/UI/components/bages';
+import { Button } from '@/ui/components/button';
+import { Input } from '@/ui/components/input';
+import { Badge } from '@/ui/components/bages';
 import { motion } from 'framer-motion';
 import { modes } from '@/constants';
 import Link from 'next/link';
@@ -15,7 +15,7 @@ import {
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from '@/UI/components/dropdown';
+} from '@/ui/components/dropdown';
 import {
   Table,
   TableBody,
@@ -23,7 +23,7 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from '@/UI/components/table';
+} from '@/ui/components/table';
 import {
   Activity,
   ArrowRight,

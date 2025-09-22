@@ -1,16 +1,16 @@
 'use client';
 
-import { Card, CardContent, CardHeader, CardTitle } from '@/UI/components/card';
+import { Card, CardContent, CardHeader, CardTitle } from '@/ui/components/card';
 import { ChartNoAxesCombined, ChevronDown } from 'lucide-react';
 import { RecentPerformanceProps } from '@/constants/type';
-import { Button } from '@/UI/components/button';
+import { Button } from '@/ui/components/button';
 import { useState } from 'react';
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from '@/UI/components/dropdown';
+} from '@/ui/components/dropdown';
 import {
   Bar,
   BarChart,

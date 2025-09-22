@@ -1,5 +1,5 @@
-import { Card, CardContent, CardHeader, CardTitle } from '@/UI/components/card';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/UI/components/tabs';
+import { Card, CardContent, CardHeader, CardTitle } from '@/ui/components/card';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/ui/components/tabs';
 import { Hourglass, Trophy, Type } from 'lucide-react';
 import { BestScoresProps } from '@/constants/type';
 import ReportCard from './reportCard';
@@ -13,7 +13,7 @@ const BestScore = ({ allTimeBestScores }: BestScoresProps) => {
           <span className="text-neutral-200">All Time Best Scores</span>
         </CardTitle>
       </CardHeader>
-      <CardContent> 
+      <CardContent>
         <Tabs defaultValue="time" className="w-full">
           <TabsList className="bg-neutral-800 mt-5">
             <TabsTrigger

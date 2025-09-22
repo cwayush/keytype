@@ -1,3 +1,0 @@
-{
-  "buildCommand": "npm install --workspaces=false && npx turbo run generate --filter=@repo/db && npx turbo run build --filter=frontend"
-}

@@ -2,11 +2,12 @@ import { NextRequest, NextResponse } from 'next/server';
 import prisma from '@repo/db';
 
 export const GET = async (
-  req: NextRequest,
-  { params }: { params: { code: string } }
+  request: NextRequest,
+  { params }: { params: Promise<{ code: string }> }
 ) => {
   try {
-    const { code } = params;
+    const { code } = await params;
+
     const room = await prisma.room.findUnique({
       where: { code },
       select: {
@@ -17,15 +18,16 @@ export const GET = async (
         modeOption: true,
       },
     });
+
     if (!room) {
       return NextResponse.json({ error: 'Room not found' }, { status: 404 });
     }
 
     return NextResponse.json(room);
-  } catch (err) {
-    console.error('Error fetching room:', err);
+  } catch (error) {
+    console.error('Error fetching room: ', error);
     return NextResponse.json(
-      { error: 'Failed to fetch room' },
+      { error: 'Internal server error' },
       { status: 500 }
     );
   }

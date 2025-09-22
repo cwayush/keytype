@@ -1,12 +1,12 @@
 import { NextResponse } from 'next/server';
+import NextAuth from 'next-auth';
+import authConfig from './auth.config';
 import {
   apiAuthPrefix,
   authRoutes,
-  DEFAULT_LOGIN_REDIRECT,
   publicRoutes,
+  DEFAULT_LOGIN_REDIRECT,
 } from './constants';
-import NextAuth from 'next-auth';
-import authConfig from './auth.config';
 
 const { auth } = NextAuth(authConfig);
 
@@ -18,13 +18,7 @@ export default auth((req) => {
   const isPublicRoute = publicRoutes.includes(nextUrl.pathname);
   const isAuthRoute = authRoutes.includes(nextUrl.pathname);
 
-  // Skip middleware for non-auth API routes
   if (isApiAuthRoute) return NextResponse.next();
-
-  // If logged in, block /auth
-  // if (isAuthRoute && isLoggedIn) {
-  //   return NextResponse.redirect(new URL(DEFAULT_LOGIN_REDIRECT, nextUrl));
-  // }
 
   if (isAuthRoute) {
     if (isLoggedIn) {
@@ -33,7 +27,6 @@ export default auth((req) => {
     return NextResponse.next();
   }
 
-  // If not logged in, block protected routes
   if (!isLoggedIn && !isPublicRoute) {
     return NextResponse.redirect(new URL('/auth', nextUrl));
   }
@@ -43,7 +36,8 @@ export default auth((req) => {
 
 export const config = {
   matcher: [
-    '/((?!_next|[^?]*\\.(?:html?|css|js(?!on)|jpe?g|webp|png|gif|svg|ttf|woff2?|ico|csv|docx?|xlsx?|zip|webmanifest)).*)',
+    '/((?!_next|api|trpc|[^?]*\\.(?:html?|css|js(?!on)|jpe?g|webp|png|gif|svg|ttf|woff2?|ico|csv|docx?|xlsx?|zip|webmanifest)).*)',
     '/(api|trpc)(.*)',
   ],
+  runtime: 'nodejs',
 };

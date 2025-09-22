@@ -1,11 +1,6 @@
 'use client';
 
-import {
-  Card,
-  CardContent,
-  CardHeader,
-  CardTitle,
-} from '@/ui_temp/components/card';
+import { Card, CardContent, CardHeader, CardTitle } from '@/ui/components/card';
 import CreateRoom from '@/components/multiplayer/createRoom';
 import PublicRoom from '@/components/multiplayer/publicRoom';
 import { useEffect, useState, useTransition } from 'react';

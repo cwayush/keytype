@@ -1,12 +1,7 @@
 'use client';
 
-import {
-  Card,
-  CardContent,
-  CardHeader,
-  CardTitle,
-} from '@/ui_temp/components/card';
-import { ScrollArea } from '@/ui_temp/components/scrollarea';
+import { Card, CardContent, CardHeader, CardTitle } from '@/ui/components/card';
+import { ScrollArea } from '@/ui/components/scrollarea';
 import { MembersProps } from '@/constants/type';
 import MemberAvatar from './memberAvatar';
 import { User } from 'lucide-react';

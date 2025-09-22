@@ -1,4 +1,4 @@
-import { Card, CardContent } from '@/ui_temp/components/card';
+import { Card, CardContent } from '@/ui/components/card';
 
 const ReportCard = ({
   icon,

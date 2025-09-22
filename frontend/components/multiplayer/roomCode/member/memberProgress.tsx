@@ -1,8 +1,4 @@
-import {
-  Avatar,
-  AvatarFallback,
-  AvatarImage,
-} from '@/ui_temp/components/avatar';
+import { Avatar, AvatarFallback, AvatarImage } from '@/ui/components/avatar';
 import { MemberProgressProps } from '@/constants/type';
 
 const MemberProgress = ({ member }: MemberProgressProps) => {

@@ -1,7 +1,7 @@
 import { Copy, Hash, Hourglass, PlayCircle, Type } from 'lucide-react';
 import { MultiplayerHeaderProps } from '@/constants/type';
 import { generateRandomWords } from '@/lib/utils';
-import { Button } from '@/ui_temp/components/button';
+import { Button } from '@/ui/components/button';
 import { useSession } from 'next-auth/react';
 import useWsStore from '@/store/useWsStore';
 import { motion } from 'framer-motion';

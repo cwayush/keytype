@@ -1,7 +1,7 @@
-import { Card, CardContent } from '@/ui_temp/components/card';
-import { ScrollArea } from '@/ui_temp/components/scrollarea';
+import { Card, CardContent } from '@/ui/components/card';
+import { ScrollArea } from '@/ui/components/scrollarea';
 import { Hourglass, Loader2, Type } from 'lucide-react';
-import { Button } from '@/ui_temp/components/button';
+import { Button } from '@/ui/components/button';
 import { useState, useTransition } from 'react';
 import { useRouter } from 'next/navigation';
 import { Room } from '@/constants/type';

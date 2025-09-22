@@ -1,13 +1,8 @@
 'use client';
 
 import { Activity, Hourglass, LineChartIcon, Target } from 'lucide-react';
-import {
-  Card,
-  CardContent,
-  CardHeader,
-  CardTitle,
-} from '@/ui_temp/components/card';
-import { ChartContainer, ChartTooltip } from '@/ui_temp/components/chart';
+import { Card, CardContent, CardHeader, CardTitle } from '@/ui/components/card';
+import { ChartContainer, ChartTooltip } from '@/ui/components/chart';
 import ReportCard from '@/components/profile/reportCard';
 import { ResultProps } from '@/constants/type';
 import { motion } from 'framer-motion';

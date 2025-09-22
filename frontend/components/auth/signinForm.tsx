@@ -4,8 +4,8 @@ import { SignInInput, signInSchema } from '@/config/zvalidate';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { ArrowRight, Lock, Mail } from 'lucide-react';
 import { DEFAULT_LOGIN_REDIRECT } from '@/constants';
-import { Button } from '@/ui_temp/components/button';
-import { Input } from '@/ui_temp/components/input';
+import { Button } from '@/ui/components/button';
+import { Input } from '@/ui/components/input';
 import { useForm } from 'react-hook-form';
 import { signIn } from 'next-auth/react';
 import { login } from '@/actions/login';
@@ -18,7 +18,7 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from '@/ui_temp/components/form';
+} from '@/ui/components/form';
 import { toast } from 'sonner';
 
 const childVariants = {

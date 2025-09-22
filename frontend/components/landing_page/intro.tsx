@@ -1,6 +1,6 @@
 'use client ';
 
-import { Button } from '@/ui_temp/components/button';
+import { Button } from '@/ui/components/button';
 import { ArrowRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';

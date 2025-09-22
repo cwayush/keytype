@@ -1,8 +1,4 @@
-import {
-  Avatar,
-  AvatarFallback,
-  AvatarImage,
-} from '@/ui_temp/components/avatar';
+import { Avatar, AvatarFallback, AvatarImage } from '@/ui/components/avatar';
 import { MemberAvatarProps } from '@/constants/type';
 
 const MemberAvatar = ({ name, image }: MemberAvatarProps) => {

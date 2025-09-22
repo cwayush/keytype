@@ -3,7 +3,7 @@ import { Geist_Mono } from 'next/font/google';
 import { Header } from '@/components/header';
 import './globals.css';
 import { Providers } from './provider';
-import { Toaster } from '@/ui_temp/components/sonner';
+import { Toaster } from '@/ui/components/sonner';
 
 const geistMono = Geist_Mono({
   subsets: ['latin'],

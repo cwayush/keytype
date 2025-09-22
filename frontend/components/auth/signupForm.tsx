@@ -3,9 +3,9 @@
 import { SignUpInput, signUpSchema } from '@/config/zvalidate';
 import { ArrowRight, Lock, Mail, User } from 'lucide-react';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { Button } from '@/ui_temp/components/button';
+import { Button } from '@/ui/components/button';
 import { register } from '@/actions/register';
-import { Input } from '@/ui_temp/components/input';
+import { Input } from '@/ui/components/input';
 import { useForm } from 'react-hook-form';
 import { motion } from 'framer-motion';
 import { useTransition } from 'react';
@@ -16,7 +16,7 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from '@/ui_temp/components/form';
+} from '@/ui/components/form';
 import { toast } from 'sonner';
 
 const childVariants = {

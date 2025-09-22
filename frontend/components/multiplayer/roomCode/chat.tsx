@@ -1,18 +1,13 @@
-import {
-  Card,
-  CardContent,
-  CardHeader,
-  CardTitle,
-} from '@/ui_temp/components/card';
+import { Card, CardContent, CardHeader, CardTitle } from '@/ui/components/card';
 import { ChatMessageProps, ChatProps, Message } from '@/constants/type';
 import { useCallback, useEffect, useRef, useState } from 'react';
-import { Avatar, AvatarFallback } from '@/ui_temp/components/avatar';
-import { ScrollArea } from '@/ui_temp/components/scrollarea';
+import { Avatar, AvatarFallback } from '@/ui/components/avatar';
+import { ScrollArea } from '@/ui/components/scrollarea';
 import { AvatarImage } from '@radix-ui/react-avatar';
 import { MessageSquare, Send } from 'lucide-react';
 import { useSession } from 'next-auth/react';
-import { Button } from '@/ui_temp/components/button';
-import { Input } from '@/ui_temp/components/input';
+import { Button } from '@/ui/components/button';
+import { Input } from '@/ui/components/input';
 import useWsStore from '@/store/useWsStore';
 import { v4 as uidv4 } from 'uuid';
 

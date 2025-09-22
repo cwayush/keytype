@@ -1,15 +1,5 @@
-import {
-  Card,
-  CardContent,
-  CardHeader,
-  CardTitle,
-} from '@/ui_temp/components/card';
-import {
-  Tabs,
-  TabsContent,
-  TabsList,
-  TabsTrigger,
-} from '@/ui_temp/components/tabs';
+import { Card, CardContent, CardHeader, CardTitle } from '@/ui/components/card';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/ui/components/tabs';
 import { Hourglass, Trophy, Type } from 'lucide-react';
 import { BestScoresProps } from '@/constants/type';
 import ReportCard from './reportCard';

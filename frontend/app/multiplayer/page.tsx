@@ -33,7 +33,6 @@ const Multiplayer = () => {
       try {
         const response = await fetch('/api/room');
         const data = await response.json();
-        console.log(data);
         setRooms(data);
       } catch (err) {
         console.log('Error fetching rooms', err);

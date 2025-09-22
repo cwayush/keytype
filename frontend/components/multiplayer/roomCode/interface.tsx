@@ -3,6 +3,7 @@ import { calculateAccuracy, calculateWPM, cn } from '@/lib/utils';
 import { AnimatePresence, motion } from 'framer-motion';
 import { InterfaceProps } from '@/constants/type';
 import Result from './result';
+import { addTest } from '@/actions/test';
 
 const Interface = ({ mode, modeOption, text, onProgress }: InterfaceProps) => {
   const [currentIndex, setCurrentIndex] = useState<number>(0);
@@ -23,6 +24,7 @@ const Interface = ({ mode, modeOption, text, onProgress }: InterfaceProps) => {
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
   const charRef = useRef<(HTMLSpanElement | null)[]>([]);
   const containerRef = useRef<HTMLDivElement>(null);
+  const completedRef = useRef(false);
 
   useEffect(() => {
     if (userInput.length === 1 && !timeStarted) {
@@ -121,22 +123,22 @@ const Interface = ({ mode, modeOption, text, onProgress }: InterfaceProps) => {
 
   useEffect(() => {
     if (raceStarted && timePassed > 0) {
-      const curr_wpm = calculateWPM(userInput.length, timePassed);
-      const curr_accuracy = calculateAccuracy(userInput, text);
-      const curr_progress = ((userInput.length + 1) / text.length) * 100;
+      const currentWpm = calculateWPM(userInput.length, timePassed);
+      const currentAccuracy = calculateAccuracy(userInput, text);
+      const currentProgress = ((userInput.length + 1) / text.length) * 100;
 
-      setWpm(curr_wpm);
-      setAccuracy(curr_accuracy);
-      onProgress(curr_wpm, curr_accuracy, curr_progress);
+      setWpm(currentWpm);
+      setAccuracy(currentAccuracy);
+      onProgress(currentWpm, currentAccuracy, currentProgress);
 
       setWpmData((prev) => {
         const lastEntry = prev[prev.length - 1];
         if (
           !lastEntry ||
-          lastEntry.wpm !== curr_wpm ||
+          lastEntry.wpm !== currentWpm ||
           lastEntry.time !== timePassed
         ) {
-          return [...prev, { time: timePassed, wpm: curr_wpm }];
+          return [...prev, { time: timePassed, wpm: currentWpm }];
         }
         return prev;
       });
@@ -144,6 +146,9 @@ const Interface = ({ mode, modeOption, text, onProgress }: InterfaceProps) => {
   }, [timePassed, raceStarted, userInput, text, onProgress]);
 
   const completeTest = () => {
+    if (completedRef.current) return;
+    completedRef.current = true;
+
     setRaceStarted(false);
     setTimeStarted(false);
     setRaceCompleted(true);
@@ -168,6 +173,14 @@ const Interface = ({ mode, modeOption, text, onProgress }: InterfaceProps) => {
       clearInterval(intervalRef.current);
       intervalRef.current = null;
     }
+
+    addTest({
+      wpm: finalWpm,
+      accuracy: parseFloat(finalAccuracy.toFixed(2)),
+      time: timePassed,
+      mode,
+      modeOption,
+    });
   };
 
   return (
@@ -195,7 +208,7 @@ const Interface = ({ mode, modeOption, text, onProgress }: InterfaceProps) => {
                   charRef.current[index] = chr;
                 }}
                 className={cn(
-                  char.status === 'correct' && 'text-neutral-200',
+                  char.status === 'correct' && 'text-green-400',
                   char.status === 'error' && 'text-red-600',
                   char.status === 'pending' && 'text-neutral-600'
                 )}

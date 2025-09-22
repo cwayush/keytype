@@ -1,11 +1,10 @@
 'use client';
 
-import { Activity, ChartNoAxesCombined, Hourglass, Target } from 'lucide-react';
+import { Activity, Hourglass, LineChartIcon, Target } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/UI/components/card';
 import { ChartContainer, ChartTooltip } from '@/UI/components/chart';
 import ReportCard from '@/components/profile/reportCard';
 import { ResultProps } from '@/constants/type';
-import { addTest } from '@/actions/test';
 import { motion } from 'framer-motion';
 import { useEffect } from 'react';
 import {
@@ -27,22 +26,6 @@ const Result = ({
   modeOption,
 }: Omit<ResultProps, 'onRestart'>) => {
   useEffect(() => {
-    const saveTest = async () => {
-      try {
-        if (!wpm || !accuracy || !time || !mode || !modeOption) return;
-
-        await addTest({
-          wpm,
-          accuracy: parseFloat(accuracy.toFixed(2)),
-          time,
-          mode,
-          modeOption,
-        });
-      } catch (err) {
-        console.log('Error saving test:', err);
-      }
-    };
-
     const addToLeaderboard = async () => {
       try {
         if (!wpm || !accuracy || !time || !mode || !modeOption) return;
@@ -64,8 +47,6 @@ const Result = ({
         console.log('Error adding to leaderboard:', err);
       }
     };
-
-    saveTest();
     addToLeaderboard();
   }, [wpm, accuracy, time, mode, modeOption]);
 
@@ -118,10 +99,10 @@ const Result = ({
 
       <motion.div variants={itemVariants}>
         <Card className="bg-neutral-900/50 border-neutral-800 shadow-lg">
-          <CardHeader className="pb-2">
-            <CardTitle className="text-2xl flex items-center space-x-3 text-neutral-200">
-              <ChartNoAxesCombined className="size-8 text-yellow-400" />
-              <span>Performance Analysis</span>
+          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-6">
+            <CardTitle className="text-xl flex items-center gap-4 ">
+              <LineChartIcon className="size-6 text-primary text-blue-500" />
+              Performance Analysis
             </CardTitle>
           </CardHeader>
           <CardContent className="pr-10">
@@ -129,7 +110,7 @@ const Result = ({
               config={{
                 wpm: {
                   label: 'WPM',
-                  color: 'hsl(142, 71%, 45%)',
+                  color: 'hsl(222, 91%, 39.5%)',
                 },
                 average: {
                   label: 'Average WPM',
@@ -167,13 +148,13 @@ const Result = ({
                     content={({ active, payload }) => {
                       if (active && payload && payload.length) {
                         return (
-                          <div className="rounded-lg border bg-neutral-800 p-2 shadow-sm">
-                            <div className="grid grid-cols-2 gap-2">
+                          <div className="rounded-lg bg-neutral-800 p-2 shadow-sm">
+                            <div className="grid grid-cols-2 gap-3">
                               <div className="flex flex-col">
                                 <span className="text-[0.70rem] uppercase text-neutral-200">
                                   Time
                                 </span>
-                                <span className="font-bold text-neutral-200">
+                                <span className="font-bold text-blue-600">
                                   {payload[0]?.payload.time}s
                                 </span>
                               </div>
@@ -181,7 +162,7 @@ const Result = ({
                                 <span className="text-[0.70rem] uppercase text-neutral-200">
                                   WPM
                                 </span>
-                                <span className="font-bold text-neutral-200">
+                                <span className="font-bold text-emerald-600">
                                   {payload[0]?.payload.wpm}
                                 </span>
                               </div>
@@ -204,14 +185,14 @@ const Result = ({
                     }}
                   />
                   <Line
-                    type="monotone"
+                    type="linear"
                     dataKey="wpm"
-                    stroke="hsl(142, 71%, 45%)"
+                    stroke="hsl(222, 91%, 39.5%)"
                     strokeWidth={3}
-                    dot={false}
+                    dot={{ r: 3, fill: 'hsl(47, 100%, 68%)' }}
                     activeDot={{
                       r: 6,
-                      fill: 'hsl(142, 71%, 45%)',
+                      fill: 'hsl(47, 100%, 68%)',
                       stroke: 'hsl(var(--background))',
                       strokeWidth: 2,
                     }}

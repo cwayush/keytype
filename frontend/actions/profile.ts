@@ -13,7 +13,6 @@ import {
 export const getProfileData = async () => {
   try {
     const session = await auth();
-    console.log(session);
     if (!session?.user?.email) {
       throw new Error('Unauthorized: No valid session found');
     }

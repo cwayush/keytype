@@ -175,8 +175,21 @@ const Interface = () => {
       time: timePassed,
       mode,
       modeOption,
-    }).catch(console.error);
+    });
   };
+
+  useEffect(() => {
+    if (raceStarted && timePassed > 0 && timePassed % 2 === 0) {
+      const currentWpm = calculateWPM(userInput.length, timePassed);
+      setWpmData((prev) => {
+        const lastEntry = prev[prev.length - 1];
+        if (!lastEntry || lastEntry.time !== timePassed) {
+          return [...prev, { time: timePassed, wpm: currentWpm }];
+        }
+        return prev;
+      });
+    }
+  }, [timePassed, raceStarted, userInput.length]);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (raceCompleted) return;
@@ -248,7 +261,7 @@ const Interface = () => {
                   charRef.current[index] = chr;
                 }}
                 className={cn(
-                  char.status === 'correct' && 'text-neutral-200',
+                  char.status === 'correct' && 'text-green-400',
                   char.status === 'error' && 'text-red-600',
                   char.status === 'pending' && 'text-neutral-600'
                 )}

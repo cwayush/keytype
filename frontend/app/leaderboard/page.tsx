@@ -77,7 +77,6 @@ function LeaderBoard() {
 
   useEffect(() => {
     fetchUsersData();
-
     const countdownInterval = setInterval(() => {
       setCountDown((prev) => (prev > 0 ? prev - 1 : 30));
     }, 1000);
@@ -110,10 +109,6 @@ function LeaderBoard() {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0 },
   };
-
-  useEffect(() => {
-    fetchUsersData();
-  }, [fetchUsersData]);
 
   return (
     <motion.div

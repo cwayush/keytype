@@ -1,10 +1,10 @@
-import { Card, CardContent } from "@/ui/components/card";
-import MemberProgress from "./member/memberProgress";
-import { useCallback, useEffect } from "react";
-import { CompeProps } from "@/constants/type";
-import { useSession } from "next-auth/react";
-import useWsStore from "@/store/useWsStore";
-import Interface from "./interface";
+import { Card, CardContent } from '@/ui_temp/components/card';
+import MemberProgress from './member/memberProgress';
+import { useCallback, useEffect } from 'react';
+import { CompeProps } from '@/constants/type';
+import { useSession } from 'next-auth/react';
+import useWsStore from '@/store/useWsStore';
+import Interface from './interface';
 
 const Compe = ({
   members,
@@ -22,7 +22,7 @@ const Compe = ({
 
     if (members.length > 0) {
       isTypingFinished = members.every(
-        (member) => member.progress?.progress === 100,
+        (member) => member.progress?.progress === 100
       );
     }
 
@@ -41,7 +41,7 @@ const Compe = ({
         try {
           wsref.send(
             JSON.stringify({
-              type: "UPDATE_PROGRESS",
+              type: 'UPDATE_PROGRESS',
               userId: session?.user.id,
               roomCode: roomData.code,
               progress: {
@@ -49,14 +49,14 @@ const Compe = ({
                 accuracy,
                 progress,
               },
-            }),
+            })
           );
         } catch (err) {
-          console.log("Error updating progress:", err);
+          console.log('Error updating progress:', err);
         }
       }
     },
-    [isRaceStarted, roomData.code, session?.user?.id, wsref],
+    [isRaceStarted, roomData.code, session?.user?.id, wsref]
   );
 
   if (!roomData) return null;

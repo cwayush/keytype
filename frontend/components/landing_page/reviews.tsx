@@ -1,11 +1,15 @@
-"use client";
+'use client';
 
-import { Avatar, AvatarFallback, AvatarImage } from "@/ui/components/avatar";
-import { Card, CardContent, CardDescription } from "@/ui/components/card";
-import { ReviewsCardProps } from "@/constants/type";
-import { ReviewsData } from "@/constants";
-import { BadgeCheck } from "lucide-react";
-import { motion } from "framer-motion";
+import {
+  Avatar,
+  AvatarFallback,
+  AvatarImage,
+} from '@/ui_temp/components/avatar';
+import { Card, CardContent, CardDescription } from '@/ui_temp/components/card';
+import { ReviewsCardProps } from '@/constants/type';
+import { ReviewsData } from '@/constants';
+import { BadgeCheck } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -27,7 +31,7 @@ const Reviews = () => {
           transition={{ duration: 0.5 }}
           className="text-3xl sm:text-4xl md:text-5xl text-neutral-200 font-bold text-center mb-12"
         >
-          Every Key{" "}
+          Every Key{' '}
           <span className="relative">
             <span className="bg-gradient-to-r from-blue-700 to-emerald-700 bg-clip-text text-transparent">
               Tells a Story
@@ -64,7 +68,7 @@ const itemVariants = {
     opacity: 1,
     y: 0,
     transition: {
-      type: "spring" as const,
+      type: 'spring' as const,
       damping: 15,
       stiffness: 100,
     },
@@ -86,7 +90,7 @@ export const ReviewsCard = ({
             <div className="rounded-full bg-gradient-to-r from-blue-700 to-emerald-700 p-[2px]">
               <Avatar className="size-8 rounded-full bg-neutral-900">
                 <AvatarImage src={image} />
-                <AvatarFallback>{name.split(" ")?.[0]?.[0]}</AvatarFallback>
+                <AvatarFallback>{name.split(' ')?.[0]?.[0]}</AvatarFallback>
               </Avatar>
             </div>
 

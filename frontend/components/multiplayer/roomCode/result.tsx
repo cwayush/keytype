@@ -1,12 +1,17 @@
-"use client";
+'use client';
 
-import { Activity, Hourglass, LineChartIcon, Target } from "lucide-react";
-import { Card, CardContent, CardHeader, CardTitle } from "@/ui/components/card";
-import { ChartContainer, ChartTooltip } from "@/ui/components/chart";
-import ReportCard from "@/components/profile/reportCard";
-import { ResultProps } from "@/constants/type";
-import { motion } from "framer-motion";
-import { useEffect } from "react";
+import { Activity, Hourglass, LineChartIcon, Target } from 'lucide-react';
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+} from '@/ui_temp/components/card';
+import { ChartContainer, ChartTooltip } from '@/ui_temp/components/chart';
+import ReportCard from '@/components/profile/reportCard';
+import { ResultProps } from '@/constants/type';
+import { motion } from 'framer-motion';
+import { useEffect } from 'react';
 import {
   CartesianGrid,
   Line,
@@ -15,7 +20,7 @@ import {
   ResponsiveContainer,
   XAxis,
   YAxis,
-} from "recharts";
+} from 'recharts';
 
 const Result = ({
   wpm,
@@ -24,16 +29,16 @@ const Result = ({
   wpmData,
   mode,
   modeOption,
-}: Omit<ResultProps, "onRestart">) => {
+}: Omit<ResultProps, 'onRestart'>) => {
   useEffect(() => {
     const addToLeaderboard = async () => {
       try {
         if (!wpm || !accuracy || !time || !mode || !modeOption) return;
 
-        await fetch("/api/leaderboard", {
-          method: "POST",
+        await fetch('/api/leaderboard', {
+          method: 'POST',
           headers: {
-            "Content-Type": "application/json",
+            'Content-Type': 'application/json',
           },
           body: JSON.stringify({
             wpm,
@@ -44,14 +49,14 @@ const Result = ({
           }),
         });
       } catch (err) {
-        console.log("Error adding to leaderboard:", err);
+        console.log('Error adding to leaderboard:', err);
       }
     };
     addToLeaderboard();
   }, [wpm, accuracy, time, mode, modeOption]);
 
   const averageWPM = Math.round(
-    wpmData.reduce((sum, data) => sum + data.wpm, 0) / wpmData.length,
+    wpmData.reduce((sum, data) => sum + data.wpm, 0) / wpmData.length
   );
 
   const containerVariants = {
@@ -109,12 +114,12 @@ const Result = ({
             <ChartContainer
               config={{
                 wpm: {
-                  label: "WPM",
-                  color: "hsl(222, 91%, 39.5%)",
+                  label: 'WPM',
+                  color: 'hsl(222, 91%, 39.5%)',
                 },
                 average: {
-                  label: "Average WPM",
-                  color: "hsl(47, 100%, 68%)",
+                  label: 'Average WPM',
+                  color: 'hsl(47, 100%, 68%)',
                 },
               }}
               className="h-[300px] sm:h-[400px]"
@@ -139,7 +144,7 @@ const Result = ({
                   />
                   <YAxis
                     stroke="hsl(var(--muted-foreground))"
-                    domain={["dataMin - 5", "dataMax + 5"]}
+                    domain={['dataMin - 5', 'dataMax + 5']}
                     opacity={0.5}
                     tickLine={false}
                     axisLine={false}
@@ -179,9 +184,9 @@ const Result = ({
                     strokeDasharray="15"
                     label={{
                       value: `Avg: ${averageWPM} WPM`,
-                      fill: "hsl(47, 100%, 68%)",
+                      fill: 'hsl(47, 100%, 68%)',
                       fontSize: 12,
-                      position: "insideBottomRight",
+                      position: 'insideBottomRight',
                     }}
                   />
                   <Line
@@ -189,11 +194,11 @@ const Result = ({
                     dataKey="wpm"
                     stroke="hsl(222, 91%, 39.5%)"
                     strokeWidth={3}
-                    dot={{ r: 3, fill: "hsl(47, 100%, 68%)" }}
+                    dot={{ r: 3, fill: 'hsl(47, 100%, 68%)' }}
                     activeDot={{
                       r: 6,
-                      fill: "hsl(47, 100%, 68%)",
-                      stroke: "hsl(var(--background))",
+                      fill: 'hsl(47, 100%, 68%)',
+                      stroke: 'hsl(var(--background))',
                       strokeWidth: 2,
                     }}
                   />

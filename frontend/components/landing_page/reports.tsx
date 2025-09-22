@@ -1,12 +1,12 @@
-import { useEffect, useState, useTransition } from "react";
-import { Loader, PlusIcon } from "lucide-react";
-import { motion } from "framer-motion";
+import { useEffect, useState, useTransition } from 'react';
+import { Loader, PlusIcon } from 'lucide-react';
+import { motion } from 'framer-motion';
 import {
   Card,
   CardContent,
   CardDescription,
   CardTitle,
-} from "@/ui/components/card";
+} from '@/ui_temp/components/card';
 
 const itemVarients = {
   hidden: { opacity: 0, y: 20 },
@@ -14,7 +14,7 @@ const itemVarients = {
     opacity: 1,
     y: 0,
     transition: {
-      type: "spring",
+      type: 'spring',
       damping: 30,
       stiffness: 100,
     },
@@ -29,7 +29,7 @@ const Reports = () => {
 
   useEffect(() => {
     startTransition(async () => {
-      const response = await fetch("/api/reports");
+      const response = await fetch('/api/reports');
       const data = await response.json();
       setReports(data);
     });
@@ -43,7 +43,7 @@ const Reports = () => {
           animate="visible"
           className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-6 text-neutral-200"
         >
-          Power in{" "}
+          Power in{' '}
           <span className="relative">
             <span className="bg-gradient-to-r from-blue-600 to-emerald-500 bg-clip-text text-transparent">
               Numbers

@@ -1,13 +1,18 @@
-"use client";
+'use client';
 
-import { Card, CardContent, CardHeader, CardTitle } from "@/ui/components/card";
-import CreateRoom from "@/components/multiplayer/createRoom";
-import PublicRoom from "@/components/multiplayer/publicRoom";
-import { useEffect, useState, useTransition } from "react";
-import JoinRoom from "@/components/multiplayer/joinRoom";
-import { Hash, LoaderPinwheel } from "lucide-react";
-import { Room } from "@/constants/type";
-import { motion } from "framer-motion";
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+} from '@/ui_temp/components/card';
+import CreateRoom from '@/components/multiplayer/createRoom';
+import PublicRoom from '@/components/multiplayer/publicRoom';
+import { useEffect, useState, useTransition } from 'react';
+import JoinRoom from '@/components/multiplayer/joinRoom';
+import { Hash, LoaderPinwheel } from 'lucide-react';
+import { Room } from '@/constants/type';
+import { motion } from 'framer-motion';
 
 const containerVarient = {
   hidden: { opacity: 0 },
@@ -31,11 +36,11 @@ const Multiplayer = () => {
   useEffect(() => {
     const fetchRooms = async () => {
       try {
-        const response = await fetch("/api/room");
+        const response = await fetch('/api/room');
         const data = await response.json();
         setRooms(data);
       } catch (err) {
-        console.log("Error fetching rooms", err);
+        console.log('Error fetching rooms', err);
       }
     };
     startTransition(() => {

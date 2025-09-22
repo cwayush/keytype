@@ -1,10 +1,15 @@
-"use client";
+'use client';
 
-import { Card, CardContent, CardHeader, CardTitle } from "@/ui/components/card";
-import { ScrollArea } from "@/ui/components/scrollarea";
-import { MembersProps } from "@/constants/type";
-import MemberAvatar from "./memberAvatar";
-import { User } from "lucide-react";
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+} from '@/ui_temp/components/card';
+import { ScrollArea } from '@/ui_temp/components/scrollarea';
+import { MembersProps } from '@/constants/type';
+import MemberAvatar from './memberAvatar';
+import { User } from 'lucide-react';
 
 const Members = ({ members }: MembersProps) => {
   return (
@@ -24,7 +29,7 @@ const Members = ({ members }: MembersProps) => {
                 className="flex items-center justify-center p-2 rounded-lg hover:bg-neutral-800/50 transition-colors"
               >
                 <div className="flex items-center gap-3">
-                  <MemberAvatar name={member.name} image={member.image || ""} />
+                  <MemberAvatar name={member.name} image={member.image || ''} />
                   <div>
                     <p className="font-medium text-neutral-200">
                       {member.name}

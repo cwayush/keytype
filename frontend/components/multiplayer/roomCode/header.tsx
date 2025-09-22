@@ -1,12 +1,12 @@
-import { Copy, Hash, Hourglass, PlayCircle, Type } from "lucide-react";
-import { MultiplayerHeaderProps } from "@/constants/type";
-import { generateRandomWords } from "@/lib/utils";
-import { Button } from "@/ui/components/button";
-import { useSession } from "next-auth/react";
-import useWsStore from "@/store/useWsStore";
-import { motion } from "framer-motion";
-import { useCallback } from "react";
-import { toast } from "sonner";
+import { Copy, Hash, Hourglass, PlayCircle, Type } from 'lucide-react';
+import { MultiplayerHeaderProps } from '@/constants/type';
+import { generateRandomWords } from '@/lib/utils';
+import { Button } from '@/ui_temp/components/button';
+import { useSession } from 'next-auth/react';
+import useWsStore from '@/store/useWsStore';
+import { motion } from 'framer-motion';
+import { useCallback } from 'react';
+import { toast } from 'sonner';
 
 const itemVariants = {
   hidden: { opacity: 0, y: 20 },
@@ -26,25 +26,25 @@ const Header = ({
     if (wsref?.readyState === WebSocket.OPEN) {
       try {
         const text = generateRandomWords(
-          roomData.mode === "words"
+          roomData.mode === 'words'
             ? roomData.modeOption
-            : roomData.modeOption * 2,
+            : roomData.modeOption * 2
         );
 
         wsref.send(
           JSON.stringify({
-            type: "START_RACE",
+            type: 'START_RACE',
             userId: session?.user.id,
             roomCode: roomData.code,
             text,
-          }),
+          })
         );
       } catch (err) {
-        console.log("Error starting race:", err);
-        toast.error("Failed to start race. Please try again.");
+        console.log('Error starting race:', err);
+        toast.error('Failed to start race. Please try again.');
       }
     } else {
-      toast.error("Connection lost. Reconnecting...");
+      toast.error('Connection lost. Reconnecting...');
     }
   }, [wsref, roomData, session?.user?.id]);
 
@@ -54,10 +54,10 @@ const Header = ({
     try {
       const inviteURL = `${window.location.origin}/multiplayer/room/${roomData.code}`;
       navigator.clipboard.writeText(inviteURL);
-      toast.success("Invite link copied to clipboard");
+      toast.success('Invite link copied to clipboard');
     } catch (err) {
-      console.error("Error copying invite link:", err);
-      toast.error("Error copying invite");
+      console.error('Error copying invite link:', err);
+      toast.error('Error copying invite');
     }
   }, [roomData]);
 
@@ -70,8 +70,8 @@ const Header = ({
     >
       <div className="space-y-2">
         <h1 className="text-3xl font-bold text-neutral-200 flex items-center gap-x-3">
-          {roomData.name} |{" "}
-          {roomData.mode === "words" ? (
+          {roomData.name} |{' '}
+          {roomData.mode === 'words' ? (
             <>
               <Type className="size-5 mr-2" />
               {roomData.modeOption} words
@@ -103,7 +103,7 @@ const Header = ({
         {isHost && (
           <Button size="lg" disabled={isRaceStarted} onClick={handleStartTest}>
             <PlayCircle />
-            {isRaceStarted ? "Join Race" : "Start Race"}
+            {isRaceStarted ? 'Join Race' : 'Start Race'}
           </Button>
         )}
       </div>

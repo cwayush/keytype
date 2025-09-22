@@ -1,19 +1,24 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/ui/components/card";
-import { ChatMessageProps, ChatProps, Message } from "@/constants/type";
-import { useCallback, useEffect, useRef, useState } from "react";
-import { Avatar, AvatarFallback } from "@/ui/components/avatar";
-import { ScrollArea } from "@/ui/components/scrollarea";
-import { AvatarImage } from "@radix-ui/react-avatar";
-import { MessageSquare, Send } from "lucide-react";
-import { useSession } from "next-auth/react";
-import { Button } from "@/ui/components/button";
-import { Input } from "@/ui/components/input";
-import useWsStore from "@/store/useWsStore";
-import { v4 as uidv4 } from "uuid";
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+} from '@/ui_temp/components/card';
+import { ChatMessageProps, ChatProps, Message } from '@/constants/type';
+import { useCallback, useEffect, useRef, useState } from 'react';
+import { Avatar, AvatarFallback } from '@/ui_temp/components/avatar';
+import { ScrollArea } from '@/ui_temp/components/scrollarea';
+import { AvatarImage } from '@radix-ui/react-avatar';
+import { MessageSquare, Send } from 'lucide-react';
+import { useSession } from 'next-auth/react';
+import { Button } from '@/ui_temp/components/button';
+import { Input } from '@/ui_temp/components/input';
+import useWsStore from '@/store/useWsStore';
+import { v4 as uidv4 } from 'uuid';
 
 const Chat = ({ code }: ChatProps) => {
   const [messages, setMessages] = useState<Message[]>([]);
-  const [inputMessage, setInputMessage] = useState<string>("");
+  const [inputMessage, setInputMessage] = useState<string>('');
   const scrollAreaRef = useRef<HTMLDivElement>(null);
 
   const { wsref } = useWsStore((state) => state);
@@ -34,15 +39,15 @@ const Chat = ({ code }: ChatProps) => {
 
       wsref.send(
         JSON.stringify({
-          type: "SEND_MESSAGE",
+          type: 'SEND_MESSAGE',
           userId: session?.user.id,
           roomCode: code,
           messages: inputMessage.trim(),
-        }),
+        })
       );
-      setInputMessage("");
+      setInputMessage('');
     },
-    [inputMessage, wsref, session, code],
+    [inputMessage, wsref, session, code]
   );
 
   useEffect(() => {
@@ -50,7 +55,7 @@ const Chat = ({ code }: ChatProps) => {
 
     const handleWebMessage = (e: MessageEvent) => {
       const data = JSON.parse(e.data);
-      if (data.type === "MESSAGE") {
+      if (data.type === 'MESSAGE') {
         setMessages((prev) => [
           ...prev,
           {
@@ -65,8 +70,8 @@ const Chat = ({ code }: ChatProps) => {
         setTimeout(scrollToBottom, 100);
       }
     };
-    wsref.addEventListener("message", handleWebMessage);
-    return () => wsref.removeEventListener("message", handleWebMessage);
+    wsref.addEventListener('message', handleWebMessage);
+    return () => wsref.removeEventListener('message', handleWebMessage);
   }, [wsref, scrollToBottom]);
 
   return (
@@ -107,12 +112,12 @@ export default Chat;
 
 const ChatMessage = ({ message }: ChatMessageProps) => {
   const initials =
-    message.sender.name.split(" ").length === 1
+    message.sender.name.split(' ').length === 1
       ? message.sender.name[0]
       : message.sender.name
-          .split(" ")
+          .split(' ')
           .map((part: string) => part[0])
-          .join("");
+          .join('');
   return (
     <div className="flex items-start gap-3">
       <Avatar className="w-8 h-8">

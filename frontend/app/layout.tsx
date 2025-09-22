@@ -1,17 +1,17 @@
-import type { Metadata } from "next";
-import { Geist_Mono } from "next/font/google";
-import { Header } from "@/components/header";
-import "./globals.css";
-import { Providers } from "./provider";
-import { Toaster } from "@/ui/components/sonner";
+import type { Metadata } from 'next';
+import { Geist_Mono } from 'next/font/google';
+import { Header } from '@/components/header';
+import './globals.css';
+import { Providers } from './provider';
+import { Toaster } from '@/ui_temp/components/sonner';
 
 const geistMono = Geist_Mono({
-  subsets: ["latin"],
+  subsets: ['latin'],
 });
 
 export const metadata: Metadata = {
-  title: "KEYTYPE",
-  description: "Practice typing with KEYTYPE",
+  title: 'KEYTYPE',
+  description: 'Practice typing with KEYTYPE',
 };
 
 export default function RootLayout({

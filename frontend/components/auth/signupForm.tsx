@@ -1,14 +1,14 @@
-"use client";
+'use client';
 
-import { SignUpInput, signUpSchema } from "@/config/zvalidate";
-import { ArrowRight, Lock, Mail, User } from "lucide-react";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { Button } from "@/ui/components/button";
-import { register } from "@/actions/register";
-import { Input } from "@/ui/components/input";
-import { useForm } from "react-hook-form";
-import { motion } from "framer-motion";
-import { useTransition } from "react";
+import { SignUpInput, signUpSchema } from '@/config/zvalidate';
+import { ArrowRight, Lock, Mail, User } from 'lucide-react';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { Button } from '@/ui_temp/components/button';
+import { register } from '@/actions/register';
+import { Input } from '@/ui_temp/components/input';
+import { useForm } from 'react-hook-form';
+import { motion } from 'framer-motion';
+import { useTransition } from 'react';
 import {
   Form,
   FormControl,
@@ -16,15 +16,15 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from "@/ui/components/form";
-import { toast } from "sonner";
+} from '@/ui_temp/components/form';
+import { toast } from 'sonner';
 
 const childVariants = {
   hidden: { opacity: 0, y: 20 },
   visible: {
     opacity: 1,
     y: 0,
-    transition: { type: "spring" as const, damping: 20, stiffness: 100 },
+    transition: { type: 'spring' as const, damping: 20, stiffness: 100 },
   },
 };
 
@@ -33,7 +33,7 @@ const SignUpForm = () => {
 
   const signUpForm = useForm<SignUpInput>({
     resolver: zodResolver(signUpSchema),
-    defaultValues: { name: "", email: "", password: "" },
+    defaultValues: { name: '', email: '', password: '' },
   });
 
   const onSignUp = async (values: SignUpInput) => {
@@ -46,8 +46,8 @@ const SignUpForm = () => {
           toast.error(result.message);
         }
       } catch (err) {
-        console.error("Registration error:", err);
-        toast.error("Something went wrong!");
+        console.error('Registration error:', err);
+        toast.error('Something went wrong!');
       }
     });
   };
@@ -138,7 +138,7 @@ const SignUpForm = () => {
             <motion.div
               className="h-5 w-5 rounded-full border-t-2 border-r-2 border-white"
               animate={{ rotate: 360 }}
-              transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
+              transition={{ duration: 1, repeat: Infinity, ease: 'linear' }}
             />
           ) : (
             <>

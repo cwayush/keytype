@@ -1,11 +1,11 @@
-import { Card, CardContent } from "@/ui/components/card";
-import { ScrollArea } from "@/ui/components/scrollarea";
-import { Hourglass, Loader2, Type } from "lucide-react";
-import { Button } from "@/ui/components/button";
-import { useState, useTransition } from "react";
-import { useRouter } from "next/navigation";
-import { Room } from "@/constants/type";
-import { toast } from "sonner";
+import { Card, CardContent } from '@/ui_temp/components/card';
+import { ScrollArea } from '@/ui_temp/components/scrollarea';
+import { Hourglass, Loader2, Type } from 'lucide-react';
+import { Button } from '@/ui_temp/components/button';
+import { useState, useTransition } from 'react';
+import { useRouter } from 'next/navigation';
+import { Room } from '@/constants/type';
+import { toast } from 'sonner';
 
 const PublicRoom = ({ rooms }: { rooms: Room[] }) => {
   const [isPending, startTransition] = useTransition();
@@ -21,13 +21,13 @@ const PublicRoom = ({ rooms }: { rooms: Room[] }) => {
 
         if (response.ok) {
           router.push(`/multiplayer/room/${roomCode}`);
-          toast.success("Joined room successfully!");
+          toast.success('Joined room successfully!');
         } else {
-          toast.error(room.error || "Room not found!");
+          toast.error(room.error || 'Room not found!');
         }
       } catch (error) {
         console.log(error);
-        toast.error("Failed to join room");
+        toast.error('Failed to join room');
       } finally {
         setRoomId(null);
       }
@@ -46,7 +46,7 @@ const PublicRoom = ({ rooms }: { rooms: Room[] }) => {
               <div className="flex items-center space-x-4 text-lg ">
                 <h3 className=" text-neutral-200">{room.name}</h3>
                 <p className="text-blue-800 flex items-center">
-                  {room.mode === "words" ? (
+                  {room.mode === 'words' ? (
                     <>
                       <Type className="size-5 mr-2" />
                       {room.modeOption} words
@@ -71,7 +71,7 @@ const PublicRoom = ({ rooms }: { rooms: Room[] }) => {
                     Joining...
                   </>
                 ) : (
-                  "Join"
+                  'Join'
                 )}
               </Button>
             </CardContent>

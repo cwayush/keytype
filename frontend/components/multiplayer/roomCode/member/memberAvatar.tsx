@@ -1,17 +1,21 @@
-import { Avatar, AvatarFallback, AvatarImage } from "@/ui/components/avatar";
-import { MemberAvatarProps } from "@/constants/type";
+import {
+  Avatar,
+  AvatarFallback,
+  AvatarImage,
+} from '@/ui_temp/components/avatar';
+import { MemberAvatarProps } from '@/constants/type';
 
 const MemberAvatar = ({ name, image }: MemberAvatarProps) => {
   return (
     <Avatar>
-      <AvatarImage src={image || ""} alt={name} />
+      <AvatarImage src={image || ''} alt={name} />
       <AvatarFallback>
-        {name.split(" ").length === 1
+        {name.split(' ').length === 1
           ? name[0]
           : name
-              .split(" ")
+              .split(' ')
               .map((part) => part[0])
-              .join("")}
+              .join('')}
       </AvatarFallback>
     </Avatar>
   );

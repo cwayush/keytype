@@ -1,5 +1,9 @@
-import { Avatar, AvatarFallback, AvatarImage } from "@/ui/components/avatar";
-import { ProfileHeaderProps } from "@/constants/type";
+import {
+  Avatar,
+  AvatarFallback,
+  AvatarImage,
+} from '@/ui_temp/components/avatar';
+import { ProfileHeaderProps } from '@/constants/type';
 
 const Header = ({ image, name }: ProfileHeaderProps) => {
   return (
@@ -8,12 +12,12 @@ const Header = ({ image, name }: ProfileHeaderProps) => {
         <Avatar className="size-20 rounded-full bg-neutral-900">
           <AvatarImage src={image} />
           <AvatarFallback>
-            {name.split(" ").length === 1
+            {name.split(' ').length === 1
               ? name?.[0]
               : name
-                  .split(" ")
+                  .split(' ')
                   .map((part) => part[0])
-                  .join("")}
+                  .join('')}
           </AvatarFallback>
         </Avatar>
       </div>

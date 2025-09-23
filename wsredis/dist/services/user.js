@@ -8,8 +8,8 @@ class UserManager {
     addUser(userId, ws, userData) {
         const user = {
             userId,
-            name: (userData === null || userData === void 0 ? void 0 : userData.name) || 'Anonymous',
-            image: (userData === null || userData === void 0 ? void 0 : userData.image) || '',
+            name: (userData === null || userData === void 0 ? void 0 : userData.name) || "Anonymous",
+            image: (userData === null || userData === void 0 ? void 0 : userData.image) || "",
             ws,
             rooms: [],
         };

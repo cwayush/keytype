@@ -45,18 +45,18 @@ class ChatWithServer {
         this.roomHosts = new Map();
         this.subscribedRooms = new Set();
         this.wsocket = new ws_1.WebSocketServer({ server: httpServer });
-        this.wsocket.on('connection', this.handleConnection.bind(this));
+        this.wsocket.on("connection", this.handleConnection.bind(this));
         this.setupPubSub();
     }
     // Handle Connection for WebSocket
     handleConnection(ws) {
-        ws.on('error', console.error);
-        ws.on('message', (data) => this.handleMessage(ws, data));
-        ws.on('close', () => this.handleClose(ws));
+        ws.on("error", console.error);
+        ws.on("message", (data) => this.handleMessage(ws, data));
+        ws.on("close", () => this.handleClose(ws));
     }
     // Setup PubSub for Redis
     setupPubSub() {
-        this.pubsub.subscriber.on('message', (channel, message) => {
+        this.pubsub.subscriber.on("message", (channel, message) => {
             const parsedMessage = JSON.parse(message);
             const users = this.userManage.getUserInRoom(channel);
             users.forEach((user) => {
@@ -91,7 +91,7 @@ class ChatWithServer {
                 isHost: user.userId === this.roomHosts.get(roomCode),
             }));
             await this.pubsub.publish(roomCode, {
-                type: 'ROOM_MEMBERS',
+                type: "ROOM_MEMBERS",
                 members: roomMembers,
             });
         }
@@ -107,7 +107,7 @@ class ChatWithServer {
                 throw new Error(`User with ID ${userId}  not found!`);
             }
             await this.pubsub.publish(roomCode, {
-                type: 'MESSAGE',
+                type: "MESSAGE",
                 userId,
                 message,
                 userData: {
@@ -117,7 +117,7 @@ class ChatWithServer {
             });
         }
         catch (err) {
-            console.error('Error Handling send Message:', err);
+            console.error("Error Handling send Message:", err);
         }
     }
     // Handle Start Race for User send message to Redis
@@ -125,17 +125,17 @@ class ChatWithServer {
         try {
             const userInRoom = this.userManage.getUserInRoom(roomCode);
             if (!userInRoom.length) {
-                console.error('No users in that room', roomCode);
+                console.error("No users in that room", roomCode);
                 return;
             }
             await this.pubsub.publish(roomCode, {
-                type: 'RACE_START',
+                type: "RACE_START",
                 timeStamp: Date.now(),
                 text,
             });
         }
         catch (err) {
-            console.error('Error Handle in RaceStarting', err);
+            console.error("Error Handle in RaceStarting", err);
         }
     }
     // Handle Progress Update for User send message to Redis
@@ -143,22 +143,22 @@ class ChatWithServer {
         try {
             const userInRoom = this.userManage.getUserInRoom(roomCode);
             if (!userInRoom.length) {
-                console.error('No users in that room for progress update:', roomCode);
+                console.error("No users in that room for progress update:", roomCode);
             }
             const user = this.userManage.getUser(userId);
             if (!user) {
-                console.error('User not found for progress update:', userId);
+                console.error("User not found for progress update:", userId);
                 return;
             }
             this.pubsub.publish(roomCode, {
-                type: 'PROGRESS_UPDATE',
+                type: "PROGRESS_UPDATE",
                 userId,
                 progress,
                 timeStamp: Date.now(),
             });
         }
         catch (err) {
-            console.error('Error Handle in UsersProgressUpdate:', err);
+            console.error("Error Handle in UsersProgressUpdate:", err);
         }
     }
     // Handle Close for User send message to Redis
@@ -180,7 +180,7 @@ class ChatWithServer {
                 }
             }
             await this.pubsub.publish(roomCode, {
-                type: 'MEMBER_LEFT',
+                type: "MEMBER_LEFT",
                 memberId: userId,
             });
             // Unsubscribe if room empty
@@ -202,24 +202,24 @@ class ChatWithServer {
                 this.userManage.addUser(userId, ws, userData);
             }
             switch (type) {
-                case 'JOIN_ROOM':
+                case "JOIN_ROOM":
                     await this.handleRoomJoin(userId, roomCode);
                     break;
-                case 'SEND_MESSAGE':
+                case "SEND_MESSAGE":
                     await this.handleSendMessage(userId, roomCode, userData.message);
                     break;
-                case 'START_RACE':
+                case "START_RACE":
                     await this.handleStartRace(roomCode, userData.text);
                     break;
-                case 'UPDATE_PROGRESS':
+                case "UPDATE_PROGRESS":
                     await this.handleProgressUpdate(userData);
                     break;
                 default:
-                    console.error('Invalid message type:', type);
+                    console.error("Invalid message type:", type);
             }
         }
         catch (err) {
-            console.error('Error Handle in Message:', err);
+            console.error("Error Handle in Message:", err);
         }
     }
 }

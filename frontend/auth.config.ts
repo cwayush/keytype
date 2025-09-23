@@ -1,32 +1,32 @@
-import GoogleProvider from "next-auth/providers/google";
-import CredentialsProvider from "next-auth/providers/credentials";
-import bcrypt from "bcryptjs";
-import { signInSchema } from "./config/zvalidate";
-import { getUserByEmail } from "./dboper/user";
-import type { NextAuthConfig } from "next-auth";
+import { type NextAuthConfig } from 'next-auth';
+import Credentials from 'next-auth/providers/credentials';
+import bcrypt from 'bcryptjs';
+import Google from 'next-auth/providers/google';
+import { signInSchema } from '@/config/zvalidate';
+import { getUserByEmail } from './dboper/user';
 
 export default {
   providers: [
-    GoogleProvider({
-      clientId: process.env.GOOGLE_CLIENT_ID!,
-      clientSecret: process.env.GOOGLE_CLIENT_SECRET!,
+    Google({
+      clientId: process.env.GOOGLE_CLIENT_ID,
+      clientSecret: process.env.GOOGLE_CLIENT_SECRET,
     }),
-    CredentialsProvider({
-      name: "Credentials",
-      credentials: {
-        email: { label: "Email", type: "text" },
-        password: { label: "Password", type: "password" },
-      },
+    Credentials({
       async authorize(credentials) {
         const validation = signInSchema.safeParse(credentials);
+        
         if (validation.success) {
           const { email, password } = validation.data;
+
           const user = await getUserByEmail(email);
           if (!user || !user.password) return null;
 
           const passwordMatch = await bcrypt.compare(password, user.password);
-          if (passwordMatch) return user;
+          if (passwordMatch) {
+            return user;
+          }
         }
+
         return null;
       },
     }),

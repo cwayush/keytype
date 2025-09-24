@@ -1,4 +1,4 @@
-import { NextResponse } from "next/server";
+import { NextResponse } from "next/server.js";
 
 // 🚨 temporary bypass middleware just for testing
 export default function middleware(req: any) {

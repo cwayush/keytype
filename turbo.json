@@ -3,7 +3,24 @@
   "tasks": {
     "build": {
       "dependsOn": ["^build"],
-      "outputs": [".next/**", "dist/**", "node_modules/.prisma/**"]
+      "outputs": [
+        "frontend/.next/**",
+        "frontend/dist/**",
+        "frontend/node_modules/.prisma/**"
+      ],
+      "env": [
+        "NEXTAUTH_SECRET",
+        "NEXTAUTH_URL",
+        "FRONTEND_URL",
+        "NEXT_PUBLIC_FRONTEND_URL",
+        "NEXT_PUBLIC_WS_URL",
+        "VERIFIED_SENDER",
+        "REDIS_URL",
+        "RESEND_API_KEY",
+        "DATABASE_URL",
+        "GOOGLE_CLIENT_ID",
+        "GOOGLE_CLIENT_SECRET"
+      ]
     },
     "dev": {
       "cache": false,

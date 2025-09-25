@@ -4,8 +4,8 @@
     "build": {
       "dependsOn": ["^build"],
       "outputs": [
-        "frontend/.next/**",
-        "packages/db/node_modules/.prisma/**"
+        ".next/**",  
+        "../packages/db/node_modules/.prisma/**"
       ],
       "env": [
         "NEXTAUTH_SECRET",

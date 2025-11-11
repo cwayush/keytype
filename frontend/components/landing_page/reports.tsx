@@ -23,17 +23,34 @@ const itemVarients = {
 
 const Reports = () => {
   const [reports, setReports] = useState<
-    null | { name: string; value: number }[]
+    { name: string; value: number }[] | null
   >(null);
   const [isPending, startTransition] = useTransition();
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     startTransition(async () => {
-      const response = await fetch('/api/reports');
-      const data = await response.json();
-      setReports(data);
+      try {
+        const response = await fetch('/api/reports');
+        if (!response.ok) throw new Error('Failed to fetch reports');
+        const data = await response.json();
+
+        if (Array.isArray(data)) {
+          setReports(data);
+        } else {
+          throw new Error('Invalid data format');
+        }
+      } catch (err: any) {
+        console.error(err);
+        setError('Unable to load reports right now. Please try again later.');
+        setReports([
+          { name: 'Typers Registered', value: 500 },
+          { name: 'Tests Completed', value: 10000 },
+        ]);
+      }
     });
   }, []);
+
   return (
     <section className="py-10 relative">
       <div className="max-w-5xl mx-auto px-4 relative z-10">
@@ -51,6 +68,7 @@ const Reports = () => {
             <span className="absolute left-0 -bottom-1 w-full h-[3px] bg-gradient-to-r from-blue-800 to-emerald-800 rounded"></span>
           </span>
         </motion.h2>
+
         <motion.p
           variants={itemVarients}
           initial="hidden"
@@ -59,11 +77,14 @@ const Reports = () => {
         >
           A quick look at our growing community.
         </motion.p>
-        <div className="flex justify-center gap-8">
+
+        <div className="flex flex-wrap justify-center gap-8">
           {isPending ? (
             <Loader className="animate-spin mx-auto size-10 text-blue-700" />
-          ) : (
-            reports?.map((report, index) => (
+          ) : error ? (
+            <p className="text-red-500 text-center">{error}</p>
+          ) : reports && reports.length > 0 ? (
+            reports.map((report, index) => (
               <Card
                 key={index}
                 className="bg-neutral-900/50 border-neutral-800 w-full max-w-xs"
@@ -79,6 +100,8 @@ const Reports = () => {
                 </CardContent>
               </Card>
             ))
+          ) : (
+            <p className="text-neutral-400">No reports available</p>
           )}
         </div>
       </div>

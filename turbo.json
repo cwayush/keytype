@@ -3,10 +3,7 @@
   "tasks": {
     "build": {
       "dependsOn": ["^build"],
-      "outputs": [
-        ".next/**",  
-        "../packages/db/node_modules/.prisma/**"
-      ],
+      "outputs": [".next/**", "../packages/db/node_modules/.prisma/**"],
       "env": [
         "NEXTAUTH_SECRET",
         "NEXTAUTH_URL",
@@ -20,6 +17,11 @@
         "GOOGLE_CLIENT_ID",
         "GOOGLE_CLIENT_SECRET"
       ]
+    },
+    "start": {
+      "dependsOn": ["build"],
+      "cache": false,
+      "persistent": true
     },
     "dev": {
       "cache": false,

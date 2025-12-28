@@ -7,8 +7,7 @@ import { getWeakKeys } from './errorWords.ts/weakKeys';
 import { getWeakWords } from './errorWords.ts/weakWords';
 
 const openai = new OpenAI({
-  apiKey:
-    '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',
+  apiKey: process.env.OPENAI_API_KEY,
 });
 
 export async function generateExercise() {

@@ -44,7 +44,7 @@ const Interface = () => {
   const completedRef = useRef(false);
 
   const [keystrokes, setKeystrokes] = useState<any[]>([]);
-  const [setWordStats] = useState<any[]>([]);
+  const [wordStats, setWordStats] = useState<any[]>([]);
 
   const wordBufferRef = useRef('');
   const expectedWordRef = useRef('');

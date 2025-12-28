@@ -9,7 +9,7 @@ import Link from 'next/link';
 export function Header() {
   const { data: session } = useSession();
   return (
-    <header className="w-full max-w-5xl mx-auto flex items-center justify-between py-5 px-0">
+    <header className="w-full max-w-6xl mx-auto flex items-center justify-between py-5 px-0">
       <Link
         href="/"
         className="relative group inline-flex items-center px-6 py-2 rounded-xl transition-all duration-500"

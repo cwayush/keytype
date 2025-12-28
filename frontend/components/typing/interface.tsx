@@ -1,31 +1,31 @@
-"use client";
+'use client';
 
-import { AnimatePresence, motion } from "framer-motion";
-import Result from "./result";
-import Modes from "./modes";
+import { AnimatePresence, motion } from 'framer-motion';
+import Result from './result';
+import Modes from './modes';
 import React, {
   useCallback,
   useEffect,
   useMemo,
   useRef,
   useState,
-} from "react";
+} from 'react';
 import {
   calculateAccuracy,
   calculateWPM,
   cn,
   generateRandomWords,
-} from "@/lib/utils";
-import { addTest } from "@/actions/test";
+} from '@/lib/utils';
+import { addTest } from '@/actions/test';
 
 const Interface = () => {
   const [currentIndex, setCurrentIndex] = useState<number>(0);
-  const [userInput, setUserInput] = useState<string>("");
-  const [text, setText] = useState<string>("");
+  const [userInput, setUserInput] = useState<string>('');
+  const [text, setText] = useState<string>('');
   const [mistakes, setMistakes] = useState<number[]>([]);
   const [caretPosition, setCaretPosition] = useState({ top: 0, left: 0 });
 
-  const [mode, setMode] = useState<string>("words");
+  const [mode, setMode] = useState<string>('words');
   const [modeOption, setModeOption] = useState<number>(10);
 
   const [timePassed, setTimePassed] = useState<number>(0);
@@ -43,14 +43,25 @@ const Interface = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const completedRef = useRef(false);
 
+  const [keystrokes, setKeystrokes] = useState<any[]>([]);
+  const [setWordStats] = useState<any[]>([]);
+
+  const wordBufferRef = useRef('');
+  const expectedWordRef = useRef('');
+  const correctSentence = useRef('');
+  const typedSentenceRef = useRef('');
+  const wordStartRef = useRef(Date.now());
+  const wordErrorsRef = useRef(0);
+  const wordStatsRef = useRef<any[]>([]);
+
   const generateNewText = useCallback(() => {
     let newText;
-    if (mode === "words") {
+    if (mode === 'words') {
       newText = generateRandomWords(Number(modeOption));
-    } else if (mode === "time") {
+    } else if (mode === 'time') {
       newText = generateRandomWords(Number(modeOption * 2));
     } else {
-      newText = "This is a placeholder text.";
+      newText = 'This is a placeholder text.';
     }
     setText(newText);
   }, [mode, modeOption]);
@@ -58,7 +69,7 @@ const Interface = () => {
   const resetTest = useCallback(() => {
     generateNewText();
     setCurrentIndex(0);
-    setUserInput("");
+    setUserInput('');
     setTimePassed(0);
     setTimeStarted(false);
     setRaceStarted(false);
@@ -76,14 +87,14 @@ const Interface = () => {
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === "Tab") {
+      if (e.key === 'Tab') {
         e.preventDefault();
         resetTest();
       }
     };
 
-    window.addEventListener("keydown", handleKeyDown);
-    return () => window.removeEventListener("keydown", handleKeyDown);
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
   }, [resetTest]);
 
   const updateCaretPosition = useCallback(() => {
@@ -109,8 +120,8 @@ const Interface = () => {
     const handleResize = () => {
       updateCaretPosition();
     };
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
   }, [updateCaretPosition]);
 
   useEffect(() => {
@@ -127,7 +138,7 @@ const Interface = () => {
       timer = setInterval(() => {
         setTimePassed((prev) => {
           const newTime = prev + 1;
-          if (mode === "time" && newTime >= modeOption) {
+          if (mode === 'time' && newTime >= modeOption) {
             return modeOption;
           }
           return newTime;
@@ -169,12 +180,16 @@ const Interface = () => {
       intervalRef.current = null;
     }
 
+    setWordStats(wordStatsRef.current);
+
     addTest({
       wpm: finalWpm,
       accuracy: parseFloat(finalAccuracy.toFixed(2)),
       time: timePassed,
       mode,
       modeOption,
+      keystrokes,
+      wordStats: wordStatsRef.current,
     });
   };
 
@@ -195,6 +210,50 @@ const Interface = () => {
     if (raceCompleted) return;
 
     const newInput = e.target.value;
+    const typedChar = newInput[newInput.length - 1];
+    const expectedChar = text[newInput.length - 1];
+
+    if (typedChar) {
+      setKeystrokes((prev) => [
+        ...prev,
+        {
+          expectedChar,
+          typedChar,
+          time: Date.now(),
+          isCorrect: typedChar === expectedChar,
+        },
+      ]);
+    }
+
+    if (expectedChar === ' ') {
+      const duration = Date.now() - wordStartRef.current;
+
+      correctSentence.current += expectedWordRef.current.trim() + ' ';
+      typedSentenceRef.current += wordBufferRef.current.trim() + ' ';
+
+      wordStatsRef.current.push({
+        word: wordBufferRef.current.trim(),
+        expected: expectedWordRef.current.trim(),
+        typedSentence: typedSentenceRef.current.trim(),
+        correctSentence: correctSentence.current.trim(),
+        duration,
+        errors: wordErrorsRef.current,
+        isCorrect: wordBufferRef.current === expectedWordRef.current,
+      });
+
+      wordBufferRef.current = '';
+      expectedWordRef.current = '';
+      wordErrorsRef.current = 0;
+      wordStartRef.current = Date.now();
+    } else if (typedChar) {
+      wordBufferRef.current += typedChar;
+      expectedWordRef.current += expectedChar;
+
+      if (typedChar !== expectedChar) {
+        wordErrorsRef.current += 1;
+      }
+    }
+
     setUserInput(newInput);
 
     if (newInput.length < userInput.length) {
@@ -206,7 +265,7 @@ const Interface = () => {
       }
     }
 
-    if (mode === "time" && timePassed >= modeOption) {
+    if (mode === 'time' && timePassed >= modeOption) {
       completeTest();
       return;
     }
@@ -219,14 +278,14 @@ const Interface = () => {
   };
 
   const character = useMemo(() => {
-    return text.split("").map((char, index) => ({
+    return text.split('').map((char, index) => ({
       char,
       status:
         index < currentIndex
           ? mistakes.includes(index)
-            ? "error"
-            : "correct"
-          : "pending",
+            ? 'error'
+            : 'correct'
+          : 'pending',
     }));
   }, [text, currentIndex, mistakes]);
 
@@ -261,9 +320,9 @@ const Interface = () => {
                   charRef.current[index] = chr;
                 }}
                 className={cn(
-                  char.status === "correct" && "text-green-400",
-                  char.status === "error" && "text-red-600",
-                  char.status === "pending" && "text-neutral-600",
+                  char.status === 'correct' && 'text-green-400',
+                  char.status === 'error' && 'text-red-600',
+                  char.status === 'pending' && 'text-neutral-600'
                 )}
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -284,7 +343,7 @@ const Interface = () => {
                 transition: {
                   duration: 0.5,
                   repeat: Infinity,
-                  repeatType: "reverse",
+                  repeatType: 'reverse',
                 },
               }}
             />
@@ -304,8 +363,8 @@ const Interface = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
             >
-              Time:{timePassed}s | WPM:{" "}
-              {calculateWPM(userInput.length, timePassed)} | Accuracy:{" "}
+              Time:{timePassed}s | WPM:{' '}
+              {calculateWPM(userInput.length, timePassed)} | Accuracy:{' '}
               {calculateAccuracy(userInput, text).toFixed(2)}%
             </motion.div>
           )}

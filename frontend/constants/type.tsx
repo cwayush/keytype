@@ -1,4 +1,4 @@
-import { Dispatch, SetStateAction } from "react";
+import { Dispatch, SetStateAction } from 'react';
 
 export type ModesProps = {
   mode: string;
@@ -83,13 +83,13 @@ export type ReviewsCardProps = {
 export type BestScoresProps = {
   allTimeBestScores: {
     time: {
-      "15s": number;
-      "30s": number;
+      '15s': number;
+      '30s': number;
     };
     words: {
-      "10": number;
-      "25": number;
-      "50": number;
+      '10': number;
+      '25': number;
+      '50': number;
     };
   };
 };
@@ -177,4 +177,13 @@ export type ChatMessageProps = {
   message: Message;
 };
 
-export type AddTestTypes = Omit<ResultProps, "onRestart" | "wpmData">;
+export type AddTestTypes = {
+  wpm: number;
+  accuracy: number;
+  time: number;
+  mode: string;
+  modeOption: number;
+
+  keystrokes?: any[];
+  wordStats?: any[];
+};

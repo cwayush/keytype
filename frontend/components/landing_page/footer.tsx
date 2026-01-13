@@ -1,3 +1,5 @@
+import { FOOTER_LINKS } from "@/constants";
+import { Dot } from "lucide-react";
 import Link from "next/link";
 
 const Footer = () => {
@@ -8,27 +10,29 @@ const Footer = () => {
           <div className="text-center md:text-left mb-4 md:mb-0">
             <Link
               href="/"
-              className="text-2xl font-bold bg-gradient-to-r from-blue-700 to-emerald-700 bg-clip-text text-transparent"
+              className="text-2xl font-bold bg-linear-to-r from-blue-700 to-emerald-700 bg-clip-text text-transparent"
             >
               keyType
             </Link>
-            <p className="text-sm text-neutral-400 mt-2">
-              &copy; {new Date().getFullYear()} keyType. All rights reserved.
+            <p className="md:text-sm text-xs  text-neutral-400 mt-2">
+              &copy; {new Date().getFullYear()} keyType. Designed for speed &
+              accuracy.
             </p>
           </div>
           <div>
-            <nav className="flex space-x-4">
-              {["Privacy Ploicy", "Terms of Services", "Contact Us"].map(
-                (link) => (
-                  <Link
-                    key={link}
-                    href="/"
-                    className="text-sm text-neutral-400 hover:text-blue-400 transition-colors duration-300"
-                  >
-                    {link}
-                  </Link>
-                ),
-              )}
+            <nav className="flex md:space-x-2  ">
+              {FOOTER_LINKS.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="md:text-sm text-xs text-neutral-400 hover:text-blue-500 transition-colors duration-300"
+                >
+                  <span className="flex gap-1 items-center">
+                    <Dot />
+                    {link.label}
+                  </span>
+                </Link>
+              ))}
             </nav>
           </div>
         </div>

@@ -1,8 +1,8 @@
-import Interface from '@/components/typing/interface';
+import Interface from "@/components/typing/interface";
 
 const TypingPage = () => {
   return (
-    <main className="grid place-content-center mt-20">
+    <main className="grid place-content-center mt-10">
       <Interface />
     </main>
   );

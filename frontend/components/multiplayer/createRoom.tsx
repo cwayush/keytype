@@ -1,30 +1,31 @@
-'use client';
+"use client";
 
-import { Card, CardContent, CardHeader, CardTitle } from '@/ui/components/card';
-import { RoomInput, roomSchema } from '@/config/zvalidate';
-import { zodResolver } from '@hookform/resolvers/zod';
-import { Button } from '@/ui/components/button';
-import { Input } from '@/ui/components/input';
-import { Loader2, Plus } from 'lucide-react';
-import { useRouter } from 'next/navigation';
-import { useForm } from 'react-hook-form';
-import { wordOptions } from '@/constants';
-import { useTransition } from 'react';
+import { Card, CardContent, CardHeader, CardTitle } from "@/ui/components/card";
+import { RoomInput, roomSchema } from "@/config/zvalidate";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { Button } from "@/ui/components/button";
+import { Input } from "@/ui/components/input";
+import { Loader2, Plus } from "lucide-react";
+import { useRouter } from "next/navigation";
+import { useForm } from "react-hook-form";
+import { wordOptions } from "@/constants";
+import { useTransition } from "react";
 import {
   Form,
   FormControl,
   FormField,
   FormItem,
   FormMessage,
-} from '@/ui/components/form';
+} from "@/ui/components/form";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from '@/ui/components/select';
-import { toast } from 'sonner';
+} from "@/ui/components/select";
+import { toast } from "sonner";
+import { createRoom } from "@/actions/rooms";
 
 const CreateRoom = () => {
   const [isPending, startTransition] = useTransition();
@@ -32,29 +33,23 @@ const CreateRoom = () => {
   const form = useForm<RoomInput>({
     resolver: zodResolver(roomSchema),
     defaultValues: {
-      name: '',
-      mode: 'words',
-      modeOption: '10',
+      name: "",
+      mode: "words",
+      modeOption: "10",
     },
   });
 
   const onSubmit = (data: RoomInput) => {
     startTransition(async () => {
-      try {
-        const response = await fetch('/api/room', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(data),
-        });
-        const room = await response.json();
-        router.push(`/multiplayer/room/${room.code}`);
-        toast.success('Room Successfully Created');
-      } catch (err) {
-        console.log('Room Not Created', err);
-        toast.error('Something went wrong!');
+      const room = await createRoom(data);
+
+      if (!room) {
+        toast.error("Something went wrong!");
+        return;
       }
+
+      toast.success("Room successfully created 🎯");
+      router.push(`/multiplayer/room/${room.code}`);
     });
   };
 
@@ -101,7 +96,7 @@ const CreateRoom = () => {
                       </FormControl>
                       <SelectContent className="bg-neutral-800 border-neutral-700 text-neutral-200">
                         <SelectItem
-                          value={'words'}
+                          value={"words"}
                           className="text-neutral-400 cursor-pointer"
                         >
                           Words

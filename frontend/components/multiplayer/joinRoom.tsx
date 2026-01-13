@@ -1,14 +1,15 @@
-import { Card, CardContent, CardHeader, CardTitle } from '@/ui/components/card';
-import { Form, FormControl, FormField, FormItem } from '@/ui/components/form';
-import { JoinRoomInput, joinRoomSchema } from '@/config/zvalidate';
-import { zodResolver } from '@hookform/resolvers/zod';
-import { Button } from '@/ui/components/button';
-import { Input } from '@/ui/components/input';
-import { Loader2, LogIn } from 'lucide-react';
-import { useRouter } from 'next/navigation';
-import { useForm } from 'react-hook-form';
-import { useTransition } from 'react';
-import { toast } from 'sonner';
+import { Card, CardContent, CardHeader, CardTitle } from "@/ui/components/card";
+import { Form, FormControl, FormField, FormItem } from "@/ui/components/form";
+import { JoinRoomInput, joinRoomSchema } from "@/config/zvalidate";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { Button } from "@/ui/components/button";
+import { Input } from "@/ui/components/input";
+import { Loader2, LogIn } from "lucide-react";
+import { useRouter } from "next/navigation";
+import { useForm } from "react-hook-form";
+import { useTransition } from "react";
+import { toast } from "sonner";
+import { joinRoom } from "@/actions/rooms";
 
 const JoinRoom = () => {
   const [isPending, startTransition] = useTransition();
@@ -17,26 +18,21 @@ const JoinRoom = () => {
   const form = useForm<JoinRoomInput>({
     resolver: zodResolver(joinRoomSchema),
     defaultValues: {
-      code: '',
+      code: "",
     },
   });
 
   const onSubmit = (data: JoinRoomInput) => {
     startTransition(async () => {
-      try {
-        const response = await fetch(`/api/room/${data.code}`);
-        const room = await response.json();
+      const result = await joinRoom({ code: data.code });
 
-        if (response.ok) {
-          router.push(`/multiplayer/room/${data.code}`);
-          toast.success('Room Successfully Joined');
-        } else {
-          toast.error(room.error || 'Room Not Found');
-        }
-      } catch (err) {
-        console.error(err);
-        toast.error('Failed to join room');
+      if (!result.ok) {
+        toast.error(result.data.error || "Room Not Found");
+        return;
       }
+
+      router.push(`/multiplayer/room/${data.code}`);
+      toast.success("Room Successfully Joined");
     });
   };
 

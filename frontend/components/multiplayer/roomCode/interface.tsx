@@ -1,13 +1,13 @@
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
-import { calculateAccuracy, calculateWPM, cn } from '@/lib/utils';
-import { AnimatePresence, motion } from 'framer-motion';
-import { InterfaceProps } from '@/constants/type';
-import Result from './result';
-import { addTest } from '@/actions/test';
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { calculateAccuracy, calculateWPM, cn } from "@/lib/utils";
+import { AnimatePresence, motion } from "framer-motion";
+import { InterfaceProps } from "@/constants/type";
+import Result from "./result";
+import { addTest } from "@/actions/addTest";
 
 const Interface = ({ mode, modeOption, text, onProgress }: InterfaceProps) => {
   const [currentIndex, setCurrentIndex] = useState<number>(0);
-  const [userInput, setUserInput] = useState<string>('');
+  const [userInput, setUserInput] = useState<string>("");
   const [mistakes, setMistakes] = useState<number[]>([]);
   const [caretPosition, setCaretPosition] = useState({ top: 0, left: 0 });
 
@@ -40,7 +40,7 @@ const Interface = ({ mode, modeOption, text, onProgress }: InterfaceProps) => {
       timer = setInterval(() => {
         setTimePassed((prev) => {
           const newTime = prev + 1;
-          if (mode === 'time' && newTime >= modeOption) {
+          if (mode === "time" && newTime >= modeOption) {
             return modeOption;
           }
           return newTime;
@@ -70,7 +70,7 @@ const Interface = ({ mode, modeOption, text, onProgress }: InterfaceProps) => {
       }
     }
 
-    if (mode === 'time' && timePassed >= modeOption) {
+    if (mode === "time" && timePassed >= modeOption) {
       completeTest();
       return;
     }
@@ -83,14 +83,14 @@ const Interface = ({ mode, modeOption, text, onProgress }: InterfaceProps) => {
   };
 
   const character = useMemo(() => {
-    return text.split('').map((char, index) => ({
+    return text.split("").map((char, index) => ({
       char,
       status:
         index < currentIndex
           ? mistakes.includes(index)
-            ? 'error'
-            : 'correct'
-          : 'pending',
+            ? "error"
+            : "correct"
+          : "pending",
     }));
   }, [text, currentIndex, mistakes]);
 
@@ -117,8 +117,8 @@ const Interface = ({ mode, modeOption, text, onProgress }: InterfaceProps) => {
     const handleResize = () => {
       updateCaretPosition();
     };
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, [updateCaretPosition]);
 
   useEffect(() => {
@@ -208,9 +208,9 @@ const Interface = ({ mode, modeOption, text, onProgress }: InterfaceProps) => {
                   charRef.current[index] = chr;
                 }}
                 className={cn(
-                  char.status === 'correct' && 'text-green-400',
-                  char.status === 'error' && 'text-red-600',
-                  char.status === 'pending' && 'text-neutral-600'
+                  char.status === "correct" && "text-green-400",
+                  char.status === "error" && "text-red-600",
+                  char.status === "pending" && "text-neutral-600"
                 )}
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -231,7 +231,7 @@ const Interface = ({ mode, modeOption, text, onProgress }: InterfaceProps) => {
                 transition: {
                   duration: 0.5,
                   repeat: Infinity,
-                  repeatType: 'reverse',
+                  repeatType: "reverse",
                 },
               }}
             />

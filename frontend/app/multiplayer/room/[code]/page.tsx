@@ -10,6 +10,7 @@ import { LoaderPinwheel } from "lucide-react";
 import { useSession } from "next-auth/react";
 import useSocket from "@/hooks/useSocket";
 import { motion } from "framer-motion";
+import { fetchRoomByCode } from "@/actions/rooms";
 
 const containerVarients = {
   hidden: { opacity: 0 },
@@ -25,6 +26,8 @@ const RoomPage = (props: { params: Promise<{ code: string }> }) => {
   const { code } = use(props.params);
 
   const { data: session, status } = useSession();
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
   const [roomData, setRoomData] = useState<Room | null>(null);
   const [isRaceStarted, setIsRaceStarted] = useState<boolean>(false);
   const [members, setMembers] = useState<Member[]>([]);
@@ -33,15 +36,29 @@ const RoomPage = (props: { params: Promise<{ code: string }> }) => {
   const socket = useSocket();
 
   useEffect(() => {
-    const getRoomData = async () => {
-      const response = await fetch(`/api/room/${code}`);
-      const data = await response.json();
+    let active = true;
+
+    const loadRoom = async () => {
+      setLoading(true);
+      setError(null);
+
+      const data = await fetchRoomByCode(code);
+
+      if (!active) return;
+
+      if (!data) {
+        setError("Room not found or expired");
+      }
+
       setRoomData(data);
+      setLoading(false);
     };
 
-    if (code) {
-      getRoomData();
-    }
+    if (code) loadRoom();
+
+    return () => {
+      active = false;
+    };
   }, [code]);
 
   const joinRoom = useCallback(() => {
@@ -57,7 +74,7 @@ const RoomPage = (props: { params: Promise<{ code: string }> }) => {
           name: session?.user?.name,
           image: session?.user?.image,
         },
-      }),
+      })
     );
 
     socket.onmessage = (e) => {
@@ -84,7 +101,7 @@ const RoomPage = (props: { params: Promise<{ code: string }> }) => {
                       progress: data.progress.progress,
                     },
                   }
-                : member,
+                : member
             );
           });
           break;
@@ -105,7 +122,7 @@ const RoomPage = (props: { params: Promise<{ code: string }> }) => {
   }
 
   const isHost = members.some(
-    (member) => member.id === session?.user?.id && member.isHost,
+    (member) => member.id === session?.user?.id && member.isHost
   );
 
   if (!roomData) {

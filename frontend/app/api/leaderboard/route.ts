@@ -47,7 +47,7 @@ export const GET = async (req: NextRequest) => {
     console.error("Error fetching leaderboard:", err);
     return NextResponse.json(
       { error: "Failed to fetch leaderboard" },
-      { status: 500 },
+      { status: 500 }
     );
   }
 };
@@ -67,7 +67,7 @@ export const POST = async (req: NextRequest) => {
         {
           error: "Unauthorized: No valid session found",
         },
-        { status: 401 },
+        { status: 401 }
       );
     }
 
@@ -106,7 +106,7 @@ export const POST = async (req: NextRequest) => {
     const midnight = new Date();
     midnight.setHours(24, 0, 0, 0);
     const secondsUntilMidnight = Math.floor(
-      (midnight.getTime() - Date.now()) / 1000,
+      (midnight.getTime() - Date.now()) / 1000
     );
     await redis.expire(DAILY_KEY, secondsUntilMidnight);
     return NextResponse.json({
@@ -118,7 +118,7 @@ export const POST = async (req: NextRequest) => {
     console.error("Error submitting score:", err);
     return NextResponse.json(
       { error: "Failed to submit score" },
-      { status: 500 },
+      { status: 500 }
     );
   }
 };

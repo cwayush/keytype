@@ -1,9 +1,9 @@
-'use client ';
+"use client ";
 
-import { Button } from '@/ui/components/button';
-import { ArrowRight } from 'lucide-react';
-import { motion } from 'framer-motion';
-import Link from 'next/link';
+import { Button } from "@/ui/components/button";
+import { ArrowRight } from "lucide-react";
+import { motion } from "framer-motion";
+import Link from "next/link";
 
 const containerVarients = {
   hidden: { opacity: 0 },
@@ -21,7 +21,7 @@ const itemVarients = {
     opacity: 1,
     y: 0,
     transition: {
-      type: 'spring' as const,
+      type: "spring" as const,
       damping: 30,
       stiffness: 100,
     },
@@ -42,12 +42,12 @@ const Intro = () => {
           className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-neutral-200"
         >
           Level Up Your Typing Skills <br />
-          with{' '}
+          with{" "}
           <span className="relative">
-            <span className="bg-gradient-to-r from-blue-600 to-emerald-500 bg-clip-text text-transparent">
+            <span className="bg-linear-to-r from-blue-600 to-emerald-500 bg-clip-text text-transparent">
               keyType
             </span>
-            <span className="absolute left-0 -bottom-1 w-full h-[3px] bg-gradient-to-r from-blue-800 to-emerald-800 rounded"></span>
+            <span className="absolute left-0 -bottom-1 w-full h-[3px] bg-linear-to-r from-blue-800 to-emerald-800 rounded"></span>
           </span>
         </motion.h1>
 

@@ -1,5 +1,5 @@
-import { Avatar, AvatarFallback, AvatarImage } from '@/ui/components/avatar';
-import { MemberProgressProps } from '@/constants/type';
+import { Avatar, AvatarFallback, AvatarImage } from "@/ui/components/avatar";
+import { MemberProgressProps } from "@/constants/type";
 
 const MemberProgress = ({ member }: MemberProgressProps) => {
   const wpm = member.progress?.wpm || 0;
@@ -10,12 +10,12 @@ const MemberProgress = ({ member }: MemberProgressProps) => {
     <div className="flex items-center gap-4">
       <div className="flex items-center gap-3">
         <Avatar>
-          <AvatarImage src={member.image || ''} alt={member.name} />
+          <AvatarImage src={member.image || ""} alt={member.name} />
           <AvatarFallback>
             {member.name
-              .split(' ')
+              .split(" ")
               .map((n) => n[0])
-              .join('')}
+              .join("")}
           </AvatarFallback>
         </Avatar>
         <div>
@@ -33,7 +33,7 @@ const MemberProgress = ({ member }: MemberProgressProps) => {
       <div className="flex-1">
         <div className="h-2 bg-neutral-800 rounded-full overflow-hidden">
           <div
-            className="h-full bg-gradient-to-r from-blue-800 to-emerald-400 transition-all duration-300 ease-out"
+            className="h-full bg-linear-to-r from-blue-800 to-emerald-400 transition-all duration-300 ease-out"
             style={{ width: `${progress}%` }}
           ></div>
         </div>

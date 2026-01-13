@@ -1,11 +1,12 @@
-import { Card, CardContent } from '@/ui/components/card';
-import { ScrollArea } from '@/ui/components/scrollarea';
-import { Hourglass, Loader2, Type } from 'lucide-react';
-import { Button } from '@/ui/components/button';
-import { useState, useTransition } from 'react';
-import { useRouter } from 'next/navigation';
-import { Room } from '@/constants/type';
-import { toast } from 'sonner';
+import { Card, CardContent } from "@/ui/components/card";
+import { ScrollArea } from "@/ui/components/scrollarea";
+import { Hourglass, Loader2, Type } from "lucide-react";
+import { Button } from "@/ui/components/button";
+import { useState, useTransition } from "react";
+import { useRouter } from "next/navigation";
+import { Room } from "@/constants/type";
+import { toast } from "sonner";
+import { joinRoom } from "@/actions/rooms";
 
 const PublicRoom = ({ rooms }: { rooms: Room[] }) => {
   const [isPending, startTransition] = useTransition();
@@ -16,18 +17,18 @@ const PublicRoom = ({ rooms }: { rooms: Room[] }) => {
     setRoomId(roomId);
     startTransition(async () => {
       try {
-        const response = await fetch(`/api/room/${roomCode}`);
-        const room = await response.json();
+        const result = await joinRoom({ code: roomCode });
 
-        if (response.ok) {
-          router.push(`/multiplayer/room/${roomCode}`);
-          toast.success('Joined room successfully!');
-        } else {
-          toast.error(room.error || 'Room not found!');
+        if (!result.ok) {
+          toast.error(result.data.error || "Room Not Found");
+          return;
         }
+
+        router.push(`/multiplayer/room/${roomCode}`);
+        toast.success("Joined room successfully!");
       } catch (error) {
-        console.log(error);
-        toast.error('Failed to join room');
+        console.log("Failed to join room", error);
+        toast.error("Failed to join room");
       } finally {
         setRoomId(null);
       }
@@ -46,7 +47,7 @@ const PublicRoom = ({ rooms }: { rooms: Room[] }) => {
               <div className="flex items-center space-x-4 text-lg ">
                 <h3 className=" text-neutral-200">{room.name}</h3>
                 <p className="text-blue-800 flex items-center">
-                  {room.mode === 'words' ? (
+                  {room.mode === "words" ? (
                     <>
                       <Type className="size-5 mr-2" />
                       {room.modeOption} words
@@ -71,7 +72,7 @@ const PublicRoom = ({ rooms }: { rooms: Room[] }) => {
                     Joining...
                   </>
                 ) : (
-                  'Join'
+                  "Join"
                 )}
               </Button>
             </CardContent>

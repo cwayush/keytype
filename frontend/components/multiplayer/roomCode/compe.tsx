@@ -1,10 +1,10 @@
-import { Card, CardContent } from '@/ui/components/card';
-import MemberProgress from './member/memberProgress';
-import { useCallback, useEffect } from 'react';
-import { CompeProps } from '@/constants/type';
-import { useSession } from 'next-auth/react';
-import useWsStore from '@/store/useWsStore';
-import Interface from './interface';
+import { Card, CardContent } from "@/ui/components/card";
+import MemberProgress from "./member/memberProgress";
+import { useCallback, useEffect } from "react";
+import { CompeProps } from "@/constants/type";
+import { useSession } from "next-auth/react";
+import useWsStore from "@/store/useWsStore";
+import Interface from "./interface";
 
 const Compe = ({
   members,
@@ -41,7 +41,7 @@ const Compe = ({
         try {
           wsref.send(
             JSON.stringify({
-              type: 'UPDATE_PROGRESS',
+              type: "UPDATE_PROGRESS",
               userId: session?.user.id,
               roomCode: roomData.code,
               progress: {
@@ -52,7 +52,7 @@ const Compe = ({
             })
           );
         } catch (err) {
-          console.log('Error updating progress:', err);
+          console.log("Error updating progress:", err);
         }
       }
     },

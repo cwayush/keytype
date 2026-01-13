@@ -1,12 +1,13 @@
-import { useEffect, useState, useTransition } from 'react';
-import { Loader, PlusIcon } from 'lucide-react';
-import { motion } from 'framer-motion';
+import { useEffect, useState, useTransition } from "react";
+import { Loader, PlusIcon } from "lucide-react";
+import { motion } from "framer-motion";
 import {
   Card,
   CardContent,
   CardDescription,
   CardTitle,
-} from '@/ui/components/card';
+} from "@/ui/components/card";
+import { fetchReports } from "@/actions/reports";
 
 const itemVarients = {
   hidden: { opacity: 0, y: 20 },
@@ -14,40 +15,39 @@ const itemVarients = {
     opacity: 1,
     y: 0,
     transition: {
-      type: 'spring',
+      type: "spring",
       damping: 30,
       stiffness: 100,
     },
   },
 } as const;
 
+interface report {
+  name: string;
+  value: number;
+}
+
 const Reports = () => {
-  const [reports, setReports] = useState<
-    { name: string; value: number }[] | null
-  >(null);
+  const [reports, setReports] = useState<report[] | null>(null);
   const [isPending, startTransition] = useTransition();
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     startTransition(async () => {
-      try {
-        const response = await fetch('/api/reports');
-        if (!response.ok) throw new Error('Failed to fetch reports');
-        const data = await response.json();
+      const data = await fetchReports();
 
-        if (Array.isArray(data)) {
-          setReports(data);
-        } else {
-          throw new Error('Invalid data format');
-        }
-      } catch (err: any) {
-        console.error(err);
-        setError('Unable to load reports right now. Please try again later.');
+      if (!data) {
+        setError("Unable to load reports right now. Please try again later.");
+
         setReports([
-          { name: 'Typers Registered', value: 500 },
-          { name: 'Tests Completed', value: 10000 },
+          { name: "Typers Registered", value: 500 },
+          { name: "Tests Completed", value: 10000 },
         ]);
+
+        return;
       }
+
+      setReports(data);
     });
   }, []);
 
@@ -60,12 +60,12 @@ const Reports = () => {
           animate="visible"
           className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-6 text-neutral-200"
         >
-          Power in{' '}
+          Power in{" "}
           <span className="relative">
-            <span className="bg-gradient-to-r from-blue-600 to-emerald-500 bg-clip-text text-transparent">
+            <span className="bg-linear-to-r from-blue-600 to-emerald-500 bg-clip-text text-transparent">
               Numbers
             </span>
-            <span className="absolute left-0 -bottom-1 w-full h-[3px] bg-gradient-to-r from-blue-800 to-emerald-800 rounded"></span>
+            <span className="absolute left-0 -bottom-1 w-full h-[3px] bg-linear-to-r from-blue-800 to-emerald-800 rounded"></span>
           </span>
         </motion.h2>
 
@@ -90,7 +90,7 @@ const Reports = () => {
                 className="bg-neutral-900/50 border-neutral-800 w-full max-w-xs"
               >
                 <CardContent className="p-5 text-center space-y-2">
-                  <CardTitle className="text-2xl bg-gradient-to-r from-blue-600 to-emerald-500 bg-clip-text text-transparent">
+                  <CardTitle className="text-2xl bg-linear-to-r from-blue-600 to-emerald-500 bg-clip-text text-transparent">
                     {report.name}
                   </CardTitle>
                   <CardDescription className="flex items-center justify-center gap-2 text-neutral-300 text-xl">

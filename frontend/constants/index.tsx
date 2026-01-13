@@ -8,6 +8,7 @@ import {
   User,
   Zap,
 } from "lucide-react";
+import { FaAward, FaMedal, FaTrophy } from "react-icons/fa";
 
 export const NAVLINKS = [
   {
@@ -66,6 +67,15 @@ export const FeaturesData = [
   },
 ];
 
+export const RankIcon = ({ rank }: { rank: number }) => {
+  if (rank === 1)
+    return <FaTrophy className="size-4 sm:size-5 text-yellow-400" />;
+  if (rank === 2) return <FaMedal className="size-4 sm:size-5 text-gray-300" />;
+  if (rank === 3)
+    return <FaAward className="size-4 sm:size-5 text-orange-500" />;
+  return <span className="ml-1">{rank}</span>;
+};
+
 export const ReviewsData = [
   {
     name: "Aarav K.",
@@ -104,7 +114,21 @@ export const ReviewsData = [
   },
 ];
 
-export const modes = ["time", "words"];
+export const messages = [
+  "Training neurons… please don’t blink 👀",
+  "Crunching keystrokes like popcorn 🍿",
+  "Finding your weak keys ⌨️",
+  "AI typing coach warming up ☕",
+  "Building your personalized drill 🚀",
+];
+
+export const FOOTER_LINKS = [
+  { label: "Privacy Policy", href: "/privacy-policy" },
+  { label: "Terms & Conditions", href: "/terms-and-conditions" },
+  { label: "Contact Us", href: "/" },
+];
+
+export const modes = ["words", "time"];
 export const timeOptions = [15, 30];
 export const wordOptions = [10, 25, 50];
 
@@ -117,6 +141,8 @@ export const publicRoutes = [
   "/type",
   "/api/leaderboard",
   "/api/stats",
+  "/privacy-policy",
+  "/terms-and-conditions",
 ];
 
 export const authRoutes = ["/auth", "/auth/verification"];

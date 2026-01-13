@@ -1,16 +1,16 @@
-'use client';
+"use client";
 
-import { Card, CardContent, CardHeader, CardTitle } from '@/ui/components/card';
-import { ChartNoAxesCombined, ChevronDown } from 'lucide-react';
-import { RecentPerformanceProps } from '@/constants/type';
-import { Button } from '@/ui/components/button';
-import { useState } from 'react';
+import { Card, CardContent, CardHeader, CardTitle } from "@/ui/components/card";
+import { ChartNoAxesCombined, ChevronDown } from "lucide-react";
+import { RecentPerformanceProps } from "@/constants/type";
+import { Button } from "@/ui/components/button";
+import { useState } from "react";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from '@/ui/components/dropdown';
+} from "@/ui/components/dropdown";
 import {
   Bar,
   BarChart,
@@ -21,76 +21,78 @@ import {
   Tooltip,
   XAxis,
   YAxis,
-} from 'recharts';
+} from "recharts";
 
 const RecentPerformance = ({ recentTests }: RecentPerformanceProps) => {
-  const [chartType, setChartType] = useState<'line' | 'bar'>('bar');
-  const [timeRange, setTimeRange] = useState('week');
+  const [chartType, setChartType] = useState<"line" | "bar">("bar");
+  const [timeRange, setTimeRange] = useState("week");
 
   return (
     <Card className="bg-neutral-900/50 border-neutral-800">
       <CardHeader>
-        <CardTitle className="flex items-center justify-between">
-          <div className="flex items-center space-x-3 text-2xl">
-            <ChartNoAxesCombined className="size-8  text-yellow-400" />
+        <CardTitle className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
+          <div className="flex items-center space-x-3 text-xl md:text-2xl">
+            <ChartNoAxesCombined className="size-7 md:size-8 text-yellow-400" />
             <span className="text-neutral-200">Recent Performance</span>
           </div>
-          <div className="flex space-x-2">
+
+          <div className="flex w-full flex-wrap gap-2 md:w-auto md:flex-nowrap">
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <Button
                   variant="outline"
-                  className="bg-neutral-800 border-neutral-700 text-neutral-200"
+                  className="w-full md:w-auto bg-neutral-800 border-neutral-700 text-neutral-200"
                 >
-                  {chartType === 'bar' ? 'Bar Chart' : 'Line Chart'}
+                  {chartType === "bar" ? "Bar Chart" : "Line Chart"}
                   <ChevronDown className="ml-2 h-4 w-4" />
                 </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent className="bg-neutral-800 border-neutral-700">
                 <DropdownMenuItem
-                  className="text-neutral-400 min-w-full cursor-pointer"
-                  onClick={() => setChartType('bar')}
+                  className="text-neutral-400 min-w-full hover:bg-neutral-900 cursor-pointer"
+                  onClick={() => setChartType("bar")}
                 >
                   Bar Chart
                 </DropdownMenuItem>
                 <DropdownMenuItem
-                  className="text-neutral-400 min-w-full cursor-pointer"
-                  onClick={() => setChartType('line')}
+                  className="text-neutral-400 min-w-full hover:bg-neutral-900 cursor-pointer"
+                  onClick={() => setChartType("line")}
                 >
                   Line Chart
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
+
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <Button
                   variant="outline"
-                  className="bg-neutral-800 border-neutral-700 text-neutral-200"
+                  className="w-full md:w-auto bg-neutral-800 border-neutral-700 text-neutral-200"
                 >
-                  {timeRange === 'week'
-                    ? 'Last Week'
-                    : timeRange === 'month'
-                      ? 'Last Month'
-                      : 'Last 3 month'}
+                  {timeRange === "week"
+                    ? "Last Week"
+                    : timeRange === "month"
+                      ? "Last Month"
+                      : "Last 3 Month"}
                   <ChevronDown className="ml-2 h-4 w-4" />
                 </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent className="bg-neutral-800 border-neutral-700">
                 <DropdownMenuItem
-                  className="text-neutral-400 min-w-full cursor-pointer"
-                  onClick={() => setTimeRange('week')}
+                  className="text-neutral-400 min-w-full hover:bg-neutral-900  cursor-pointer"
+                  onClick={() => setTimeRange("week")}
                 >
                   Last Week
                 </DropdownMenuItem>
                 <DropdownMenuItem
-                  className="text-neutral-400 min-w-full cursor-pointer"
-                  onClick={() => setTimeRange('month')}
+                  className="text-neutral-400 min-w-full hover:bg-neutral-900 cursor-pointer"
+                  onClick={() => setTimeRange("month")}
                 >
                   Last Month
                 </DropdownMenuItem>
                 <DropdownMenuItem
-                  className="text-neutral-400 min-w-full cursor-pointer"
-                  onClick={() => setTimeRange('3month')}
+                  className="text-neutral-400 min-w-full hover:bg-neutral-900 cursor-pointer"
+                  onClick={() => setTimeRange("3month")}
                 >
                   Last 3 month
                 </DropdownMenuItem>
@@ -99,10 +101,11 @@ const RecentPerformance = ({ recentTests }: RecentPerformanceProps) => {
           </div>
         </CardTitle>
       </CardHeader>
+
       <CardContent>
         <div className="h-[300px]">
           <ResponsiveContainer width="100%" height="100%">
-            {chartType === 'bar' ? (
+            {chartType === "bar" ? (
               <BarChart data={recentTests}>
                 <CartesianGrid
                   strokeDasharray="3 3"
@@ -126,7 +129,7 @@ const RecentPerformance = ({ recentTests }: RecentPerformanceProps) => {
                   content={({ active, payload }) => {
                     if (active && payload && payload.length) {
                       return (
-                        <div className="rounded-lg border bg-neutral-800 p-2 shadow-sm">
+                        <div className="rounded-md border bg-neutral-800 p-2 shadow-sm">
                           <div className="grid grid-cols-2 gap-2">
                             <div className="flex flex-col">
                               <span className="text-[0.70rem] uppercase text-neutral-200">
@@ -181,7 +184,7 @@ const RecentPerformance = ({ recentTests }: RecentPerformanceProps) => {
                   content={({ active, payload }) => {
                     if (active && payload && payload.length) {
                       return (
-                        <div className="rounded-lg border bg-neutral-800 p-2 shadow-sm">
+                        <div className="rounded-md border bg-neutral-800 p-2 shadow-sm">
                           <div className="grid grid-cols-2 gap-2">
                             <div className="flex flex-col">
                               <span className="text-[0.70rem] uppercase text-neutral-200">
@@ -211,7 +214,7 @@ const RecentPerformance = ({ recentTests }: RecentPerformanceProps) => {
                   dataKey="wpm"
                   stroke="rgba(255,255,255,0.1)"
                   strokeWidth={2}
-                  dot={{ fill: 'hsl(230, 71%, 45%)', r: 4 }}
+                  dot={{ fill: "hsl(230, 71%, 45%)", r: 4 }}
                 />
               </LineChart>
             )}

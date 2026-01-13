@@ -1,4 +1,4 @@
-import { Dispatch, SetStateAction } from 'react';
+import { Dispatch, SetStateAction } from "react";
 
 export type ModesProps = {
   mode: string;
@@ -44,6 +44,7 @@ export type ResultProps = {
   onRestart: () => void;
   mode: string;
   modeOption: number;
+  hasMistakes?: boolean;
 };
 
 export type LeaderboardDataType = {
@@ -83,13 +84,13 @@ export type ReviewsCardProps = {
 export type BestScoresProps = {
   allTimeBestScores: {
     time: {
-      '15s': number;
-      '30s': number;
+      "15s": number;
+      "30s": number;
     };
     words: {
-      '10': number;
-      '25': number;
-      '50': number;
+      "10": number;
+      "25": number;
+      "50": number;
     };
   };
 };
@@ -183,7 +184,4 @@ export type AddTestTypes = {
   time: number;
   mode: string;
   modeOption: number;
-
-  keystrokes?: any[];
-  wordStats?: any[];
 };

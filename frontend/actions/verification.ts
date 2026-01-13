@@ -1,5 +1,3 @@
-"use server";
-
 import { getVerificationTokenByToken } from "@/dboper/token";
 import { getUserByEmail } from "@/dboper/user";
 import prisma from "@repo/db";

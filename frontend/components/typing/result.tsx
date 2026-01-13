@@ -68,6 +68,15 @@ const Result = ({
     return () => clearInterval(interval);
   }, [loading]);
 
+  useEffect(() => {
+    addScoreToLeaderboard({
+      wpm,
+      accuracy: parseFloat(accuracy.toFixed(2)),
+      time,
+      mode,
+    });
+  }, [wpm, accuracy, time, mode, modeOption]);
+
   const handleGenerate = async () => {
     try {
       setError(null);
@@ -80,28 +89,19 @@ const Result = ({
       const res = await generateExercise();
       setExercise(res);
       setOpen(true);
-    } catch (err) {
+    } catch {
       setError("Something went wrong while generating analysis");
     } finally {
       setLoading(false);
     }
   };
 
-  useEffect(() => {
-    addScoreToLeaderboard({
-      wpm,
-      accuracy: parseFloat(accuracy.toFixed(2)),
-      time,
-      mode,
-    });
-  }, [wpm, accuracy, time, mode, modeOption]);
-
   const averageWPM = Math.round(
-    wpmData.reduce((sum, data) => sum + data.wpm, 0) / wpmData.length
+    wpmData.reduce((sum, d) => sum + d.wpm, 0) / wpmData.length
   );
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
+    hidden: { opacity: 0, y: 16 },
     visible: { opacity: 1, y: 0 },
   };
 
@@ -129,158 +129,174 @@ const Result = ({
 
   return (
     <>
-      <motion.div className="mt-10 grid grid-cols-1 md:grid-cols-[1fr_250px] gap-6 w-full">
-        <motion.div variants={itemVariants}>
-          <Card className="bg-neutral-900/50 border-neutral-800 md:shadow-lg shadow-none w-full">
-            <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-6">
-              <CardTitle className="md:text-xl text-md flex items-center gap-4 ">
-                <LineChartIcon className="size-6 text-primary text-blue-500" />
-                Performance Analysis
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <ChartContainer
-                config={{
-                  wpm: {
-                    label: "WPM",
-                    color: "hsl(222, 91%, 39.5%)",
-                  },
-                  average: {
-                    label: "Average WPM",
-                    color: "hsl(47, 100%, 68%)",
-                  },
-                }}
-                className="md:h-[350px] h-auto md:w-full w-[350px]"
-              >
-                <ResponsiveContainer width="100%" height="100%">
-                  <LineChart
-                    data={wpmData}
-                    margin={{ top: 20, right: 30, left: 0, bottom: 0 }}
-                  >
-                    <CartesianGrid
-                      strokeDasharray="3 3"
-                      stroke="hsl(var(--border))"
-                      opacity={0.1}
-                    />
-                    <XAxis
-                      dataKey="time"
-                      stroke="hsl(var(--muted-foreground))"
-                      tickFormatter={(value) => `${value}s`}
-                      opacity={0.5}
-                      tickLine={false}
-                      axisLine={false}
-                    />
-                    <YAxis
-                      stroke="hsl(var(--muted-foreground))"
-                      domain={["dataMin - 5", "dataMax + 5"]}
-                      opacity={0.5}
-                      tickLine={false}
-                      axisLine={false}
-                    />
-                    <ChartTooltip
-                      content={({ active, payload }) => {
-                        if (active && payload && payload.length) {
-                          return (
-                            <div className="rounded-md bg-neutral-800 p-2 shadow-sm">
-                              <div className="grid grid-cols-2 gap-3">
-                                <div className="flex flex-col">
-                                  <span className="text-[0.70rem] uppercase text-neutral-200">
-                                    Time
-                                  </span>
-                                  <span className="font-bold text-blue-600">
-                                    {payload[0]?.payload.time}s
-                                  </span>
-                                </div>
-                                <div className="flex flex-col">
-                                  <span className="text-[0.70rem] uppercase text-neutral-200">
-                                    WPM
-                                  </span>
-                                  <span className="font-bold text-emerald-600">
-                                    {payload[0]?.payload.wpm}
-                                  </span>
+      <div className="w-full">
+        <motion.div
+          variants={itemVariants}
+          className="grid grid-cols-1 md:grid-cols-[minmax(0,1fr)_260px] gap-6 w-full max-w-7xl mx-auto px-8 md:px-0"
+        >
+          <motion.div layout={false}>
+            <Card className="bg-neutral-900/50 border-neutral-800 shadow-none md:shadow-lg w-full min-w-0">
+              <CardHeader className="pb-2">
+                <CardTitle className="text-base md:text-2xl flex items-center gap-3">
+                  <LineChartIcon className="size-6 text-primary text-blue-500" />
+                  Performance Analysis
+                </CardTitle>
+              </CardHeader>
+
+              <CardContent>
+                <ChartContainer
+                  config={{
+                    wpm: {
+                      label: "WPM",
+                      color: "hsl(222, 91%, 39.5%)",
+                    },
+                    average: {
+                      label: "Average WPM",
+                      color: "hsl(47, 100%, 68%)",
+                    },
+                  }}
+                  className="h-[260px] md:h-[350px] w-full"
+                >
+                  <ResponsiveContainer width="100%" height="100%">
+                    <LineChart
+                      data={wpmData}
+                      margin={{ top: 20, right: 30, left: 0, bottom: 0 }}
+                    >
+                      <CartesianGrid
+                        strokeDasharray="3 3"
+                        stroke="hsl(var(--border))"
+                        opacity={0.1}
+                      />
+                      <XAxis
+                        dataKey="time"
+                        stroke="hsl(var(--muted-foreground))"
+                        tickFormatter={(value) => `${value}s`}
+                        opacity={0.5}
+                        tickLine={false}
+                        axisLine={false}
+                      />
+
+                      <YAxis
+                        stroke="hsl(var(--muted-foreground))"
+                        domain={["dataMin - 5", "dataMax + 5"]}
+                        opacity={0.5}
+                        tickLine={false}
+                        axisLine={false}
+                      />
+
+                      <ChartTooltip
+                        content={({ active, payload }) => {
+                          if (active && payload && payload.length) {
+                            return (
+                              <div className="rounded-md bg-neutral-800 p-2 shadow-sm">
+                                <div className="grid grid-cols-2 gap-3">
+                                  <div className="flex flex-col">
+                                    <span className="text-[0.70rem] uppercase text-neutral-200">
+                                      Time
+                                    </span>
+                                    <span className="font-bold text-blue-600">
+                                      {payload[0]?.payload.time}s
+                                    </span>
+                                  </div>
+                                  <div className="flex flex-col">
+                                    <span className="text-[0.70rem] uppercase text-neutral-200">
+                                      WPM
+                                    </span>
+                                    <span className="font-bold text-emerald-600">
+                                      {payload[0]?.payload.wpm}
+                                    </span>
+                                  </div>
                                 </div>
                               </div>
-                            </div>
-                          );
-                        }
-                        return null;
-                      }}
-                    />
-                    <ReferenceLine
-                      y={averageWPM}
-                      stroke="hsl(47, 100%, 68%)"
-                      strokeDasharray="15"
-                      label={{
-                        value: `Avg: ${averageWPM} WPM`,
-                        fill: "hsl(47, 100%, 68%)",
-                        fontSize: 12,
-                        position: "insideBottomRight",
-                      }}
-                    />
-                    <Line
-                      type="linear"
-                      dataKey="wpm"
-                      stroke="hsl(222, 91%, 39.5%)"
-                      strokeWidth={3}
-                      dot={{ r: 3, fill: "hsl(47, 100%, 68%)" }}
-                      activeDot={{
-                        r: 6,
-                        fill: "hsl(47, 100%, 68%)",
-                        stroke: "hsl(var(--background))",
-                        strokeWidth: 2,
-                      }}
-                    />
-                  </LineChart>
-                </ResponsiveContainer>
-              </ChartContainer>
-            </CardContent>
-          </Card>
-        </motion.div>
-        <motion.div variants={itemVariants} className="grid grid-rows-3 gap-4">
-          <ReportCard
-            icon={<Activity className="size-8 mr-2 text-sky-400" />}
-            title="WPM"
-            value={wpm}
-          />
-          <ReportCard
-            icon={<Target className="size-8 mr-2 text-emerald-400" />}
-            title="Accuracy"
-            value={`${accuracy.toFixed(2)}%`}
-          />
+                            );
+                          }
+                          return null;
+                        }}
+                      />
 
-          <ReportCard
-            icon={<Hourglass className="size-8 mr-2 text-violet-400" />}
-            title="Time"
-            value={`${time}s`}
-          />
+                      <ReferenceLine
+                        y={averageWPM}
+                        stroke="hsl(47, 100%, 68%)"
+                        strokeDasharray="10"
+                        label={{
+                          value: `Avg: ${averageWPM} WPM`,
+                          fill: "hsl(47, 100%, 68%)",
+                          fontSize: 12,
+                          position: "insideBottomRight",
+                        }}
+                      />
 
-          <div className="flex flex-col items-center gap-3 justify-center">
-            {hasMistakes && (
+                      <Line
+                        type="linear"
+                        dataKey="wpm"
+                        stroke="hsl(222, 91%, 39.5%)"
+                        strokeWidth={3}
+                        dot={{ r: 3, fill: "hsl(47, 100%, 68%)" }}
+                        activeDot={{
+                          r: 6,
+                          fill: "hsl(47, 100%, 68%)",
+                          stroke: "hsl(var(--background))",
+                          strokeWidth: 2,
+                        }}
+                      />
+                    </LineChart>
+                  </ResponsiveContainer>
+                </ChartContainer>
+              </CardContent>
+            </Card>
+          </motion.div>
+
+          <motion.div layout={false} className="grid gap-4 min-w-0">
+            <ReportCard
+              icon={<Activity className="w-7 h-7 text-sky-400" />}
+              title="WPM"
+              value={wpm}
+            />
+
+            <ReportCard
+              icon={<Target className="w-7 h-7 text-emerald-400" />}
+              title="Accuracy"
+              value={`${accuracy.toFixed(2)}%`}
+            />
+
+            <ReportCard
+              icon={<Hourglass className="w-7 h-7 text-violet-400" />}
+              title="Time"
+              value={`${time}s`}
+            />
+
+            <div className="flex flex-col items-center gap-3 min-h-[120px] justify-center">
+              {hasMistakes && (
+                <Button
+                  size="lg"
+                  variant="secondary"
+                  onClick={handleGenerate}
+                  disabled={loading}
+                  className="md:w-full w-fit px-6"
+                >
+                  <WandSparkles />
+                  {loading ? "Generating..." : "Analyzing with AI..."}
+                </Button>
+              )}
+
               <Button
                 size="lg"
-                variant="secondary"
-                onClick={handleGenerate}
-                disabled={loading}
+                onClick={onRestart}
                 className="md:w-full w-fit px-6"
               >
-                <WandSparkles />
-                {loading ? "Generating Practice..." : "Analyzing with AI..."}
+                <RotateCcw />
+                Type Again
               </Button>
-            )}
-
-            <Button
-              size="lg"
-              onClick={onRestart}
-              className="md:w-full w-fit px-6"
-            >
-              <RotateCcw />
-              Type Again
-            </Button>
-          </div>
+            </div>
+          </motion.div>
         </motion.div>
-      </motion.div>
+      </div>
 
-      {loading && <AILoader message={message} />}
+      {loading && (
+        <div className="fixed inset-0 z-50">
+          <AILoader message={message} />
+        </div>
+      )}
 
       <Sheet open={open} onOpenChange={setOpen}>
         <SheetContent
@@ -505,7 +521,9 @@ const Result = ({
         </SheetContent>
       </Sheet>
 
-      {error && <p className="text-red-400 text-sm">{error}</p>}
+      <div className=" flex items-center justify-center md:text-lg text-xs mb-5">
+        {error && <p className="text-red-400 mt-4">{error}</p>}
+      </div>
     </>
   );
 };

@@ -520,8 +520,8 @@ const Interface = () => {
           key="result-screen"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 1.5, ease: "easeInOut" }}
-          className="fixed inset-0 z-50 flex items-center justify-center pointer-events-none"
+          transition={{ duration: 0.8, ease: "easeInOut" }}
+          className="relative z-10 flex justify-center"
         >
           <div className="pointer-events-auto">
             {showGuestPrompt ? (

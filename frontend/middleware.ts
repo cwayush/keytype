@@ -1,12 +1,12 @@
-import { NextResponse } from 'next/server';
+import { NextResponse } from "next/server";
 import {
   apiAuthPrefix,
   authRoutes,
   DEFAULT_LOGIN_REDIRECT,
   publicRoutes,
-} from './constants';
-import NextAuth from 'next-auth';
-import authConfig from './auth.config';
+} from "./constants";
+import NextAuth from "next-auth";
+import authConfig from "./auth.config";
 
 const { auth } = NextAuth(authConfig);
 
@@ -28,7 +28,7 @@ export default auth((req) => {
   }
 
   if (!isLoggedIn && !isPublicRoute) {
-    return NextResponse.redirect(new URL('/auth', nextUrl));
+    return NextResponse.redirect(new URL("/auth", nextUrl));
   }
 
   return NextResponse.next();
@@ -36,7 +36,7 @@ export default auth((req) => {
 
 export const config = {
   matcher: [
-    '/((?!_next|api|trpc|[^?]*\\.(?:html?|css|js(?!on)|jpe?g|webp|png|gif|svg|ttf|woff2?|ico|csv|docx?|xlsx?|zip|webmanifest)).*)',
+    "/((?!_next|api|trpc|[^?]*\\.(?:html?|css|js(?!on)|jpe?g|webp|png|gif|svg|ttf|woff2?|ico|csv|docx?|xlsx?|zip|webmanifest)).*)",
   ],
-  runtime: 'nodejs',
+  runtime: "nodejs",
 };

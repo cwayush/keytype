@@ -1,4 +1,5 @@
 import prisma from "@repo/db";
+import { v4 as uuidv4 } from "uuid";
 
 export const getVerificationTokenByEmail = async (email: string) => {
   try {
@@ -12,15 +13,25 @@ export const getVerificationTokenByEmail = async (email: string) => {
   }
 };
 
-export const getVerificationTokenByToken = async (token: string) => {
-  try {
-    const verificationToken = await prisma.verificationToken.findUnique({
-      where: {
-        token,
-      },
+export const generateVerificationToken = async (email: string) => {
+  const token = uuidv4();
+  const expires = new Date(new Date().getTime() + 3600 * 1000);
+
+  const exisitingToken = await getVerificationTokenByEmail(email);
+
+  if (exisitingToken) {
+    await prisma.verificationToken.delete({
+      where: { id: exisitingToken.id },
     });
-    return verificationToken;
-  } catch (err) {
-    console.log(err);
   }
+
+  const verificationToken = await prisma.verificationToken.create({
+    data: {
+      token,
+      expiresAt: expires,
+      email,
+    },
+  });
+
+  return verificationToken;
 };

@@ -50,7 +50,7 @@ export const getRecentTests = (tests: Test[]) => {
   return tests
     .sort(
       (a, b) =>
-        new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime(),
+        new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
     )
     .slice(0, 7)
     .map((test) => ({
@@ -101,27 +101,4 @@ export const geneateRoomCode = () => {
     code += characters.charAt(Math.floor(Math.random() * characters.length));
   }
   return code;
-};
-
-export const generateVerificationToken = async (email: string) => {
-  const token = uuidv4();
-  const expires = new Date(new Date().getTime() + 3600 * 1000);
-
-  const exisitingToken = await getVerificationTokenByEmail(email);
-
-  if (exisitingToken) {
-    await prisma.verificationToken.delete({
-      where: { id: exisitingToken.id },
-    });
-  }
-
-  const verificationToken = await prisma.verificationToken.create({
-    data: {
-      token,
-      expiresAt: expires,
-      email,
-    },
-  });
-
-  return verificationToken;
 };

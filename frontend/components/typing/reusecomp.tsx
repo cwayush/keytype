@@ -24,7 +24,7 @@ export function GuestPromptCard({ onReset }: CardProps) {
       animate={{ scale: 1, opacity: 1 }}
       transition={{ duration: 0.25, ease: "easeOut" }}
       className=" md:w-full md:max-w-xl max-w-md rounded-md border border-neutral-600
-                    bg-neutral-900 md:p-6 p-4 text-center"
+                    bg-neutral-900 md:p-6 p-4 mt-20 text-center"
     >
       <h2 className="flex items-center justify-center gap-3 md:text-2xl text-lg font-semibold text-neutral-200">
         That was smooth <span className="text-4xl">👀</span>

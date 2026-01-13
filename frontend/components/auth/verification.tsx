@@ -1,20 +1,20 @@
-'use client';
+"use client";
 
-import { CircleCheckBig, TriangleAlert } from 'lucide-react';
-import { useCallback, useEffect, useState } from 'react';
-import { verification } from '@/actions/verification';
-import BeatLoader from 'react-spinners/BeatLoader';
-import { useSearchParams } from 'next/navigation';
-import { motion } from 'framer-motion';
-import { cn } from '@/lib/utils';
-import Link from 'next/link';
+import { CircleCheckBig, TriangleAlert } from "lucide-react";
+import { useCallback, useEffect, useState } from "react";
+import BeatLoader from "react-spinners/BeatLoader";
+import { useSearchParams } from "next/navigation";
+import { motion } from "framer-motion";
+import { cn } from "@/lib/utils";
+import Link from "next/link";
 import {
   Card,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
-} from '@/ui/components/card';
+} from "@/ui/components/card";
+import { verification } from "@/actions/verification";
 
 const containerVarients = {
   hidden: { opacity: 0 },
@@ -22,7 +22,7 @@ const containerVarients = {
     opacity: 1,
     y: 0,
     transition: {
-      type: 'spring' as const,
+      type: "spring" as const,
       damping: 20,
       stiffness: 100,
     },
@@ -31,16 +31,17 @@ const containerVarients = {
 
 const Verification = () => {
   const searchParams = useSearchParams();
-  const token = searchParams.get('token');
-  const [message, setMessage] = useState<string>('');
+  const token = searchParams.get("token");
+  const [message, setMessage] = useState<string>("");
   const [success, setSuccess] = useState<boolean | null>(null);
 
   const onSubmit = useCallback(() => {
     if (!token) {
       setSuccess(false);
-      setMessage('Missing Token!');
+      setMessage("Missing Token!");
       return;
     }
+    console.log("ye pass ho rha hai token UI par", token);
 
     verification(token)
       .then((res) => {
@@ -50,7 +51,7 @@ const Verification = () => {
       .catch((err) => {
         setSuccess(false);
         console.error(err);
-        setMessage('Something went wrong!');
+        setMessage("Something went wrong!");
       });
   }, [token]);
 
@@ -81,10 +82,10 @@ const Verification = () => {
                 <>
                   <div
                     className={cn(
-                      'p-3 rounded-md flex items-center gap-x-2 text-sm',
+                      "p-3 rounded-md flex items-center gap-x-2 text-sm",
                       success
-                        ? 'bg-emerald-500/15 text-emerald-500'
-                        : 'bg-destructive/15 text-destructive'
+                        ? "bg-emerald-500/15 text-emerald-500"
+                        : "bg-destructive/15 text-destructive"
                     )}
                   >
                     {success ? (
@@ -99,7 +100,7 @@ const Verification = () => {
                     className="text-sm text-neutral-400 hover:text-neutral-200 transition-colors"
                   >
                     Back to login
-                  </Link>{' '}
+                  </Link>{" "}
                 </>
               ) : (
                 <BeatLoader color="#ffffff" />

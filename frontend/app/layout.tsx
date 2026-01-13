@@ -10,8 +10,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "KEYTYPE",
-  description: "Practice typing with KEYTYPE",
+  title: "keyType - Improve Typing Speed with AI Coach",
+  description:
+    "Practice typing, improve speed, accuracy, and consistency with AI-powered feedback.",
 };
 
 export default function RootLayout({

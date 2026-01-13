@@ -21,8 +21,9 @@ export function Header() {
           className="relative group inline-flex items-center px-4 py-2 rounded-xl transition-all duration-500"
         >
           <span className="absolute inset-0 rounded-xl bg-linear-to-r from-indigo-500  to-emerald-500 opacity-0 group-hover:opacity-40 blur-2xl group-hover:scale-400 transition-all duration-500" />
-          <span className="relative z-10 flex items-center md:gap-3 gap-2 font-extrabold md:text-3xl text-2xl tracking-wide">
-            <GhostIcon className="w-8 h-8 text-white" />
+          <span className="relative z-10 flex items-center gap-2 font-extrabold md:text-3xl text-2xl tracking-wide">
+            <img src="/kt-logo.svg" alt="KEYTYPE logo" className="w-10 h-10" />
+
             <span>
               <span className="text-white">key</span>
               <span className="bg-linear-to-r from-blue-700 to-emerald-700 bg-clip-text text-transparent">

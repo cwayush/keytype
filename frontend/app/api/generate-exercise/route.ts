@@ -28,13 +28,9 @@ export async function POST() {
     where: { userId },
   });
 
-  console.log("Word Stats:", wordStats);
-
   const keyStats = await prisma.weakKeyStat.findMany({
     where: { userId },
   });
-
-  console.log("Key Stats:", keyStats);
 
   const collectWords = wordStats
     .map((w) => ({
@@ -59,9 +55,6 @@ export async function POST() {
     }))
     .filter((k) => k.attempts >= 1)
     .slice(0, 5);
-
-  console.log("Collected Words for Prompt:", collectWords);
-  console.log("Collected Keys for Prompt:", collectKeys);
 
   if (!collectWords.length && !collectKeys.length) {
     return NextResponse.json(
@@ -147,20 +140,21 @@ export async function POST() {
   `;
 
   try {
-    const res = await openai.responses.create({
-      model: "gpt-4.1-mini",
-      input: prompt,
+    const res = await openai.chat.completions.create({
+      model: "gpt-4o-mini",
+      messages: [{ role: "user", content: prompt }],
+      temperature: 0.6,
+      response_format: { type: "json_object" },
     });
 
-    const raw = res.output[0].content[0].text;
+    const raw = res.choices[0].message.content!;
     const data = JSON.parse(raw);
 
     return NextResponse.json(data);
   } catch (e) {
-    console.error("OPENAI FAILURE:", e);
     return NextResponse.json(
       { error: "Failed to generate exercise" },
-      { status: 500 },
+      { status: 500 }
     );
   }
 }

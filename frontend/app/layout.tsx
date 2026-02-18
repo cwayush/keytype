@@ -10,7 +10,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "KeyType – Improve Typing Speed with AI Coach",
+  title: "keyType – Improve Typing Speed with AI Coach",
   description:
     "Boost your typing speed, accuracy, and consistency with KeyType. Train with AI-powered feedback, multiplayer challenges, and real-time performance tracking.",
 
